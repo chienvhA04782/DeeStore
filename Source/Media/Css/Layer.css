@@ -1,0 +1,494 @@
+﻿@import url(/Media/Css/FontExtend/FontFace.css);
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+select{
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 10px;
+    padding-left: 10px;
+    min-width: 100px;
+}
+a {
+    color: #379ACF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body {
+    font-size: 14px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+    color: #404040;
+}
+
+#page {
+    width: 100%;
+}
+
+header#heads {
+    width: 100%;
+    margin: 10px auto;
+    position: relative;
+}
+
+#page header .content {
+    width: 996px;
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
+}
+
+#page .bodyContent {
+    width: 100%;
+    margin-top: 10px;
+    min-height: 300px;
+    position: relative;
+    float: left;
+}
+#page .Inside{
+    width: 996px;
+    margin: 0 auto;
+}
+#page .bodyContent .Inside .left{
+    width: 200px;
+    margin-right: 8px;
+    display: block;
+    background-color: red;
+    height: 30px;
+    border:1px solid #D3D3D3;
+    background: #fff;
+    min-height: 700px;
+    float: left;
+}
+#page .bodyContent .Inside .left .titleCate h2{
+    border-bottom: 2px solid #DC2606;
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 5px;
+    width: 92%;
+}
+#page .bodyContent .Inside .right{
+    width: 777px;
+    display: block;
+    float: left;
+}
+#page .bodyContent .Inside .right .wrapperTopSearch{
+    width: 100%;
+    height: 100px;
+    border: 1px solid #d1d0d1;
+    background-color: #fff;
+}
+#page .bodyContent .Inside .right .wrapperTopSearch .inside{
+    padding: 10px;
+}
+#page .bodyContent .Inside .right .wrapperTopSearch .inside .boxContentSearch{
+    width: 200px;
+    float: left;
+    margin-right: 50px;
+}
+#page .bodyContent .Inside .right .wrapperTopSearch .inside .boxContentSearch label{
+    display: block;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    
+}
+.contentProductShow{
+    background-color: #FFFFFF;
+    border: 1px solid #D1D0D1;
+    margin-top: 7px;
+    min-height: 400px;
+    padding-left: 11px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    width: 97%;
+    float: left;
+}
+.contentProductShow .productContent{
+    display: block;
+    width: 100%;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.contentProductShow .contentpagingtop{
+    display: block;
+    height: 30px;
+    padding-top: 15px;
+}
+
+.contentProductShow .productContent .items{
+    float: left;
+    height: 367px;
+    width: 182px;
+    cursor: pointer;
+    margin-right: 5px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 1px solid #d1d0d1;
+    margin-top: 10px;
+    padding: 3px;
+}
+
+.contentProductShow .productContent .items .sizeH{
+    background: none repeat scroll 0 0 #404040;
+    margin-left: -3px;
+    opacity: 0.8;
+    padding-bottom: 6px;
+    margin-top: 10%;
+    padding-top: 6px;
+    position: absolute;
+    width: 180px;
+    z-index: 1;
+    display: none;
+}
+.contentProductShow .productContent .items:hover .sizeH{
+    display: block;
+}
+.contentProductShow .productContent .items .sizeH label{
+    color: #fff;
+    margin-left: 2px;
+    font-family: Helvetica Neue Medium;
+}
+.contentProductShow .productContent .items:hover{
+    border: 1px solid #d1d0d1;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.contentProductShow .productContent .items .opImage{
+
+}
+.contentProductShow .productContent .items .opnameProduct{
+    display: block;
+    font-size: 12px;
+    margin-top: 2px;
+    padding-left: 5px;
+    border-bottom: 1px dotted #404040;
+    padding-bottom: 3px;
+}
+.contentProductShow .productContent .items .opDescription{
+    display: block;
+    font-size: 11px;
+    margin-top: 2px;
+    padding-left: 5px;
+    padding-bottom: 3px;
+}
+.contentProductShow .productContent .items .opOldPrice{
+    display: block;
+    font-size: 12px;
+    margin-top: 2px;
+    padding-left: 5px;
+    padding-bottom: 3px;
+    font-family: Helvetica Neue Medium;
+    text-decoration: line-through;
+}
+.contentProductShow .productContent .items .opCurrentPrice{
+    display: block;
+    font-size: 13px;
+    margin-top: 2px;
+    padding-left: 5px;
+    padding-bottom: 3px;
+    font-family: Helvetica Neue Medium;
+    color: #dc2606;
+}
+.contentProductShow .productContent .items .deestoreKy{
+    display: block;
+    font-size: 13px;
+    margin-top: 2px;
+    padding-left: 5px;
+    padding-bottom: 3px;
+    color: #d1d0d1;
+    text-align: right;
+}
+
+.contentProductShow .productContent .items .opImage .salepercent{
+    background: url("../Image/Icon/discountFlag.png") no-repeat scroll 0 0 transparent;
+    height: 25px;
+    position: absolute;
+    width: 50px;
+}
+.contentProductShow .productContent .items .opImage .salepercent span{
+    font-size: 12px;
+    margin-left: 2px;
+    color: #fff;
+}
+.contentProductShow .productContent .items .opImage img{
+    border: medium none;
+    height: 252px;
+    width: 172px;
+}
+.contentProductShow .contentpagingtop .sleft{
+    float: left;
+    width: 50%;
+}
+.contentProductShow .contentpagingtop .sright{
+    float: left;
+    text-align: right;
+    width: 50%;
+}
+.contentProductShow .contentpagingtop .sright a{
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: #fff;
+    border:1px solid #d1d0d1;
+    color: #000;
+}
+.contentProductShow .contentpagingtop .sright a:hover{
+    border:1px solid #404040;
+    color: #dc2606;
+}
+#page header .content .topBar {
+    width: 100%;
+}
+
+#page header .content .topBar .logo {
+    background-color: #404040;
+    display: inline-block;
+    height: 90px;
+    top: 30px;
+    width: 108px;
+    padding-left: 5px;
+    padding-top: 20px;
+}
+#page header .content .topBar .logo h2{
+    color: #fff;
+    font-family: Helvetica Neue Thin;
+    font-size: 18px;
+}
+#page header .content .topBar .search {
+    width: 742px;
+    display: inline-block;
+    float: right;
+}
+
+#page header .content .topBar .search label button#btnsearch {
+    background: none repeat scroll -706px -500px #404040;
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
+    height: 30px;
+    padding-left: 15px;
+    text-transform: uppercase;
+}
+
+input.searchTopMain {
+    color: #404040;
+    height: 26px;
+    width: 310px;
+    font-size: 1.2em;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    font-weight: normal;
+}
+
+input.searchTopMain[placeholder] {
+    font-size: 14px;
+    color: #B4B4B4;
+}
+
+#page header .content nav#menu {
+    border-bottom: 1px solid #D1D0D1;
+    display: block;
+    float: left;
+    margin-top: 20px;
+    width: 100%;
+}
+
+#page header .content nav#menu .contentMenu {
+}
+
+#page header .content nav#menu .contentMenu ul {
+    list-style-type: none;
+}
+
+#page header .content nav#menu .contentMenu ul.parent li {
+    margin-right: 3px;
+}
+
+#page header .content nav#menu .contentMenu ul.parent li a {
+    border-right: 1px solid #D1D0D1;
+    color: #4A4A4A;
+    display: block;
+    float: left;
+    font-family: Helvetica Neue Medium;
+    font-size: 15px;
+    margin-right: 1px;
+    min-width: 40px;
+    padding: 6px 8px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#page header .content nav#menu .contentMenu ul.parent li a:hover {
+    color: #DC2606;
+}
+
+#page header .content nav#menu .contentMenu ul.parent li a.home {
+    background-image: url("../Image/Icon/homeIcon.png");
+    background-repeat: no-repeat;
+    height: 17px;
+    min-width: 20px !important;
+}
+
+#page header .content nav#menu .contentMenu ul.parent li a.home:hover {
+    background-position: 0 -26px;
+}
+
+#page header .content nav#menu .contentMenu ul.parent li a.active {
+    background-color: #494949;
+}
+
+#page header .content nav#menu .contentMenu ul.parent li ul.child {
+    display: block;
+    float: left;
+    width: 100%;
+    background-color: #494949;
+}
+
+#page header .content nav#menu .contentMenu ul.parent li ul.child li a {
+    background-color: #494949;
+    font-size: 12px;
+    font-family: Helvetica Neue Medium, arial;
+    text-transform: uppercase;
+}
+
+#page header .content nav#menu .contentMenu ul.parent li ul.child li a:hover {
+    background-color: #7b777b;
+}
+
+footer {
+    background-color: #FFFFFF;
+    bottom: 0 !important;
+    margin-top: 10px;
+    min-height: 160px;
+    width: 100%;
+    padding-top: 10px;
+    float: left;
+    border-top: 1px solid #D1D0D1;
+}
+
+footer .content .contentFooterLeft {
+    display: inline-block;
+    width: 69%;
+}
+
+footer .content .contentFooterLeft ul.menuBasicFooter {
+    list-style-type: none;
+}
+
+footer .content .contentFooterLeft ul.menuBasicFooter li {
+}
+
+footer .content .contentFooterLeft ul.menuBasicFooter li a {
+    border-right: 1px solid #595757;
+    color: #595757;
+    display: block;
+    float: left;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+footer .content .contentFooterLeft ul.menuBasicFooter li a:hover {
+    color: #dc2606;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+footer .content .contentFooterLeft ul.menuBasicFooter li:last-child a {
+    border-right: none;
+}
+
+footer .content .contentFooterLeft .inforsite {
+    float: left;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+footer .content .contentFooterRight {
+    display: inline-block;
+    width: 30%;
+    text-align: right;
+}
+
+footer .content {
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    width: 996px;
+}
+
+.byacn {
+    font-family: Helvetica Neue Medium,arial;
+    font-size: 12px;
+    color: #dc2606;
+}
+.byacn:hover {
+    text-decoration: underline;
+}
+.TopSiteMap{
+    color: #525152;
+    display: inline-block;
+    float: left;
+    font-family: a;
+    font-size: 14px;
+    margin-top: 3px;
+    padding-left: 5px;
+    padding-top: 8px;
+    width: 100%;
+}
+.TopSiteMap a{
+    color: #404040;
+}
+
+ul.menuLeft{
+    list-style-type: none;
+}
+
+ul.menuLeft li ul{
+    list-style-type: none;
+}
+
+ul.menuLeft li a{
+    padding-left: 20px;
+    padding-top: 10px;
+    display: block;
+    color: #000;
+}
+ul.menuLeft li a:hover{
+    color: #dc2606;
+}
+ul.menuLeft li ul li a{
+    padding-left: 35px;
+    font-size: 13px;
+}
+ul.menuLeft li ul li a:hover{
+    color: #dc2606;
+}
