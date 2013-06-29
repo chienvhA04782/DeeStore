@@ -109,7 +109,7 @@ header#heads {
     display: block;
     padding-bottom: 10px;
     padding-left: 5px;
-    
+
 }
 .contentProductShow{
     background-color: #FFFFFF;
@@ -491,4 +491,33 @@ ul.menuLeft li ul li a{
 }
 ul.menuLeft li ul li a:hover{
     color: #dc2606;
+}
+
+#mask {
+    background: #000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    z-index: 999;
+}
+
+#unmask {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    z-index: 999;
+}
+
+.loadPanel{
+    background: url("/Media/Image/Icon/ajax-loading.gif") no-repeat scroll 0 0 #D1D0D1;
+    display: none;
+    height: 32px;
+    right: 50%;
+    position: fixed;
+    top: 0;
+    width: 32px;
+    z-index: 1;
 }

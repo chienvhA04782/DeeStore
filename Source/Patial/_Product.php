@@ -27,7 +27,7 @@
     </div>
 </div>
 <div class="contentProductShow">
-    ÁO PHÔNG NGẮN TAY: (365 items)
+    <h2 title="ÁO PHÔNG NGẮN TAY" style="font-weight: normal; font-size: 14px; display: inline-block">ÁO PHÔNG NGẮN TAY</h2> - <span>(365 items)</span> 
     <div class="contentpagingtop">
         <div class="sleft"> 
             <select>
@@ -45,7 +45,7 @@
         </div>
     </div>
     <div class="productContent"> 
-        <div class="items">
+<!--        <div class="items">
             <div class="sizeH">
                 <label>
                     SIZE: X | XL | 1 | 2A
@@ -74,7 +74,7 @@
                     DEESTORE
                 </label>
             </div>
-        </div>
+        </div>-->
     </div>
     <div class="contentpagingtop">
         <div class="sleft"> 

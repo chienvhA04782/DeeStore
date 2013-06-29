@@ -1,13 +1,13 @@
-
-<!DOCTYPE html>
-<html lang="vi" ng-app="phonecat">
+<!doctype html>
+<html lang="en" ng-app="App">
     <head>
         <title>DeeStore Shopping Online</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="fragment" content="!" /> 
         <link href="/Media/Css/Layer.css" rel="stylesheet" />
         <script src="/Media/JavaScript/jquery/jquery.min.js"></script>
     </head>
-    <body style="background-color: #FFF">
+    <body style="background-color: #FFF" data-status="{{ status }}">
         <div id="page">
             <?php
             include './Share/Header.php';
@@ -40,12 +40,7 @@
                 </div>
             </div>
             <script src="/Media/JavaScript/angular/angular.min.js"></script>
-            <script src="/Media/JavaScript/app.js"></script>
-            <script src="/Media/JavaScript/controllers.js"></script>
-            <script src="/Media/JavaScript/filters.js"></script>
-            <script src="/Media/JavaScript/services.js"></script>
-            <script src="/Media/JavaScript/angular/angular-resource.js"></script>
-
+            <script src="/Media/JavaScript/application.js"></script>
             <?php
             include './Share/Footer.php';
             include './Share/MasterInclude.php';
@@ -57,8 +52,8 @@
         // Bin Menu Top
         echo "<script type='text/javascript'>";
         while ($row = mysqli_fetch_array($result)) {
-            echo "$('ul.parent').append('<li><a href=\'#Product/" .
-            $row['CategoriesID'] . "/" . $row['CategoriesParentID'] . "/" . str_replace(" ", "_", $row['CategoriesName']) . "\'>" .
+            echo "$('ul.parent').append('<li><a href=\'#/Product/" .
+            $row['CategoriesID'] . "/" . $row['CategoriesParentID'] . "/" . khongdau($row['CategoriesName']) . "\'>" .
             $row['CategoriesName'] . "</a></li>');";
         }
         echo "</script>";
@@ -67,8 +62,8 @@
         // Bin Menu Left
         echo "<script type='text/javascript'>";
         while ($row = mysqli_fetch_array($menuLeftParent)) {
-            echo "$('ul.menuLeft').append('<li class=\'prl" . $row['CategoriesID'] . "\'><a href=\'#Product/" .
-            $row['CategoriesID'] . "/" . $row['CategoriesParentID'] . "/" . str_replace(" ", "_", $row['CategoriesName']) . "\'>" .
+            echo "$('ul.menuLeft').append('<li class=\'prl" . $row['CategoriesID'] . "\'><a href=\'#/Product/" .
+            $row['CategoriesID'] . "/" . $row['CategoriesParentID'] . "/" . khongdau($row['CategoriesName']) . "\'>" .
             $row['CategoriesName'] . "</a></li>');";
             // Bin Menu Left child grade I only
             $resultChild = $cate->feFetchtchCategoriesChildByParent($row['CategoriesID']);
@@ -76,8 +71,8 @@
             echo "var ul = document.createElement('ul');";
             echo "$(ul).appendTo('ul.menuLeft li.prl" . $row['CategoriesID'] . "');";
             while ($rows = mysqli_fetch_array($resultChild)) {
-                echo "$(ul).append('<li class=\'prl" . $rows['CategoriesID'] . "\'><a href=\'#Product/" .
-                $rows['CategoriesID'] . "/" . $rows['CategoriesParentID'] . "/" . str_replace(" ", "_", $rows['CategoriesName']) . "\'>" .
+                echo "$(ul).append('<li class=\'prl" . $rows['CategoriesID'] . "\'><a href=\'#/Product/" .
+                $rows['CategoriesID'] . "/" . $rows['CategoriesParentID'] . "/" . khongdau($rows['CategoriesName']) . "\'>" .
                 $rows['CategoriesName'] . "</a></li>');";
             }
         }

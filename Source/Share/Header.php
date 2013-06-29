@@ -1,4 +1,5 @@
 <header id="heads">
+    <div class="loadPanel" style="display: none"></div>
     <div class="content">
         <div class="topBar">
             <div class="logo">
@@ -21,7 +22,7 @@
         <nav id="menu">
             <div class="contentMenu">
                 <ul class="parent">
-                    <li><a href="#/ProductAll">NEW</a></li>
+                    <li><a href="#/Product">NEW</a></li>
                 </ul>
             </div>
         </nav>
