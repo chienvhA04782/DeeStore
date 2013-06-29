@@ -1,7 +1,6 @@
 var App;
 (function() {
     App = angular.module('App', []);
-
     App.run(['$rootScope', function($rootScope) {
             var _getTopScope = function() {
                 return $rootScope;
@@ -25,12 +24,26 @@ var App;
             });
         }]);
 
-    App.controller('IndexCtrl', ['$scope', '$http', function($scope, $http) {
-            
+// CONTROLLER *******************************************************************************************
+    App.controller('ProductByCateCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
+            $(".loadPanel").show();
+            $.ajax({url: 'Model/Controller.php',
+                data: {action: 'ProductByCate', cateId: $routeParams.CateId, parentId: $routeParams.ParentId},
+                type: 'post',
+                success: function(output) {
+                    $('body').append(output);
+                    $(".loadPanel").hide();
+
+
+                    $scope.some_value = 'Val';
+                    $scope.ready();
+                    $scope.names = ['matias', 'val', 'mark'];
+                }
+            });
         }]);
 
     App.controller('ProductAllCtrl', ['$scope', '$http', function($scope, $http) {
-           $(".loadPanel").show();
+            $(".loadPanel").show();
             $.ajax({url: 'Model/Controller.php',
                 data: {action: 'AllProduct'},
                 type: 'post',
@@ -41,40 +54,17 @@ var App;
             });
         }]);
 
-    App.controller('VideosCtrl', ['$scope', '$http', 'slow', function($scope, $http, isSlow) {
-            var callbackToken = 'JSON_CALLBACK';
-            var url = 'https://gdata.youtube.com/feeds/api/standardfeeds/top_rated?time=today&alt=json&callback=' + callbackToken;
-            var timeout = isSlow ? 2000 : 1;
-            $http.jsonp(url).success(function(data) {
-                setTimeout(function() {
-                    var feed = data['feed'];
-                    var entries = feed['entry'];
-                    $scope.videos = [];
-                    for (var i = 0; i < entries.length; i++) {
-                        var entry = entries[i];
-                        var title = entry['title']['$t'];
-                        $scope.videos.push({
-                            title: title
-                        });
-                    }
-                    ;
-                    $scope.ready();
-                }, timeout);
-            });
-        }]);
-
+// ROUTER *******************************************************************************************
     App.config(['$routeProvider', '$locationProvider', function($routes, $location) {
-
             $location.hashPrefix('!');
-
             $routes.when('/Product', {
                 controller: 'ProductAllCtrl',
                 templateUrl: 'Patial/_Product.php'
             });
 
-            $routes.when('/videos', {
-                controller: 'VideosCtrl',
-                templateUrl: './pages/videos.html',
+            $routes.when('/Product/:CateId/:ParentId/:CategoriesName', {
+                controller: 'ProductByCateCtrl',
+                templateUrl: 'Patial/_Product.php',
                 resolve: {
                     slow: function() {
                         return false;
@@ -82,20 +72,8 @@ var App;
                 }
             });
 
-            $routes.when('/videos/slow', {
-                controller: 'VideosCtrl',
-                templateUrl: './pages/videos.html',
-                resolve: {
-                    slow: function() {
-                        return true;
-                    }
-                }
-            });
-
             $routes.otherwise({
                 redirectTo: '/Product'
             });
-
         }]);
-
 })();

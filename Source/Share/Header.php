@@ -22,7 +22,7 @@
         <nav id="menu">
             <div class="contentMenu">
                 <ul class="parent">
-                    <li><a href="#/Product">NEW</a></li>
+                    <li><a href="#!/Product">NEW</a></li>
                 </ul>
             </div>
         </nav>

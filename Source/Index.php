@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="App">
+<html lang="en" data-ng-app="App">
     <head>
         <title>DeeStore Shopping Online</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -52,7 +52,7 @@
         // Bin Menu Top
         echo "<script type='text/javascript'>";
         while ($row = mysqli_fetch_array($result)) {
-            echo "$('ul.parent').append('<li><a href=\'#/Product/" .
+            echo "$('ul.parent').append('<li><a href=\'#!/Product/" .
             $row['CategoriesID'] . "/" . $row['CategoriesParentID'] . "/" . khongdau($row['CategoriesName']) . "\'>" .
             $row['CategoriesName'] . "</a></li>');";
         }
@@ -62,7 +62,7 @@
         // Bin Menu Left
         echo "<script type='text/javascript'>";
         while ($row = mysqli_fetch_array($menuLeftParent)) {
-            echo "$('ul.menuLeft').append('<li class=\'prl" . $row['CategoriesID'] . "\'><a href=\'#/Product/" .
+            echo "$('ul.menuLeft').append('<li class=\'prl" . $row['CategoriesID'] . "\'><a href=\'#!/Product/" .
             $row['CategoriesID'] . "/" . $row['CategoriesParentID'] . "/" . khongdau($row['CategoriesName']) . "\'>" .
             $row['CategoriesName'] . "</a></li>');";
             // Bin Menu Left child grade I only
@@ -71,7 +71,7 @@
             echo "var ul = document.createElement('ul');";
             echo "$(ul).appendTo('ul.menuLeft li.prl" . $row['CategoriesID'] . "');";
             while ($rows = mysqli_fetch_array($resultChild)) {
-                echo "$(ul).append('<li class=\'prl" . $rows['CategoriesID'] . "\'><a href=\'#/Product/" .
+                echo "$(ul).append('<li class=\'prl" . $rows['CategoriesID'] . "\'><a href=\'#!/Product/" .
                 $rows['CategoriesID'] . "/" . $rows['CategoriesParentID'] . "/" . khongdau($rows['CategoriesName']) . "\'>" .
                 $rows['CategoriesName'] . "</a></li>');";
             }
