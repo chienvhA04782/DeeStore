@@ -234,6 +234,7 @@ header#heads {
 }
 .contentProductShow .productContent .items .opImage img{
     border: medium none;
+    display: block;
     height: 252px;
     width: 172px;
 }

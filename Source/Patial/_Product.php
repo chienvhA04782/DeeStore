@@ -27,7 +27,7 @@
     </div>
 </div>
 <div class="contentProductShow">
-    <h2 title="ÁO PHÔNG NGẮN TAY" style="font-weight: normal; font-size: 14px; display: inline-block">ÁO PHÔNG NGẮN TAY</h2> - <span>(365 items)</span> 
+    <h2 id="titleProductForm" title="" style="font-weight: normal; font-size: 14px; display: inline-block"></h2> - <span id="totalNumberProduct"></span> 
     <div class="contentpagingtop">
         <div class="sleft"> 
             <select>
@@ -36,13 +36,13 @@
                 <option>value 3</option>
             </select>
         </div>
-        <div class="sright">
+<!--        <div class="sright">
             <a href="#">1</a>
             <a href="#">2</a>
             <a href="#">3</a>
             <a href="#">4</a>
             <a href="#">5</a>
-        </div>
+        </div>-->
     </div>
     <div class="productContent"> 
 <!--        <div class="items">
@@ -84,12 +84,12 @@
                 <option>value 3</option>
             </select>
         </div>
-        <div class="sright">
+<!--        <div class="sright">
             <a href="#">1</a>
             <a href="#">2</a>
             <a href="#">3</a>
             <a href="#">4</a>
             <a href="#">5</a>
-        </div>
+        </div>-->
     </div>
 </div>

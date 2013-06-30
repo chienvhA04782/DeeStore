@@ -43,6 +43,17 @@ class Categories {
         }
     }
 
+    function feFetchCategoriesByCateId($cateId) {
+        try {
+            $connect = new Connect();
+            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM 
+                categories WHERE CategoriesID = '" . $cateId . "'");
+            $connect->CloseDB();
+            return $result;
+        } catch (Exception $e) {
+            echo "feFetchCategoriesByCateId" + $e;
+        }
+    }
 }
 
 ?>
