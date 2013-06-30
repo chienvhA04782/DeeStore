@@ -27,6 +27,10 @@ a {
     color: #379ACF;
     text-decoration: none;
     cursor: pointer;
+    border: none;
+}
+a img{
+    border: none;
 }
 
 body {
@@ -42,7 +46,7 @@ body {
 
 header#heads {
     width: 100%;
-    margin: 10px auto;
+    margin: 0 auto;
     position: relative;
 }
 
@@ -76,15 +80,16 @@ header#heads {
     float: left;
 }
 #page .bodyContent .Inside .left .titleCate h2{
-    border-bottom: 2px solid #DC2606;
+    border-bottom: 2px solid #404040;
     display: block;
     font-size: 14px;
-    font-weight: normal;
     margin: 0 auto;
     padding-bottom: 5px;
     padding-left: 10px;
     padding-top: 5px;
     width: 92%;
+    font-weight: bold;
+    font-family: arial;
 }
 #page .bodyContent .Inside .right{
     width: 777px;
@@ -185,6 +190,7 @@ header#heads {
     padding-left: 5px;
     border-bottom: 1px dotted #404040;
     padding-bottom: 3px;
+    color: #404040;
 }
 .contentProductShow .productContent .items .opDescription{
     display: block;
@@ -192,6 +198,7 @@ header#heads {
     margin-top: 2px;
     padding-left: 5px;
     padding-bottom: 3px;
+    color: #404040;
 }
 .contentProductShow .productContent .items .opOldPrice{
     display: block;
@@ -201,6 +208,7 @@ header#heads {
     padding-bottom: 3px;
     font-family: Helvetica Neue Medium;
     text-decoration: line-through;
+    color: #404040;
 }
 .contentProductShow .productContent .items .opCurrentPrice{
     display: block;
@@ -267,7 +275,7 @@ header#heads {
 #page header .content .topBar .logo {
     background-color: #404040;
     display: inline-block;
-    height: 90px;
+    height: 95px;
     top: 30px;
     width: 108px;
     padding-left: 5px;
@@ -282,6 +290,44 @@ header#heads {
     width: 742px;
     display: inline-block;
     float: right;
+}
+#page header .content .topBar .contentTopRight{
+      font-family: arial;
+    font-size: 12px;
+    margin-top: 8px;
+    position: absolute;
+    right: 12px;
+    text-align: right;
+    top: 0;
+}
+#page header .content .topBar .search .menuTop{
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.menuTop ul.mnTop{
+    list-style-type: none;
+}
+.menuTop ul.mnTop li{
+
+}
+.menuTop ul.mnTop li:first-child a{
+    border-left: 1px solid #D1D0D1;
+}
+.menuTop ul.mnTop li a{
+    border-right: 1px solid #D1D0D1;
+    color: #404040;
+    font-family: serif;
+    font-size: 16px;
+    font-style: italic;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    display: block;
+    float: left;
+}.menuTop ul.mnTop li a:hover{
+    color: #dc2606;
 }
 
 #page header .content .topBar .search label button#btnsearch {
@@ -521,4 +567,97 @@ ul.menuLeft li ul li a:hover{
     top: 0;
     width: 32px;
     z-index: 1;
+}
+.warpperDetails{
+    border: 1px solid #d1d0d1;
+    display: block;
+    float: left;
+    padding: 10px;
+}
+.warpperDetails .leftDetails{
+    width: 480px;
+    display:block;
+    float: left;
+}
+.warpperDetails .leftDetails .description{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.warpperDetails .leftDetails .inforProduct{
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.warpperDetails .leftDetails .inforProduct .size{
+
+}
+.warpperDetails .leftDetails .inforProduct .size a{
+    padding-left: 5px;
+    padding-right: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 3px;
+    color: #404040;
+    font-size: 12px;
+    background-color: #dc2606;
+    color: #fff;
+}
+.warpperDetails .leftDetails .inforProduct .size a:hover{
+    background-color: #404040;
+}
+.warpperDetails .leftDetails .inforProduct .price .oldPrice{
+    display: block;
+    margin-top: 10px;
+    text-decoration: line-through;
+}
+.warpperDetails .leftDetails .inforProduct .price .currentPrice{
+    color: #dc2606;
+    display: block;
+    margin-top: 5px;
+}
+.warpperDetails .leftDetails .inforProduct .price{
+    display: block;
+    margin-top: 20px;
+}
+.warpperDetails .rightDetails{
+    display:block;
+    float: left;
+    padding-left: 45px;
+}
+.warpperDetails .rightDetails .contentImageSLide .slideSmalIcon .smallImg img{
+    width: 40px;
+    border: 1px solid #d1d0d1;
+    padding: 3px;
+    cursor: pointer;
+}
+.warpperDetails .rightDetails .contentImageSLide .mainImgSlide{
+    float: left;
+}
+.warpperDetails .rightDetails .contentImageSLide .slideSmalIcon{
+    float: left;
+    margin-left: 5px;
+    width: 50px;
+}
+.warpperDetails .rightDetails .contentImageSLide .slideSmalIcon .smallImg{
+    width: 50px
+}
+.warpperDetails h2.titleDetails{
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 1.35em;
+}
+.product-ship{
+    border-top: 1px solid #D1D0D1;
+    display: block;
+    float: left;
+    margin-top: 5px;
+    min-height: 500px;
+    width: 773px;
+}
+.product-ship h2.titleShip{
+    color: #404040;
+    font-size: 17px;
+    font-weight: normal !important;
+    padding: 10px;
 }

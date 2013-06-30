@@ -7,6 +7,8 @@
 require './Model/Connect.php';
 require './Model/Categories.php';
 require './Model/Product.php';
+require './Model/ProductBrand.php';
+require './Model/ProductSize.php';
 
 function khongdau($str) {
     $str = preg_replace("/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|� �|ặ|ẳ|ẵ|ắ)/", 'a', $str);

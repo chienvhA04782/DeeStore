@@ -1,6 +1,6 @@
 var App;
 (function() {
-    App = angular.module('App', []);
+    App = angular.module('App', ['angulartics', 'angulartics.ga']);
     App.run(['$rootScope', function($rootScope) {
             var _getTopScope = function() {
                 return $rootScope;
@@ -25,6 +25,7 @@ var App;
         }]);
 
 // CONTROLLER *******************************************************************************************
+// PRODUCT BY CATEGORIES CTRL
     App.controller('ProductByCateCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
             $(".loadPanel").show();
             $.ajax({url: 'Model/Controller.php',
@@ -41,7 +42,7 @@ var App;
                 }
             });
         }]);
-
+    // ALL PRODUCT CTRL
     App.controller('ProductAllCtrl', ['$scope', '$http', function($scope, $http) {
             $(".loadPanel").show();
             $.ajax({url: 'Model/Controller.php',
@@ -54,14 +55,23 @@ var App;
             });
         }]);
 
+    // PRODUCT DETAILS BY PRODUCT ID
+    App.controller('ProductDetails', ['$scope', '$http', function($scope, $http) {
+
+        }]);
+
 // ROUTER *******************************************************************************************
-    App.config(['$routeProvider', '$locationProvider', function($routes, $location) {
+    App.config(['$routeProvider', '$locationProvider','$analyticsProvider', function($routes, $location,$analytics) {
             $location.hashPrefix('!');
+            $analytics.virtualPageviews(false);  
+            
+            // ALL PRODUCT
             $routes.when('/Product', {
                 controller: 'ProductAllCtrl',
                 templateUrl: 'Patial/_Product.php'
             });
 
+            // PRODUCT BY CATEGORIES
             $routes.when('/Product/:CateId/:ParentId/:CategoriesName', {
                 controller: 'ProductByCateCtrl',
                 templateUrl: 'Patial/_Product.php',
@@ -72,6 +82,16 @@ var App;
                 }
             });
 
+            // DETAILS PRODUCT
+            $routes.when('/Product/Details/:productId/:cateId/:ProductName', {
+                controller: 'ProductDetails',
+                templateUrl: 'Patial/_Details.php',
+                resolve: {
+                    slow: function() {
+                        return false;
+                    }
+                }
+            });
             $routes.otherwise({
                 redirectTo: '/Product'
             });
