@@ -530,14 +530,14 @@ ul.menuLeft li a{
     color: #000;
 }
 ul.menuLeft li a:hover{
-    color: #dc2606;
+    color: #dc2606 !important;
 }
 ul.menuLeft li ul li a{
     padding-left: 35px;
     font-size: 13px;
 }
 ul.menuLeft li ul li a:hover{
-    color: #dc2606;
+    color: #dc2606 !important;
 }
 
 #mask {
@@ -623,7 +623,7 @@ ul.menuLeft li ul li a:hover{
 .warpperDetails .rightDetails{
     display:block;
     float: left;
-    padding-left: 45px;
+    padding-left: 65px;
 }
 .warpperDetails .rightDetails .contentImageSLide .slideSmalIcon .smallImg img{
     width: 40px;

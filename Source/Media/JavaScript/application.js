@@ -56,15 +56,23 @@ var App;
         }]);
 
     // PRODUCT DETAILS BY PRODUCT ID
-    App.controller('ProductDetails', ['$scope', '$http', function($scope, $http) {
-
+    App.controller('ProductDetails', ['$scope', '$routeParams', function($scope, $routeParams) {
+            $(".loadPanel").show();
+            $.ajax({url: 'Model/Controller.php',
+                data: {action: 'DetailsProduct', productId: $routeParams.productId},
+                type: 'post',
+                success: function(output) {
+                    $('body').append(output);
+                    $(".loadPanel").hide();
+                }
+            });
         }]);
 
 // ROUTER *******************************************************************************************
-    App.config(['$routeProvider', '$locationProvider','$analyticsProvider', function($routes, $location,$analytics) {
+    App.config(['$routeProvider', '$locationProvider', '$analyticsProvider', function($routes, $location, $analytics) {
             $location.hashPrefix('!');
-            $analytics.virtualPageviews(false);  
-            
+            $analytics.virtualPageviews(false);
+
             // ALL PRODUCT
             $routes.when('/Product', {
                 controller: 'ProductAllCtrl',

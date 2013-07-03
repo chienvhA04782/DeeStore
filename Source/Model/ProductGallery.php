@@ -6,28 +6,27 @@
  */
 
 /**
- * Description of ProductBrand
+ * Description of Productgallery
  *
  * @author chien
  */
-class ProductBrand {
+class ProductGallery {
 
     //put your code here
-    function ProductBrand() {
+    function ProductGallery() {
         
     }
 
-    function FetchAllProductBrand() {
+    function FetchProductGalleryByProductId($productId) {
         try {
             $connect = new Connect();
-            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM productbrand");
+            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM productgallery WHERE ProductID = $productId");
             $connect->CloseDB();
             return $result;
         } catch (Exception $e) {
-            echo "feFetchTop20Product" . $e;
+            echo "feFetchProductGalleryByProductId" . $e;
         }
     }
-
 }
 
 ?>

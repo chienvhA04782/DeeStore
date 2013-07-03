@@ -96,7 +96,7 @@ require '../Model/ProductSize.php';
 // Load combox search form
 //BRAND
 $productBrand = new ProductBrand();
-$resultBrand = $productBrand->feFetchAllProductBrand();
+$resultBrand = $productBrand->FetchAllProductBrand();
 echo "<script type='text/javascript'>";
 while ($rowBrand = mysqli_fetch_array($resultBrand)) {
     echo "$('select#brandPSelect').append('<option value=\'" . $rowBrand["ProductBrandID"] . "\'>" . $rowBrand["ProductBrandName"] . "</option>');";
@@ -105,7 +105,7 @@ echo "</script>";
 
 // SIZE
 $productSize = new ProductSize();
-$resultSize = $productSize->feFetchAllProductSize();
+$resultSize = $productSize->FetchAllProductSize();
 echo "<script type='text/javascript'>";
 while ($rowSize = mysqli_fetch_array($resultSize)) {
     echo "$('select#sizeSelect').append('<option value=\'" . $rowSize["ProductSizeID"] . "\'>" . $rowSize["ProductSizeNumber"] . "</option>');";

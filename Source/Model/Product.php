@@ -17,29 +17,29 @@ class Product {
         
     }
 
-    function feFetchTop20Product() {
+    function FetchTop20Product() {
         try {
             $connect = new Connect();
             $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM products LIMIT 20");
             $connect->CloseDB();
             return $result;
         } catch (Exception $e) {
-            echo "feFetchTop20Product" + $e;
+            echo "feFetchTop20Product" . $e;
         }
     }
 
-    function feFetchProductByCategoriesId($cateId) {
+    function FetchProductByCategoriesId($cateId) {
         try {
             $connect = new Connect();
             $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM products WHERE CategoriesID = $cateId");
             $connect->CloseDB();
             return $result;
         } catch (Exception $e) {
-            echo "feFetchProductByCategoriesId" + $e;
+            echo "feFetchProductByCategoriesId" . $e;
         }
     }
 
-    function feFetchProductByParentId($cateId) {
+    function FetchProductByParentId($cateId) {
         try {
             $connect = new Connect();
             $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM categories WHERE CategoriesParentID = $cateId");
@@ -61,10 +61,20 @@ class Product {
             $connect->CloseDB();
             return $result;
         } catch (Exception $e) {
-            echo "feFetchProductByParentId" + $e;
+            echo "feFetchProductByParentId" . $e;
         }
     }
 
+    function FetchProductByProductId($productId) {
+        try {
+            $connect = new Connect();
+            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM products WHERE ProductID = $productId");
+            return $result;
+            $connect->CloseDB();
+        } catch (Exception $e) {
+            echo "feFetchProductByProductId" . $e;
+        }
+    }
 }
 
 ?>

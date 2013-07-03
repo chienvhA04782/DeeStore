@@ -6,28 +6,27 @@
  */
 
 /**
- * Description of ProductBrand
+ * Description of JoinProductSize
  *
  * @author chien
  */
-class ProductBrand {
+class JoinProductSize {
 
     //put your code here
-    function ProductBrand() {
+    function JoinProductSize() {
         
     }
 
-    function FetchAllProductBrand() {
+    function FetchJoinProductSizeByProductID($productID) {
         try {
             $connect = new Connect();
-            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM productbrand");
+            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM joinproductsize WHERE ProductID = $productID");
             $connect->CloseDB();
             return $result;
         } catch (Exception $e) {
-            echo "feFetchTop20Product" . $e;
+            echo "feFetchCategoriesParent" . $e;
         }
     }
-
 }
 
 ?>

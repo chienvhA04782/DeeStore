@@ -27,10 +27,15 @@
 
         <!--Share this-->
         <script type="text/javascript">var switchTo5x = true;</script>
-        <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-        <script type="text/javascript">stLight.options({publisher: "30414ba1-6d1c-4993-b683-2654b7e5b3d6", doNotHash: true, doNotCopy: false, hashAddressBar: false});</script>
+<!--        <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+        <script type="text/javascript">stLight.options({publisher: "30414ba1-6d1c-4993-b683-2654b7e5b3d6", doNotHash: true, doNotCopy: false, hashAddressBar: false});</script>-->
     </head>
-    <body style="background-color: #FFF" data-status="{{ status }}">
+    <style>
+        body{
+            background-color: #FFF
+        }
+    </style>
+    <body data-status="{{ status }}">
         <div id="page">
             <?php
             include './Share/Header.php';
@@ -90,7 +95,7 @@
         </div>
         <?php
         $cate = new Categories();
-        $result = $cate->feFetchCategoriesParent();
+        $result = $cate->FetchCategoriesParent();
         // Bin Menu Top
         echo "<script type='text/javascript'>";
         while ($row = mysqli_fetch_array($result)) {
@@ -100,23 +105,34 @@
         }
         echo "</script>";
 
-        $menuLeftParent = $cate->feFetchCategoriesParent();
+        $menuLeftParent = $cate->FetchCategoriesParent();
         // Bin Menu Left
         echo "<script type='text/javascript'>";
         while ($row = mysqli_fetch_array($menuLeftParent)) {
-            echo "$('ul.menuLeft').append('<li class=\'prl" . $row['CategoriesID'] . "\'><a title=\'" . $row['CategoriesName'] . "\' href=\'#!/Product/" .
+            echo "$('ul.menuLeft').append('<li class=\'prl" . $row['CategoriesID'] . "\'><a class=\'prl" . $row['CategoriesID'] . "\' title=\'" . $row['CategoriesName'] . "\' href=\'#!/Product/" .
             $row['CategoriesID'] . "/" . $row['CategoriesParentID'] . "/" . khongdau($row['CategoriesName']) . "\'>" .
             $row['CategoriesName'] . "</a></li>');";
             // Bin Menu Left child grade I only
-            $resultChild = $cate->feFetchtchCategoriesChildByParent($row['CategoriesID']);
+            $resultChild = $cate->FetchtchCategoriesChildByParent($row['CategoriesID']);
 
             echo "var ul = document.createElement('ul');";
             echo "$(ul).appendTo('ul.menuLeft li.prl" . $row['CategoriesID'] . "');";
             while ($rows = mysqli_fetch_array($resultChild)) {
-                echo "$(ul).append('<li class=\'prl" . $rows['CategoriesID'] . "\'><a title=\'" . $rows['CategoriesName'] . "\' href=\'#!/Product/" .
+                echo "$(ul).append('<li class=\'prl" . $rows['CategoriesID'] . "\'><a class=\'prl" . $rows['CategoriesID'] . "\' title=\'" . $rows['CategoriesName'] . "\' href=\'#!/Product/" .
                 $rows['CategoriesID'] . "/" . $rows['CategoriesParentID'] . "/" . khongdau($rows['CategoriesName']) . "\'>" .
                 $rows['CategoriesName'] . "</a></li>');";
+
+                // Bin event active menu left
+                echo '$("a.prl' . $rows['CategoriesID'] . '").click(function(){';
+                echo '$(".menuLeft li a").css("color","#404040");';
+                echo '$(this).css("color","#dc2606");';
+                echo '});';
             }
+            // Bin event active menu left
+            echo '$("a.prl' . $row['CategoriesID'] . '").click(function(){';
+            echo '$(".menuLeft li a").css("color","#404040");';
+            echo '$(this).css("color","#dc2606");';
+            echo '});';
         }
         echo "</script>";
 
@@ -125,7 +141,7 @@
         if ($cateId == null) {
             // if cate null then load all product
             $product = new Product();
-            $result = $product->feFetchTop20Product();
+            $result = $product->FetchTop20Product();
 
             echo "<script type='text/javascript'>";
             while ($row = mysqli_fetch_array($result)) {

@@ -31,7 +31,7 @@ class Connect {
                 return $this->con;
             }
         } catch (Exception $e) {
-            echo "connect open failure" + $e;
+            echo "connect open failure" . $e;
         }
     }
 
@@ -40,7 +40,7 @@ class Connect {
             // close connect
             mysql_close($this->con);
         } catch (Exception $e) {
-            echo "Close connect failure" + $e;
+            echo "Close connect failure" . $e;
         }
     }
 

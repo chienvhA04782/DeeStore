@@ -20,18 +20,18 @@ class Categories {
         
     }
 
-    function feFetchCategoriesParent() {
+    function FetchCategoriesParent() {
         try {
             $connect = new Connect();
             $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM categories WHERE CategoriesParentID = 0");
             $connect->CloseDB();
             return $result;
         } catch (Exception $e) {
-            echo "feFetchCategoriesParent" + $e;
+            echo "feFetchCategoriesParent" . $e;
         }
     }
 
-    function feFetchtchCategoriesChildByParent($idParent) {
+    function FetchtchCategoriesChildByParent($idParent) {
         try {
             $connect = new Connect();
             $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM 
@@ -39,11 +39,11 @@ class Categories {
             $connect->CloseDB();
             return $result;
         } catch (Exception $e) {
-            echo "feFetchtchCategoriesChildByParent" + $e;
+            echo "feFetchtchCategoriesChildByParent" . $e;
         }
     }
 
-    function feFetchCategoriesByCateId($cateId) {
+    function FetchCategoriesByCateId($cateId) {
         try {
             $connect = new Connect();
             $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM 
@@ -51,7 +51,7 @@ class Categories {
             $connect->CloseDB();
             return $result;
         } catch (Exception $e) {
-            echo "feFetchCategoriesByCateId" + $e;
+            echo "feFetchCategoriesByCateId" . $e;
         }
     }
 }
