@@ -27,14 +27,17 @@
 
         <!--Share this-->
         <script type="text/javascript">var switchTo5x = true;</script>
-<!--        <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-        <script type="text/javascript">stLight.options({publisher: "30414ba1-6d1c-4993-b683-2654b7e5b3d6", doNotHash: true, doNotCopy: false, hashAddressBar: false});</script>-->
+        <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+        <script type="text/javascript">stLight.options({publisher: "30414ba1-6d1c-4993-b683-2654b7e5b3d6", doNotHash: true, doNotCopy: false, hashAddressBar: false});</script>
     </head>
     <style>
         body{
             background-color: #FFF
         }
     </style>
+    <?php
+    include './Share/MasterInclude.php';
+    ?>
     <body data-status="{{ status }}">
         <div id="page">
             <?php
@@ -90,21 +93,10 @@
             <script src="/Media/JavaScript/application.js"></script>
             <?php
             include './Share/Footer.php';
-            include './Share/MasterInclude.php';
             ?>
         </div>
         <?php
         $cate = new Categories();
-        $result = $cate->FetchCategoriesParent();
-        // Bin Menu Top
-        echo "<script type='text/javascript'>";
-        while ($row = mysqli_fetch_array($result)) {
-            echo "$('ul.parent').append('<li><a title=\'" . $row['CategoriesName'] . "\' href=\'#!/Product/" .
-            $row['CategoriesID'] . "/" . $row['CategoriesParentID'] . "/" . khongdau($row['CategoriesName']) . "\'>" .
-            $row['CategoriesName'] . "</a></li>');";
-        }
-        echo "</script>";
-
         $menuLeftParent = $cate->FetchCategoriesParent();
         // Bin Menu Left
         echo "<script type='text/javascript'>";

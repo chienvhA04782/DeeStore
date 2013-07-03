@@ -60,6 +60,13 @@
             <div class="contentMenu">
                 <ul class="parent">
                     <li><a href="#!/Product">NEW</a></li>
+                    <?php
+                    $cate = new Categories();
+                    $result = $cate->FetchCategoriesParent();
+                    while ($row = mysqli_fetch_array($result)) {
+                        echo '<li><a title="' . $row['CategoriesName'] . '" href="#!/Product/' . $row['CategoriesID'] . '/' . $row['CategoriesParentID'] . '/' . khongdau($row['CategoriesName']) . '">' . $row['CategoriesName'] . '</a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </nav>
@@ -67,4 +74,5 @@
             <a href="#">Trang Chủ</a> → <a href="#">Áo Khoác</a>
         </div>
     </div>
+
 </header>
