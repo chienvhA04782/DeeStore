@@ -11,6 +11,11 @@
     <?php
     include './Share/MasterInclude.php';
     ?>
+    <script>
+        location.href = "http://" + window.location.host + "/#!/Product";
+
+        // location.href = "http://localhost:801/#!/Product";
+    </script>
     <body data-status="{{ status }}">
         <div id="page">
             <?php

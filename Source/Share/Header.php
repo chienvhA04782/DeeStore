@@ -1,7 +1,7 @@
-<marquee behavior="scroll" direction="left" scrollamount="10"
+<!--<marquee behavior="scroll" direction="left" scrollamount="10"
          style="background-color: #dc2606;
          font-weight: bold;position:fixed;font-size: 16px;
-         color:#fff; display: block; width: 100%; z-index: 90000; top: 40%">Website đang trong quá trình xây dựng bởi ACN</marquee>
+         color:#fff; display: block; width: 100%; z-index: 90000; top: 40%">Website đang trong quá trình xây dựng bởi ACN</marquee>-->
 <header id="heads">
     <div class="loadPanel" style="display: none"></div>
     <div class="content">
@@ -84,6 +84,12 @@
                         echo '<li><a title="' . $row['CategoriesName'] . '" href="#!/Product/' . $row['CategoriesID'] . '/' . $row['CategoriesParentID'] . '/' . khongdau($row['CategoriesName']) . '">' . $row['CategoriesName'] . '</a></li>';
                     }
                     ?>
+                    <li><a href="#" style="float: right;    background: none repeat scroll 0 0 #DC2606;
+                           float: right;
+                           font-family: cursive;
+                           font-size: 12px;
+                           font-weight: normal;
+                           margin-right: -3px;">DEE STYLE !</a></li>
                 </ul>
             </div>
         </nav>

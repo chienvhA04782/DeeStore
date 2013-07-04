@@ -74,7 +74,7 @@
                                     echo '<label class="oldPrice">' . number_format($rowDetails['ProductPriceOld'], 0, '.', '.') . ' VNĐ</label>';
                                 }
                                 if (isset($rowDetails['ProductPriceCurrent']) && !empty($rowDetails['ProductPriceCurrent'])) {
-                                    echo '<label class="currentPrice">' . number_format($rowDetails['ProductPriceCurrent'], 0, '.', '.') . ' VNĐ</label>';
+                                    echo '<label class="currentPrice">Giá: ' . number_format($rowDetails['ProductPriceCurrent'], 0, '.', '.') . ' VNĐ</label>';
                                 }
                                 echo '</div></div>';
                                 echo '</div>

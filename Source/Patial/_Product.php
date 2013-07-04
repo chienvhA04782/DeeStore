@@ -2,9 +2,6 @@
 <div class="wrapperTopSearch">
     <div class="inside">
         <div class="boxContentSearch">
-            <label>
-
-            </label>
             <label>BRAND</label>
             <select style="width: 200px" id="brandPSelect">
             </select>
