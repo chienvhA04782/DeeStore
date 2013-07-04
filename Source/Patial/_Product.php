@@ -2,6 +2,9 @@
 <div class="wrapperTopSearch">
     <div class="inside">
         <div class="boxContentSearch">
+            <label>
+
+            </label>
             <label>BRAND</label>
             <select style="width: 200px" id="brandPSelect">
             </select>
@@ -19,7 +22,6 @@
         </div>
     </div>
 </div>
-
 <div class="contentProductShow">
     <h2 id="titleProductForm" title="" style="font-weight: normal; font-size: 14px; display: inline-block"></h2> - <span id="totalNumberProduct"></span> 
     <div class="contentpagingtop">
@@ -30,9 +32,7 @@
                 <option>value 3</option>
             </select>
         </div>
-        <?php 
-            echo "";
-        ?>
+
         <!--        <div class="sright">
                     <a href="#">1</a>
                     <a href="#">2</a>

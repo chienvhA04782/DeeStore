@@ -10,22 +10,22 @@
                 <div class="menuTop">
                     <ul class="mnTop">
                         <li>
-                            <a href="#">
+                            <a href="/About.php">
                                 Thông tin
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/Contact.php">
                                 Liên hệ
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/Contact.php">
                                 Địa chỉ
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/SiteMap.php">
                                 SiteMap
                             </a>
                         </li>
@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="contentTopRight">
-                Deestore Shop: Địa chỉ 36b - Phố Huế - Hà Nội<br/>
+                Deestore Shop: Địa chỉ 64b - Phố Huế - Hà Nội<br/>
                 Mobile: 0972999588
                 <label style="display: block; margin-top: 20px">
                     <span class='st_fblike_hcount' displayText='Facebook Like'></span>

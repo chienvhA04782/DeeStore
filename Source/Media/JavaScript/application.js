@@ -1,4 +1,5 @@
 var App;
+
 (function() {
     App = angular.module('App', ['angulartics', 'angulartics.ga']);
     App.run(['$rootScope', function($rootScope) {
@@ -34,11 +35,6 @@ var App;
                 success: function(output) {
                     $('body').append(output);
                     $(".loadPanel").hide();
-
-
-                    $scope.some_value = 'Val';
-                    $scope.ready();
-                    $scope.names = ['matias', 'val', 'mark'];
                 }
             });
         }]);
@@ -76,7 +72,14 @@ var App;
             // ALL PRODUCT
             $routes.when('/Product', {
                 controller: 'ProductAllCtrl',
-                templateUrl: 'Patial/_Product.php'
+                templateUrl: 'Patial/_Product.php',
+                resolve: {
+                    slow: function() {
+                        // remove details view
+                        $('.boundDetails').html('');
+                        return false;
+                    }
+                }
             });
 
             // PRODUCT BY CATEGORIES
@@ -85,6 +88,8 @@ var App;
                 templateUrl: 'Patial/_Product.php',
                 resolve: {
                     slow: function() {
+                        // remove details view
+                        $('.boundDetails').html('');
                         return false;
                     }
                 }
@@ -96,12 +101,15 @@ var App;
                 templateUrl: 'Patial/_Details.php',
                 resolve: {
                     slow: function() {
+                        // remove details view
+                        $('.boundDetails').html('');
                         return false;
                     }
                 }
             });
-            $routes.otherwise({
-                redirectTo: '/Product'
-            });
+
+//            $routes.otherwise({
+//                redirectTo: '/Product'
+//            });
         }]);
 })();

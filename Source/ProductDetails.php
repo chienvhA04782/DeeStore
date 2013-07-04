@@ -36,7 +36,11 @@
                         </div>
                     </div>
                     <div class="right">
-                        <div ng-view>  
+                        <div class="boundDetails">
+                             <h2>information aasdfalsdjfasdfkj</h2>
+                        </div>                       
+                        <div ng-view> 
+                            
                         </div>
                     </div>
                 </div>

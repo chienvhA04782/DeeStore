@@ -16,9 +16,7 @@ class Connect {
     function FetchName() {
         return "HELLO I'M FetchName Method";
     }
-
-    var $con;
-
+    
     function ConnectDb() {
         try {
             // Create connection

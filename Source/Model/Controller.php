@@ -80,7 +80,7 @@ if (isset($_POST['action']) && !empty($_POST['action'])) {
                     }
                     $count = 0;
                     while ($row = mysqli_fetch_array($result)) {
-                        echo '$(".productContent").append(\'<a href="#!/Product/Details/' . $row['ProductID'] . '/' . $row['CategoriesID'] . "/" . khongdauController($row['ProductName']) . '" title="' . $row['ProductName'] . '"><div class="items">';
+                        echo '$(".productContent").append(\'<a href="ProductDetails.php?_id=' . $row['ProductID'] . '&cateId=' . $row['CategoriesID'] . "&name=" . khongdauController($row['ProductName']) . '" title="' . $row['ProductName'] . '"><div class="items">';
                         echo '<div class="sizeH"><label><span style="color:#000">SIZE:</span>';
                         echo '<span>X | XL | 1 | 2A</span></label>';
                         echo '</div><div class="opImage">';
