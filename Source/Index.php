@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en" data-ng-app="App">
     <head>
-        <title>DeeStore Shopping Online</title>
+        <title>Wellcome to DeeShop</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="fragment" content="!" /> 
-
+        <meta name="Keywords" content="Dee Shop - Chuyên bán buôn, bán lẻ hàng VNXK. Mẫu mã đa dạng phong phú, cập nhật thường xuyên">
         <meta name="robots" content="INDEX,FOLLOW,ALL" />
         <meta name="language" content="Vietnamese,English" />
         <meta name="author" content="Deestore.vn" />
@@ -39,6 +39,10 @@
     include './Share/MasterInclude.php';
     ?>
     <body data-status="{{ status }}">
+        <!--        <marquee behavior="scroll" direction="left" scrollamount="10"
+                         style="background-color: #dc2606;
+                         font-weight: bold;position:fixed;font-size: 16px;
+                         color:#fff; display: block; z-index: 90000; top: 40%">Website đang trong quá trình xây dựng bởi ACN</marquee>-->
         <div id="page">
             <?php
             include './Share/Header.php';
@@ -49,6 +53,42 @@
                         <div class="titleCate">
                             <h2 style="color: #dc2606">DEESTORE SHOP</h2>
                             <ul class="menuLeft">
+                                <?php
+                                $cate = new Categories();
+                                $menuLeftParent = $cate->FetchCategoriesParent();
+                                while ($row = mysqli_fetch_array($menuLeftParent)) {
+                                    echo "<li class='prl" . $row['CategoriesID'] . "'><a class='prl" . $row['CategoriesID'] . "' title='" . $row['CategoriesName'] . "' href='#!/Product/" .
+                                    $row['CategoriesID'] . "/" . $row['CategoriesParentID'] . "/" . khongdau($row['CategoriesName']) . "'>" .
+                                    $row['CategoriesName'] . "</a>";
+                                    // Bin Menu Left child grade I only
+                                    $resultChild = $cate->FetchtchCategoriesChildByParent($row['CategoriesID']);
+
+                                    echo "<ul>";
+                                    while ($rows = mysqli_fetch_array($resultChild)) {
+                                        echo "<li class='prl" . $rows['CategoriesID'] . "'><a class='prl" . $rows['CategoriesID'] . "' title='" . $rows['CategoriesName'] . "' href='#!/Product/" .
+                                        $rows['CategoriesID'] . "/" . $rows['CategoriesParentID'] . "/" . khongdau($rows['CategoriesName']) . "'>" .
+                                        $rows['CategoriesName'] . "</a></li>";
+
+                                        echo "<script type='text/javascript'>";
+                                        // Bin event active menu left
+                                        echo '$("a.prl' . $rows['CategoriesID'] . '").click(function(){';
+                                        echo '$(".menuLeft li a").css("color","#404040");';
+                                        echo '$(this).css("color","#dc2606");';
+                                        echo '});';
+
+                                        echo "</script>";
+                                    }
+                                    echo "</ul>";
+                                    echo "</li>";
+
+                                    echo "<script type='text/javascript'>";
+                                    echo '$("a.prl' . $row['CategoriesID'] . '").click(function(){';
+                                    echo '$(".menuLeft li a").css("color","#404040");';
+                                    echo '$(this).css("color","#dc2606");';
+                                    echo '});';
+                                    echo "</script>";
+                                }
+                                ?>
                             </ul>
                         </div>
                         <div class="titleCate" style="margin-top: 20px">
@@ -74,56 +114,6 @@
             include './Share/Footer.php';
             ?>
         </div>
-        <?php
-        $cate = new Categories();
-        $menuLeftParent = $cate->FetchCategoriesParent();
-        // Bin Menu Left
-        echo "<script type='text/javascript'>";
-        while ($row = mysqli_fetch_array($menuLeftParent)) {
-            echo "$('ul.menuLeft').append('<li class=\'prl" . $row['CategoriesID'] . "\'><a class=\'prl" . $row['CategoriesID'] . "\' title=\'" . $row['CategoriesName'] . "\' href=\'#!/Product/" .
-            $row['CategoriesID'] . "/" . $row['CategoriesParentID'] . "/" . khongdau($row['CategoriesName']) . "\'>" .
-            $row['CategoriesName'] . "</a></li>');";
-            // Bin Menu Left child grade I only
-            $resultChild = $cate->FetchtchCategoriesChildByParent($row['CategoriesID']);
-
-            echo "var ul = document.createElement('ul');";
-            echo "$(ul).appendTo('ul.menuLeft li.prl" . $row['CategoriesID'] . "');";
-            while ($rows = mysqli_fetch_array($resultChild)) {
-                echo "$(ul).append('<li class=\'prl" . $rows['CategoriesID'] . "\'><a class=\'prl" . $rows['CategoriesID'] . "\' title=\'" . $rows['CategoriesName'] . "\' href=\'#!/Product/" .
-                $rows['CategoriesID'] . "/" . $rows['CategoriesParentID'] . "/" . khongdau($rows['CategoriesName']) . "\'>" .
-                $rows['CategoriesName'] . "</a></li>');";
-
-                // Bin event active menu left
-                echo '$("a.prl' . $rows['CategoriesID'] . '").click(function(){';
-                echo '$(".menuLeft li a").css("color","#404040");';
-                echo '$(this).css("color","#dc2606");';
-                echo '});';
-            }
-            // Bin event active menu left
-            echo '$("a.prl' . $row['CategoriesID'] . '").click(function(){';
-            echo '$(".menuLeft li a").css("color","#404040");';
-            echo '$(this).css("color","#dc2606");';
-            echo '});';
-        }
-        echo "</script>";
-
-        // Load product"
-        $cateId = $_GET["cate"];
-        if ($cateId == null) {
-            // if cate null then load all product
-            $product = new Product();
-            $result = $product->FetchTop20Product();
-
-            echo "<script type='text/javascript'>";
-            while ($row = mysqli_fetch_array($result)) {
-                echo '$(".productContent").append(\'<div class="items"><div class="sizeH"><label>SIZE: X | XL | 1 | 2A</label></div><div class="opImage"><div class="salepercent"><span>-12</span></div><img src="Media/Upload/Product/natural-project-7386-01857-1-catalog.jpg"></div><div><label class="opnameProduct">' . $row['ProductName'] . '</label><label class="opDescription">Description</label><label class="opOldPrice">600.000 VNĐ</label><label class="opCurrentPrice">450.000 VNĐ</label><label class="deestoreKy">DEESTORE</label></div></div>\');';
-            }
-            echo "</script>";
-        } else {
-            // load product with categories
-        }
-        ?>
-
         <script src="/Media/JavaScript/angular/angular.min.js"></script>
         <script src="/Media/JavaScript/angulartics.js"></script>
         <script src="/Media/JavaScript/angulartics-ga.js"></script>

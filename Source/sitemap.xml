@@ -1,17 +1,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://www.deestore.vn/#!/Product</loc>
+        <loc>http://www.deestore.vn/</loc>
         <changefreq>daily</changefreq>
-        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>http://www.deestore.vn/Product.php</loc>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>http://www.deestore.vn/Contact.php</loc>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>http://www.deestore.vn/About.php</loc>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>http://www.deestore.vn/Search.php</loc>
+        <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>http://www.deestore.vn/#!/Product/:CateId/:ParentId/:CategoriesName</loc>
         <changefreq>daily</changefreq>
-        <priority>1.0</priority>
     </url>
     <url>
         <loc>http://www.deestore.vn/#!/Product/Details/:productId/:cateId/:ProductName</loc>
         <changefreq>daily</changefreq>
-        <priority>1.0</priority>
     </url>
 </urlset> 
