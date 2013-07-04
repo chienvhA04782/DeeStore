@@ -12,10 +12,6 @@
     include './Share/MasterInclude.php';
     ?>
     <body data-status="{{ status }}">
-        <!--        <marquee behavior="scroll" direction="left" scrollamount="10"
-                         style="background-color: #dc2606;
-                         font-weight: bold;position:fixed;font-size: 16px;
-                         color:#fff; display: block; z-index: 90000; top: 40%">Website đang trong quá trình xây dựng bởi ACN</marquee>-->
         <div id="page">
             <?php
             include './Share/Header.php';

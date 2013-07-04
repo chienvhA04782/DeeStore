@@ -13,11 +13,11 @@
 class ProductSize {
 
     //put your code here
-    function ProductSize() {
+    public function ProductSize() {
         
     }
 
-    function FetchAllProductSize() {
+    public function FetchAllProductSize() {
         try {
             $connect = new Connect();
             $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM productsize");
@@ -28,10 +28,21 @@ class ProductSize {
         }
     }
 
-    function FetchProductSizeByProductId($productId) {
+    public function FetchProductSizeByProductId($productId) {
         try {
             $connect = new Connect();
             $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM productsize WHERE ProductSizeID = $productId");
+            $connect->CloseDB();
+            return $result;
+        } catch (Exception $e) {
+            echo "FetchProductSizeByProductId" . $e;
+        }
+    }
+
+    public function FetchProductSizeByProductSizeId($productSizeId) {
+        try {
+            $connect = new Connect();
+            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM productsize WHERE ProductSizeID = $productSizeId");
             $connect->CloseDB();
             return $result;
         } catch (Exception $e) {

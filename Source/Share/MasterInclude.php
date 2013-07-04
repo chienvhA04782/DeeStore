@@ -9,6 +9,8 @@ require './Model/Categories.php';
 require './Model/Product.php';
 require './Model/ProductBrand.php';
 require './Model/ProductSize.php';
+require './Model/ProductGallery.php';
+require './Model/JoinProductSize.php';
 
 function khongdau($str) {
     $str = preg_replace("/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|� �|ặ|ẳ|ẵ|ắ)/", 'a', $str);
@@ -25,7 +27,7 @@ function khongdau($str) {
     $str = preg_replace("/(Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ)/", 'U', $str);
     $str = preg_replace("/(Ỳ|Ý|Ỵ|Ỷ|Ỹ)/", 'Y', $str);
     $str = preg_replace("/(Đ)/", 'D', $str);
-    $str = preg_replace("/ /", '_', $str);
+    $str = preg_replace("/ /", '-', $str);
     return $str;
 }
 

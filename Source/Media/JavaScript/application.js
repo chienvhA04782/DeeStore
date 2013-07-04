@@ -29,7 +29,7 @@ var App;
 // PRODUCT BY CATEGORIES CTRL
     App.controller('ProductByCateCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
             $(".loadPanel").show();
-            $.ajax({url: 'Model/Controller.php',
+            $.ajax({url: '/Model/Controller.php',
                 data: {action: 'ProductByCate', cateId: $routeParams.CateId, parentId: $routeParams.ParentId},
                 type: 'post',
                 success: function(output) {
@@ -41,7 +41,7 @@ var App;
     // ALL PRODUCT CTRL
     App.controller('ProductAllCtrl', ['$scope', '$http', function($scope, $http) {
             $(".loadPanel").show();
-            $.ajax({url: 'Model/Controller.php',
+            $.ajax({url: '/Model/Controller.php',
                 data: {action: 'AllProduct'},
                 type: 'post',
                 success: function(output) {
@@ -54,7 +54,7 @@ var App;
     // PRODUCT DETAILS BY PRODUCT ID
     App.controller('ProductDetails', ['$scope', '$routeParams', function($scope, $routeParams) {
             $(".loadPanel").show();
-            $.ajax({url: 'Model/Controller.php',
+            $.ajax({url: '/Model/Controller.php',
                 data: {action: 'DetailsProduct', productId: $routeParams.productId},
                 type: 'post',
                 success: function(output) {
@@ -66,13 +66,14 @@ var App;
 
 // ROUTER *******************************************************************************************
     App.config(['$routeProvider', '$locationProvider', '$analyticsProvider', function($routes, $location, $analytics) {
+         //   $location.html5Mode(true);
             $location.hashPrefix('!');
             $analytics.virtualPageviews(false);
 
             // ALL PRODUCT
             $routes.when('/Product', {
                 controller: 'ProductAllCtrl',
-                templateUrl: 'Patial/_Product.php',
+                templateUrl: '/Patial/_Product.php',
                 resolve: {
                     slow: function() {
                         // remove details view
@@ -85,7 +86,7 @@ var App;
             // PRODUCT BY CATEGORIES
             $routes.when('/Product/:CateId/:ParentId/:CategoriesName', {
                 controller: 'ProductByCateCtrl',
-                templateUrl: 'Patial/_Product.php',
+                templateUrl: '/Patial/_Product.php',
                 resolve: {
                     slow: function() {
                         // remove details view
@@ -98,7 +99,7 @@ var App;
             // DETAILS PRODUCT
             $routes.when('/Product/Details/:productId/:cateId/:ProductName', {
                 controller: 'ProductDetails',
-                templateUrl: 'Patial/_Details.php',
+                templateUrl: '/Patial/_Details.php',
                 resolve: {
                     slow: function() {
                         // remove details view

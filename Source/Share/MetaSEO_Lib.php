@@ -1,4 +1,7 @@
+
 <meta name="fragment" content="!" /> 
+<link rel="shortcut icon" href="http://image.spreadshirt.com/image-server/v1/products/19396512/views/1,width=42,height=42.png">
+<link rel="search" type="application/opensearchdescription+xml" title="Deestore shop" href="/opensearch.xml">
 <meta name="Keywords" content="Dee Store - Chuyên bán buôn, bán lẻ hàng VNXK. Mẫu mã đa dạng phong phú, cập nhật thường xuyên,áo sơ mi, áo phông, quần jean, áo khoác, deestore">
 <meta name="robots" content="INDEX,FOLLOW,ALL" />
 <meta name="language" content="Vietnamese,English" />
@@ -19,7 +22,13 @@
 <link href="/Media/Css/Layer.css" rel="stylesheet" />
 <script src="/Media/JavaScript/jquery/jquery.min.js"></script>
 <script src="/Media/JavaScript/jquery/jquery.session.js"></script>
-<!--Share this-->
-<script type="text/javascript">var switchTo5x = true;</script>
-<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript">stLight.options({publisher: "30414ba1-6d1c-4993-b683-2654b7e5b3d6", doNotHash: true, doNotCopy: false, hashAddressBar: false});</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id))
+            return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>

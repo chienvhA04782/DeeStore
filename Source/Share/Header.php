@@ -1,3 +1,7 @@
+<marquee behavior="scroll" direction="left" scrollamount="10"
+         style="background-color: #dc2606;
+         font-weight: bold;position:fixed;font-size: 16px;
+         color:#fff; display: block; width: 100%; z-index: 90000; top: 40%">Website đang trong quá trình xây dựng bởi ACN</marquee>
 <header id="heads">
     <div class="loadPanel" style="display: none"></div>
     <div class="content">
@@ -50,9 +54,22 @@
             <div class="contentTopRight">
                 Deestore Shop: Địa chỉ 64b - Phố Huế - Hà Nội<br/>
                 Mobile: 0972999588
-                <label style="display: block; margin-top: 20px">
-                    <span class='st_fblike_hcount' displayText='Facebook Like'></span>
-                    <span class='st_plusone_hcount' displayText='Google +1'></span>
+                <label style="display: block; margin-top: 20px;margin-right: -35px !important">
+                    <div class="fb-like" data-href="http://deestore.vn" data-send="true" data-layout="button_count" data-width="100" data-show-faces="true"></div>&nbsp;                    
+                    <!-- Place this tag where you want the +1 button to render. -->
+                    <div class="g-plusone" data-size="medium"></div>
+                    <!-- Place this tag after the last +1 button tag. -->
+                    <script type="text/javascript">
+                        window.___gcfg = {lang: 'vi'};
+                        (function() {
+                            var po = document.createElement('script');
+                            po.type = 'text/javascript';
+                            po.async = true;
+                            po.src = 'https://apis.google.com/js/plusone.js';
+                            var s = document.getElementsByTagName('script')[0];
+                            s.parentNode.insertBefore(po, s);
+                        })();
+                    </script>
                 </label>
             </div>
         </div>
