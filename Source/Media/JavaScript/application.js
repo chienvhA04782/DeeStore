@@ -1,7 +1,7 @@
 var App;
 
 (function() {
-    App = angular.module('App', ['angulartics', 'angulartics.ga']);
+    App = angular.module('App', ['angulartics', 'angulartics.ga']).value('$anchorScroll', angular.noop);
     App.run(['$rootScope', function($rootScope) {
             var _getTopScope = function() {
                 return $rootScope;
@@ -35,6 +35,8 @@ var App;
                 success: function(output) {
                     $('body').append(output);
                     $(".loadPanel").hide();
+                }, error: function(err) {
+                    console.error(err);
                 }
             });
         }]);
@@ -65,8 +67,9 @@ var App;
         }]);
 
 // ROUTER *******************************************************************************************
-    App.config(['$routeProvider', '$locationProvider', '$analyticsProvider', function($routes, $location, $analytics) {
-         //   $location.html5Mode(true);
+    App.config(['$routeProvider', '$locationProvider', '$analyticsProvider',
+        function($routes, $location, $analytics, $anchorScrollProvider) {
+            $location.html5Mode(false);
             $location.hashPrefix('!');
             $analytics.virtualPageviews(false);
 
