@@ -5,8 +5,270 @@
     Description:
         Purpose of the stylesheet follows.
 */
-
-root { 
-    display: block;
+body{
+    background: #6C909C;
+    font-family: Arial,Helvetica,sans-serif;
 }
 
+header{
+    background: none repeat scroll 0 0 #FFFFFF;
+    margin: 0 auto;
+    min-height: 69px;
+    overflow: hidden;
+    width: 996px;
+}
+.logo{
+    background-image: url("../../Media/Images/logo_bg.jpg");
+    float: left;
+    height: 69px;
+    width: 226px;
+}
+#logout{
+    background-color: #E6E6E6;
+    float: right;
+    height: 69px;
+    margin-right: 5px;
+    width: 100px;
+}
+#logout_icon{
+    float: left;
+    height: 30px;
+    margin-top: 13px;
+    width: 99px;
+}
+.spanLogout{
+    float: left;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+    width: 100px;
+}
+.logOut{
+    font-size: 12px;
+    font-weight: bold;
+}
+#settings{
+    background: #E6E6E6;
+    float: right;
+    height: 69px;
+    margin-right: 5px;
+    width: 100px;
+}
+#settings_icon{
+    float: left;
+    height: 30px;
+    margin-top: 13px;
+    width: 99px;
+}
+.spanSettings{
+    float: left;
+    margin: 4px 0 0;
+    overflow: hidden;
+    text-align: center;
+    width: 100px;
+}
+.settings{
+    font-size: 12px;
+    font-weight: bold;
+}
+#users{
+    background: #E6E6E6;
+    float: right;
+    height: 69px;
+    margin-right: 5px;
+    width: 100px;
+}
+#users_icon{
+    float: left;
+    height: 30px;
+    margin-top: 13px;
+    width: 99px;
+}
+.spanUsers{
+    float: left;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+    width: 100px;
+}
+.users{
+    font-size: 12px;
+    font-weight: bold;
+}
+#about{
+    background: #E6E6E6;
+    float: right;
+    height: 69px;
+    margin-right: 5px;
+    width: 100px;
+}
+#about_icon{
+    float: left;
+    height: 30px;
+    margin-top: 13px;
+    width: 99px;
+}
+.spanAbout{
+    float: left;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+    width: 100px;
+}
+.about{
+    font-size: 12px;
+    font-weight: bold;
+}
+.wellcomePersonal{
+    float: right;
+    height: 69px;
+    margin-right: 5px;
+    width: 200px;
+}
+#hello {
+    height: 30px;
+    margin-top: 10px;
+    width: 206px;
+}
+.bodytext{
+    color: #505050;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    line-height: 21px;
+}
+#hello a{
+    font-weight: bold;
+    color: #478DA4;
+}
+.happyGreetings{
+    background: #478DA4;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    height: 22px;
+    padding-left: 5px;
+    width: 195px;
+}
+#arrows{
+    background-image: url("../../Media/Images/arrows.jpg");
+    float: left;
+    height: 69px;
+    width: 132px;
+}
+
+
+
+
+footer{
+    background: #B8B8B8;
+    min-height: 30px;
+    width: 996px;
+    margin: 0 auto;
+}
+
+.container{
+    background: #D7EAF0;
+    min-height: 700px;
+    width: 996px;
+    margin: 0 auto;
+}
+
+.leftMenu{
+    background: url("../../Media/Images/bg_leftcolumn.jpg");
+    min-height: 700px;
+    width: 225px;
+    float: left;
+    overflow: hidden;
+}
+.mainManager{
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 1px;
+    position: absolute;
+    text-transform: capitalize;
+    width: 125px;
+    z-index: 3;
+}
+.itemLeftMenu{
+    background: url("../../Media/Images/navi_bg.jpg");
+    color: #2B7C98;
+    min-height: 300px;
+    padding-left: 25px;
+    padding-top: 22px;
+    position: absolute;
+    width: 200px;
+}
+.itemManager{
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    text-transform: capitalize;
+    width: 125px;
+    z-index: 3;
+}
+.listItem-menu{
+    font-size: 13px;
+    font-weight: bold;
+    list-style-type: none;
+    margin: 20px 0 0;
+    padding-top: 15px;
+    text-transform: capitalize;
+    width: 190px;
+}
+.listItem-menu li{
+    margin-top: 10px;
+}
+.listItem-menu li a{
+    color: #BABABA;
+}
+.listItem-menu li a:hover{
+    color: #FFFFFF;
+}
+
+
+.main{
+    background: #F1F1F1;
+    min-height: 700px;
+    width: 771px;
+    margin: 0 auto;
+    float: left;
+}
+.topMenu{
+    background: url("../../Media/Images/table_bg.jpg") repeat scroll 0 0 transparent;
+    height: 40px;
+    margin: 0;
+    overflow: hidden;
+    width: 771px;
+}
+.topMenu ul{
+    float: left;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+}
+.topMenu ul li{
+    float: left;
+    height: 40px;
+    list-style-type: none;
+    margin: 0 15px;
+}
+.topMenu ul li a{
+    color: #FFFFFF;
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    padding-top: 9px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.topMenu ul li a:hover{
+    text-decoration: underline;
+}
+
+
+.contents{
+    float:left;
+    min-height:660px;
+    width:771px;
+}
