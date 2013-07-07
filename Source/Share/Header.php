@@ -1,7 +1,7 @@
-<!--<marquee behavior="scroll" direction="left" scrollamount="10"
+<marquee behavior="scroll" direction="left" scrollamount="10"
          style="background-color: #dc2606;
          font-weight: bold;position:fixed;font-size: 16px;
-         color:#fff; display: block; width: 100%; z-index: 90000; top: 40%">Website đang trong quá trình xây dựng bởi ACN</marquee>-->
+         color:#fff; display: block; width: 100%; z-index: 90000; top: 96%">Website đang trong quá trình xây dựng bởi ACN</marquee>
 <header id="heads">
     <div class="loadPanel" style="display: none"></div>
     <div class="content">
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="contentTopRight">
-                Deestore Shop: Địa chỉ 64b - Phố Huế - Hà Nội<br/>
+                Deestore Shop: Địa chỉ 364b - Phố Huế - Hà Nội<br/>
                 Mobile: 0972999588
                 <label style="display: block; margin-top: 20px;margin-right: -35px !important">
                     <div class="fb-like" data-href="http://deestore.vn" data-send="true" data-layout="button_count" data-width="100" data-show-faces="true"></div>&nbsp;                    
@@ -76,20 +76,16 @@
         <nav id="menu">
             <div class="contentMenu">
                 <ul class="parent">
-                    <li><a href="#!/Product">NEW</a></li>
+                    <li><a class="homemenu" href="#!/Home" onclick="layerSite.activeMenu('homemenu');">HOME</a></li>
+                    <li><a class="topmenuNew" href="#!/Product" onclick="layerSite.activeMenu('topmenuNew');">NEW</a></li>
                     <?php
                     $cate = new Categories();
                     $result = $cate->FetchCategoriesParent();
                     while ($row = mysqli_fetch_array($result)) {
-                        echo '<li><a title="' . $row['CategoriesName'] . '" href="#!/Product/' . $row['CategoriesID'] . '/' . $row['CategoriesParentID'] . '/' . khongdau($row['CategoriesName']) . '">' . $row['CategoriesName'] . '</a></li>';
+                        echo '<li><a onclick="' . "layerSite.activeMenu('mnitems-" . $row['CategoriesID'] . "');" . '" class="mnitems-' . $row['CategoriesID'] . '" title="' . $row['CategoriesName'] . '" href="#!/Product/' . $row['CategoriesID'] . '/' . $row['CategoriesParentID'] . '/' . khongdau($row['CategoriesName']) . '">' . $row['CategoriesName'] . '</a></li>';
                     }
                     ?>
-                    <li><a href="#" style="float: right;    background: none repeat scroll 0 0 #DC2606;
-                           float: right;
-                           font-family: cursive;
-                           font-size: 12px;
-                           font-weight: normal;
-                           margin-right: -3px;">DEE STYLE !</a></li>
+                    <li><a class="styleAMenuTop" href="#">DEE STYLE !</a></li>
                 </ul>
             </div>
         </nav>

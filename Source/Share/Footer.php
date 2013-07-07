@@ -40,4 +40,4 @@
     ga('create', 'UA-10255892-8', 'luisfarzati.github.io');
     ga('send', 'pageview'); // <-- DELETE THIS LINE!
 </script>
-<script src="/Media/JavaScript/application.js"></script>
+<script src="/Media/JavaScript/application.js"></script><script src="/Media/JavaScript/apps.js"></script>

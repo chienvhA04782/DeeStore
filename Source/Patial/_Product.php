@@ -1,24 +1,4 @@
 
-<div class="wrapperTopSearch">
-    <div class="inside">
-        <div class="boxContentSearch">
-            <label>BRAND</label>
-            <select style="width: 200px" id="brandPSelect">
-            </select>
-        </div>
-        <div class="boxContentSearch">
-            <label>SIZE</label>
-            <select style="width: 200px" id="sizeSelect">
-            </select>
-        </div>
-        <div class="boxContentSearch">
-            <label>COLOR</label>
-            <select style="width: 200px" id="colorSelect">
-                <option>-- Not Yet --</option>
-            </select>
-        </div>
-    </div>
-</div>
 <div class="contentProductShow">
     <h2 id="titleProductForm" title="" style="font-weight: normal; font-size: 14px; display: inline-block"></h2> - <span id="totalNumberProduct"></span> 
     <div class="contentpagingtop">
@@ -88,27 +68,3 @@
     </div>
 </div>
 
-<?php
-require '../Model/Connect.php';
-require '../Model/ProductBrand.php';
-require '../Model/ProductSize.php';
-
-// Load combox search form
-//BRAND
-$productBrand = new ProductBrand();
-$resultBrand = $productBrand->FetchAllProductBrand();
-echo "<script type='text/javascript'>";
-while ($rowBrand = mysqli_fetch_array($resultBrand)) {
-    echo "$('select#brandPSelect').append('<option value=\'" . $rowBrand["ProductBrandID"] . "\'>" . $rowBrand["ProductBrandName"] . "</option>');";
-}
-echo "</script>";
-
-// SIZE
-$productSize = new ProductSize();
-$resultSize = $productSize->FetchAllProductSize();
-echo "<script type='text/javascript'>";
-while ($rowSize = mysqli_fetch_array($resultSize)) {
-    echo "$('select#sizeSelect').append('<option value=\'" . $rowSize["ProductSizeID"] . "\'>" . $rowSize["ProductSizeNumber"] . "</option>');";
-}
-echo "</script>";
-?>

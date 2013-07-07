@@ -7,7 +7,6 @@ var App;
                 return $rootScope;
                 //return angular.element(document).scope();
             };
-
             $rootScope.ready = function() {
                 var $scope = _getTopScope();
                 $scope.status = 'ready';
@@ -66,12 +65,30 @@ var App;
             });
         }]);
 
+    // Home CTRL
+    App.controller('HomeCtrols', ['$scope', '$routeParams', function($scope, $routeParams) {
+            $(".loadPanel").show();
+            $(".loadPanel").hide();
+        }]);
 // ROUTER *******************************************************************************************
     App.config(['$routeProvider', '$locationProvider', '$analyticsProvider',
         function($routes, $location, $analytics, $anchorScrollProvider) {
             $location.html5Mode(false);
             $location.hashPrefix('!');
             $analytics.virtualPageviews(false);
+
+            // Home 
+            $routes.when('/Home', {
+                controller: 'HomeCtrols',
+                templateUrl: '/Patial/_Homes.php',
+                resolve: {
+                    slow: function() {
+                        // remove details view
+                        $('.boundDetails').html('');
+                        return false;
+                    }
+                }
+            });
 
             // ALL PRODUCT
             $routes.when('/Product', {

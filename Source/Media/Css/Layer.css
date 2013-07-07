@@ -98,30 +98,60 @@ header#heads {
     display: block;
     float: left;
 }
-#page .bodyContent .Inside .right .wrapperTopSearch{
-    width: 100%;
-    height: 82px;
-    border: 1px solid #d1d0d1;
-    background-color: #fff;
+.wrapperTopSearch{
+    background: none repeat scroll 0 0 #404040;
+    color: #FFFFFF;
+    float: left;
+    margin-bottom: 15px;
+    margin-left: 4px;
+    margin-top: 10px;
+    padding-bottom: 25px;
+    width: 96%;
 }
-#page .bodyContent .Inside .right .wrapperTopSearch .inside{
+.wrapperTopSearch .inside{
     padding: 10px;
 }
-#page .bodyContent .Inside .right .wrapperTopSearch .inside .boxContentSearch{
+.wrapperTopSearch .inside .boxContentSearch{
     width: 200px;
     float: left;
     margin-right: 50px;
 }
-#page .bodyContent .Inside .right .wrapperTopSearch .inside .boxContentSearch label{
+.wrapperTopSearch .inside .searchBtn button{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: medium none;
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+    text-align: right;
+    cursor: pointer;
+}
+.wrapperTopSearch .inside .searchBtn button:hover{
+    background-color: #d1d0d1;
+}
+.wrapperTopSearch .titleSearch h2.p-search{
+    border-bottom: 1px solid #FF5F3F !important;
+    display: block !important;
+    font-family: verdana !important;
+    font-size: 15px !important;
+    font-weight: normal !important;
+    padding-bottom: 3px !important;
+    padding-left: 2px !important;
+    width: 89% !important;
+}
+.wrapperTopSearch .inside .boxContentSearch label{
     display: block;
-    padding-bottom: 10px;
+    font-size: 12px !important;
+    padding-bottom: 2px;
     padding-left: 5px;
+    padding-top: 8px;
 
+}
+.wrapperTopSearch .inside .boxContentSearch select{
+    width: 178px !important;
 }
 .contentProductShow{
     background-color: #FFFFFF;
     border: 1px solid #D1D0D1;
-    margin-top: 7px;
     min-height: 400px;
     padding-left: 11px;
     padding-right: 15px;
@@ -319,7 +349,7 @@ header#heads {
 .menuTop ul.mnTop li a{
     border-right: 1px solid #D1D0D1;
     color: #404040;
-    font-family: serif;
+    font-family: "sans-serif";
     font-size: 16px;
     font-style: italic;
     padding-right: 5px;
@@ -365,7 +395,7 @@ input.searchTopMain[placeholder] {
     float: left;
     margin-top: 20px;
     width: 100%;
-        background-color: #404040;
+    background-color: #404040;
 }
 
 #page header .content nav#menu .contentMenu {
@@ -380,16 +410,17 @@ input.searchTopMain[placeholder] {
 }
 
 #page header .content nav#menu .contentMenu ul.parent li a {
-     color: #FFFFFF;
+    color: #FFFFFF;
     display: block;
     float: left;
-    font-family: Helvetica Neue Medium;
+    font-family: "Helvetica Neue Medium", Helvetica,Arial,sans-serif;
     font-size: 14px;
     margin-right: 1px;
     min-width: 40px;
     padding: 6px 8px;
     text-align: center;
     text-transform: uppercase;
+    padding-bottom: 7px;
 }
 
 #page header .content nav#menu .contentMenu ul.parent li a:hover {
@@ -409,7 +440,8 @@ input.searchTopMain[placeholder] {
 }
 
 #page header .content nav#menu .contentMenu ul.parent li a.active {
-    background-color: #494949;
+    background-color: #fff;
+    color: #dc2606;
 }
 
 #page header .content nav#menu .contentMenu ul.parent li ul.child {
@@ -533,6 +565,9 @@ ul.menuLeft li a{
     color: #000;
 }
 ul.menuLeft li a:hover{
+    color: #dc2606 !important;
+}
+ul.menuLeft li a.active{
     color: #dc2606 !important;
 }
 ul.menuLeft li ul li a{
@@ -667,4 +702,18 @@ ul.menuLeft li ul li a:hover{
     font-size: 17px;
     font-weight: normal !important;
     padding: 10px;
+}
+a.styleAMenuTop:hover{
+    color: #fff !important;
+
+}
+a.styleAMenuTop{
+    float: right !important;  
+    background: none repeat scroll 0 0 #DC2606 !important;
+    font-family: cursive !important;
+    font-size: 12px !important;
+    font-weight: normal !important;
+    margin-right: -3px !important;
+    padding-bottom: 7px !important;
+    display: block;
 }
