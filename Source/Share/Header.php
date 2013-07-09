@@ -1,5 +1,5 @@
 <marquee behavior="scroll" direction="left" scrollamount="10"
-         style="background-color: #dc2606;
+         style="background-color: #404040;
          font-weight: bold;position:fixed;font-size: 16px;
          color:#fff; display: block; width: 100%; z-index: 90000; top: 96%">Website đang trong quá trình xây dựng bởi ACN</marquee>
 <header id="heads">
@@ -14,18 +14,8 @@
                 <div class="menuTop">
                     <ul class="mnTop">
                         <li>
-                            <a href="/About.php">
-                                Thông tin
-                            </a>
-                        </li>
-                        <li>
                             <a href="/Contact.php">
-                                Liên hệ
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/Contact.php">
-                                Địa chỉ
+                                Liên Hệ & Đặt Hàng
                             </a>
                         </li>
                         <li>

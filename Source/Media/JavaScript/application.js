@@ -68,7 +68,14 @@ var App;
     // Home CTRL
     App.controller('HomeCtrols', ['$scope', '$routeParams', function($scope, $routeParams) {
             $(".loadPanel").show();
-            $(".loadPanel").hide();
+            $.ajax({url: '/Model/Controller.php',
+                data: {action: 'AllProduct'},
+                type: 'post',
+                success: function(output) {
+                    $('body').append(output);
+                    $(".loadPanel").hide();
+                }
+            });
         }]);
 // ROUTER *******************************************************************************************
     App.config(['$routeProvider', '$locationProvider', '$analyticsProvider',

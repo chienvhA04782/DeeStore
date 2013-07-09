@@ -20,7 +20,7 @@ class Product {
     function FetchTop20Product() {
         try {
             $connect = new Connect();
-            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM products LIMIT 20");
+            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM products LIMIT 12");
             $connect->CloseDB();
             return $result;
         } catch (Exception $e) {

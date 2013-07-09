@@ -717,3 +717,11 @@ a.styleAMenuTop{
     padding-bottom: 7px !important;
     display: block;
 }
+article.boud{
+    background-color: #F2F6F8;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #B0C5D3;
+    padding: 10px;
+    margin-top: 5px;
+    font-family: sans-serif, arial;
+}
