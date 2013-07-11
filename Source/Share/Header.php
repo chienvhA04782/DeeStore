@@ -8,7 +8,7 @@
         <div class="topBar">
             <div class="logo">
                 <h2 style="font-weight: normal" id="logos">MAKES YOU STYLE <h2 style="font-family: cursive; font-weight: normal">DEESTORE</span>
-                        <br/><small>64b Phố Huế</small></h2>
+                        <br/><small>364b Phố Huế</small></h2>
             </div>
             <div class="search">
                 <div class="menuTop">
