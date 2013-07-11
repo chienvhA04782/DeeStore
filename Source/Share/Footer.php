@@ -37,7 +37,8 @@
         m.parentNode.insertBefore(a, m)
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-10255892-8', 'luisfarzati.github.io');
-    ga('send', 'pageview'); // <-- DELETE THIS LINE!
+    ga('create', 'UA-42388461-1', 'deestore.vn');
+    ga('send', 'pageview');
+
 </script>
 <script src="/Media/JavaScript/application.js"></script><script src="/Media/JavaScript/apps.js"></script>
