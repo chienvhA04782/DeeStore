@@ -1,13 +1,20 @@
-/* 
-    Document   : Layer
-    Created on : Jun 27, 2013, 1:47:43 AM
-    Author     : chien
-    Description:
-        Purpose of the stylesheet follows.
-*/
 body{
     background: #6C909C;
     font-family: Arial,Helvetica,sans-serif;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    margin: 0;
+    padding: 0;
+    line-height: 20px;
 }
 
 header{
@@ -16,6 +23,13 @@ header{
     min-height: 69px;
     overflow: hidden;
     width: 996px;
+}
+header a{
+    color: #2B7C98;
+}
+header a:hover{
+    color: #2B7C98;
+    text-decoration: underline;
 }
 .logo{
     background-image: url("../../Media/Images/logo_bg.jpg");
@@ -62,7 +76,7 @@ header{
 }
 .spanSettings{
     float: left;
-    margin: 4px 0 0;
+    margin: 0;
     overflow: hidden;
     text-align: center;
     width: 100px;
@@ -146,8 +160,8 @@ header{
     font-size: 12px;
     font-weight: bold;
     height: 22px;
-    padding-left: 5px;
-    width: 195px;
+    padding: 5px 5px 0;
+    width: 190px;
 }
 #arrows{
     background-image: url("../../Media/Images/arrows.jpg");
@@ -166,11 +180,12 @@ footer{
     margin: 0 auto;
 }
 
-.container{
-    background: #D7EAF0;
+.divcontainers{
+    background: url("../../Media/Images/bg_leftcolumn.jpg");
     min-height: 700px;
     width: 996px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .leftMenu{
@@ -181,7 +196,7 @@ footer{
     overflow: hidden;
 }
 .mainManager{
-    font-size: 12px;
+    font-size: 13px;
     font-weight: bold;
     margin-top: 1px;
     position: absolute;
@@ -189,18 +204,19 @@ footer{
     width: 125px;
     z-index: 3;
 }
-.itemLeftMenu{
+#itemLeftMenu{
     background: url("../../Media/Images/navi_bg.jpg");
     color: #2B7C98;
     min-height: 300px;
     padding-left: 25px;
-    padding-top: 22px;
+    padding-top: 25px;
     position: absolute;
     width: 200px;
 }
 .itemManager{
     font-size: 12px;
     font-weight: bold;
+    margin-top: 1px;
     position: absolute;
     text-transform: capitalize;
     width: 125px;
@@ -211,20 +227,42 @@ footer{
     font-weight: bold;
     list-style-type: none;
     margin: 20px 0 0;
-    padding-top: 15px;
+    padding: 30px 0 0;
     text-transform: capitalize;
-    width: 190px;
+    width: 200px;
 }
 .listItem-menu li{
-    margin-top: 10px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+.listItem-menu li:hover{
+    background: url("../../Media/Images/bg_lbtnHover.png");
+    color: #032E3E;
+    text-shadow: 5px 5px 10px #032E3E;
 }
 .listItem-menu li a{
     color: #BABABA;
+    padding-left: 5px;
+    text-shadow: 2px 2px 5px #BABABA;
+    float: left;
+    height: 30px;
+    padding-top: 8px;
+    width: 161px;
 }
 .listItem-menu li a:hover{
     color: #FFFFFF;
+    text-shadow: 5px 5px 10px #032E3E;
 }
-
+.leftMenuActive{
+    background: url("../../Media/Images/bg_lbtnHover.png");
+}
+.listItem-menu .leftMenuActive a{
+    color: #032E3E;
+    text-shadow: 5px 5px 10px #032E3E;
+}
+.listItem-menu .leftMenuActive a:hover{
+    color: #032E3E;
+}
 
 .main{
     background: #F1F1F1;
@@ -233,42 +271,54 @@ footer{
     margin: 0 auto;
     float: left;
 }
-.topMenu{
+#divTopMenu{
     background: url("../../Media/Images/table_bg.jpg") repeat scroll 0 0 transparent;
     height: 40px;
     margin: 0;
     overflow: hidden;
     width: 771px;
 }
-.topMenu ul{
+#divTopMenu ul{
     float: left;
     height: 100%;
     margin: 0;
     overflow: hidden;
     width: 100%;
 }
-.topMenu ul li{
+#divTopMenu ul li{
     float: left;
     height: 40px;
     list-style-type: none;
-    margin: 0 15px;
 }
-.topMenu ul li a{
+
+#divTopMenu ul li a{
     color: #FFFFFF;
     float: left;
     font-size: 13px;
     font-weight: bold;
-    padding-top: 9px;
     text-decoration: none;
     text-transform: capitalize;
+    height: 31px;
+    padding: 9px 15px 0;
+    margin-right: 1px;
+    text-shadow: 2px 2px 5px;
 }
-.topMenu ul li a:hover{
-    text-decoration: underline;
+#divTopMenu ul li a:hover{
+    background: url("../../Media/Images/bg_btHover.png") repeat scroll 0 0 transparent;
+    color: #032E3E;
+    text-shadow: 2px 2px 5px;
+}
+.topMenuActive{
+    background: url("../../Media/Images/bg_btHover.png") repeat scroll 0 0 transparent;
+}
+#divTopMenu ul li .topMenuActive{
+    color: #032E3E;
 }
 
 
 .contents{
-    float:left;
-    min-height:660px;
-    width:771px;
+    float: left;
+    min-height: 660px;
+    padding-top: 15px;
+    width: 771px;
 }

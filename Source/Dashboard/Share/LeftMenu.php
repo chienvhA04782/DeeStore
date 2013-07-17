@@ -1,23 +1,23 @@
 <div class="leftMenu">
     <div class="mainManager">
-        <img width="180px" height="49px" style="margin-top: 10px; position: absolute; z-index: 2; max-width: 165px;" src="Media/Images/title_bg.png" alt="titlebg">
-        <div class="itemLeftMenu">
-            <label class="itemManager">Main Manager</label>
+        <img width="180px" height="49px" style="margin-top: 10px; position: absolute; z-index: 2; max-width: 165px;" src="../Media/Images/title_bg.png">
+        <div id="itemLeftMenu">
+            <label class="itemManager">Quản lý chung</label>
             <ul class="listItem-menu">
                 <li>
-                    <img width="20px" height="20px" alt="Item Menu" src="Media/Images/Icons/menuItem.png">
-                    <a href="#">Action</a>
+                    <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../Media/Images/Icons/categoriesIcon.png">
+                    <a href="../Pages/Categories/CategoriesManager.php">Danh mục sản phẩm</a>
                 </li>
                 <li>
-                    <img width="20px" height="20px" alt="Item Menu" src="Media/Images/Icons/menuItem.png">
+                    <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../Media/Images/Icons/menuItem.png">
                     <a href="#">Another action</a>
                 </li>
                 <li>
-                    <img width="20px" height="20px" alt="Item Menu" src="Media/Images/Icons/menuItem.png">
+                    <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../Media/Images/Icons/menuItem.png">
                     <a href="#">Something else here</a>
                 </li>
                 <li>
-                    <img width="20px" height="20px" alt="Item Menu" src="Media/Images/Icons/menuItem.png">
+                    <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../Media/Images/Icons/menuItem.png">
                     <a href="#">Separated link</a>
                 </li>
             </ul>
