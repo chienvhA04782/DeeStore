@@ -48,16 +48,15 @@
                             $product = new Product();
                             $resultDetailsProduct = $product->FetchProductByProductId($pId);
                             while ($rowDetails = mysqli_fetch_array($resultDetailsProduct)) {
-                                echo '<div class="warpperDetails">
+                                echo '<div class="warpperDetails post postcontent">
                                 <div class="leftDetails">
-                                    <h2 class="titleDetails" title="' . $rowDetails["ProductName"] . '">' . $rowDetails["ProductName"] . '</h2>
-                                    <div class="description" title="' . '"><h3 title="' . $rowDetails["ProductDescription"] . '">
+                                    <h2 class="title" title="' . $rowDetails["ProductName"] . '">' . $rowDetails["ProductName"] . '</h2>
+                                    <div class="description" title="' .$rowDetails["ProductDescription"] . '"><h3 title="' . $rowDetails["ProductDescription"] . '">
                                     ' . $rowDetails["ProductDescription"] . '
                                     </h3></div>
                                     <div class="inforProduct">
                                         <div class="size">
                                             <label>SIZE:</label> ';
-
                                 $joinProduct = new JoinProductSize();
                                 $resultJoinProduct = $joinProduct->FetchJoinProductSizeByProductID($pId);
                                 while ($row = mysqli_fetch_array($resultJoinProduct)) {
@@ -79,7 +78,7 @@
                                 echo '</div></div>';
                                 echo '</div>
                                 <div class="rightDetails">
-                                    <div class="contentImageSLide">
+                                    <div class="contentImageSLide images">
                                         <div class="mainImgSlide">
                                             <img src="' . $rowDetails['ProductPathImage'] . '" width="172px"/>
                                         </div>
