@@ -48,7 +48,7 @@
                             $product = new Product();
                             $resultDetailsProduct = $product->FetchProductByProductId($pId);
                             while ($rowDetails = mysqli_fetch_array($resultDetailsProduct)) {
-                                echo '<div class="warpperDetails post postcontent">
+                                echo '<div class="post warpperDetails postcontent">
                                 <div class="leftDetails">
                                     <h2 class="title" title="' . $rowDetails["ProductName"] . '">' . $rowDetails["ProductName"] . '</h2>
                                     <div class="description" title="' .$rowDetails["ProductDescription"] . '"><h3 title="' . $rowDetails["ProductDescription"] . '">
