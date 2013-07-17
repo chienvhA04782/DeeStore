@@ -29,7 +29,7 @@ var App;
     App.controller('ProductByCateCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
             $(".loadPanel").show();
             $.ajax({url: '/Model/Controller.php',
-                data: {action: 'ProductByCate', cateId: $routeParams.CateId, parentId: $routeParams.ParentId},
+                data: {action: 'ProductByCate', cateId: $routeParams.CateId, parentId: $routeParams.ParentId, tokenId: $("meta[name='csrf-token']").attr("content")},
                 type: 'post',
                 success: function(output) {
                     $('body').append(output);

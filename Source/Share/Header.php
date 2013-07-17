@@ -80,7 +80,7 @@
             </div>
         </nav>
         <div class="TopSiteMap">
-            <a href="#">Trang Chủ</a> → <a href="#">Áo Khoác</a>
+            <a href="#!/Home">Trang Chủ</a> <a href="#" class="sitemap_parentClass"></a> <a href="#" class="sitemap_ChildClass"></a>
         </div>
     </div>
 
