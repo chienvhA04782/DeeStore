@@ -161,8 +161,7 @@
     padding: 10px 5px;
 }
 .titleEditCategories{
-    background: url("../Images/Icons/add.png") 
-        no-repeat scroll left 5px #C4DBE3;
+    background: url("../Images/Icons/add.png") no-repeat scroll left 5px #C4DBE3;
     border: 1px solid #B2B2B2;
     border-radius: 5px 5px 5px 5px;
     box-shadow: 5px 5px 10px #CCCCCC;
@@ -172,12 +171,20 @@
     padding: 10px 35px;
     text-align: left;
 }
-.editCateContent{
-
+.addEditCateContent{
+    border: 1px solid #E8E8E8;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 5px 5px 10px #DDDDDD;
+    margin: 20px 10px;
+    padding: 20px 10px 30px 50px;
+}
+.addEditCateContent table{
+    color: #266886;
 }
 
 .error{
     color: red;
+    font-size: 10px;
 }
 
 #divEditCate table tr{
@@ -254,7 +261,7 @@
     color: #73A3B4;
     margin: 14px 14px 0 14px;
     overflow: hidden;
-    padding-left: 15px;
+    padding: 0 15px;
     width: 935px;
 }
 #profile_pic{
@@ -271,7 +278,7 @@
     border: 1px solid #DDDDDD;
 }
 .lblSelectUpload{
-    background: none repeat scroll 0 0 #F1F1F1;
+    background: none repeat scroll 0 0 #DADADA;
     border: 1px solid #C5C5C5;
     border-radius: 5px 5px 5px 5px;
     cursor: pointer;
@@ -286,4 +293,32 @@
     color: red;
     font-size: 12px;
     padding-left: 15px;
+}
+#cbBannerStatus{
+    margin: 10px 0;
+}
+.btnSubmit{
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #F5F5F5;
+    background-image: -moz-linear-gradient(center top , #FFFFFF, #E6E6E6);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 1px 1px 3px #BCBCBC;
+    color: #266886;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    margin: 10px 50px 10px 0;
+    padding: 5px 30px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
 }

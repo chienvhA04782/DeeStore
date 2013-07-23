@@ -1,7 +1,7 @@
 <?php
 
-require 'Connect.php';
-require 'DALCategories.php';
+include 'Connect.php';
+include 'DALCategories.php';
 //Check remove cate
 if (isset($_GET['reId']) && !empty($_GET['reId'])) {
 

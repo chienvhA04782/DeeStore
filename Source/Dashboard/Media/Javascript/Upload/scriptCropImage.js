@@ -1,5 +1,5 @@
 $(function() {
-    var btnUpload = $('#pUpload');
+    var btnUpload = $('#selectImage');
     var mestatus = $('#mestatus');
     var files = $('#profile_pic');
     new AjaxUpload(btnUpload, {
@@ -19,7 +19,7 @@ $(function() {
             files.html('');
             //Add uploaded file to list
             if (response !== "error") {
-                $('<li></li>').appendTo('#profile_pic').html('<img id="thumb" src="../../Media/Images/Categories/' + imgType + '_' + response + file + '" alt="" /><br />').addClass('success');
+                $('<li></li>').appendTo('#profile_pic').html('<img id="thumb" src="../../Media/Images/Categories/' + response + '" alt="" /><br />').addClass('success');
             } else {
                 $('<li></li>').appendTo('#profile_pic').text(file).addClass('error');
             }

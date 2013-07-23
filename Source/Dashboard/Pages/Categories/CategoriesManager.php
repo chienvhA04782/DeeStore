@@ -14,7 +14,7 @@
             $(document).ready(function() {
                 $('#liCategoriesManager').addClass('leftMenuActive');
                 $('#example').dataTable({
-                    "sScrollY": "300px",
+                    "sScrollY": "500px",
                     "bPaginate": true,
                     "bScrollCollapse": true,
                     "bS": true,
@@ -22,7 +22,7 @@
                     "sPaginationType": "full_numbers"
                 });
                 $('.btnAddCate').click(function() {
-                    window.location = "addNewCategories.php";
+                    window.location = "AddNewCategories.php";
                 });
             });
 
@@ -80,7 +80,7 @@
                     require '../../Model/BLLCategoriesManager.php';
                     ?>
                     <!-- Button to trigger modal -->
-                    <a id="btnAddCate" href="#myModal" role="button" class="btnAddCate" data-toggle="modal">Add new categories</a>
+                    <a id="btnAddCate" href="#myModal" role="button" class="btnAddCate" data-toggle="modal">Thêm một danh mục mới</a>
                 </div>
             </div>
             <?php
