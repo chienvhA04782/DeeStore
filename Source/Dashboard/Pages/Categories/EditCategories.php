@@ -1,9 +1,9 @@
 <html>
     <head>
-        <title>CATEGORIES</title>
+        <title>EDIT CATEGORIES</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../../Media/Css/Layer.css" type="text/css" rel="stylesheet" />
-        <link href="../../Media/Css/Categories.css" type="text/css" rel="stylesheet" />
+        <link href="../../Media/Css/contents.css" type="text/css" rel="stylesheet" />
         <link href="../../Media/Lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
         <script src="../../Media/JavaScript/jquery.min.js"></script>
         <script src="../../Media/Lib/bootstrap/js/bootstrap.min.js"></script>

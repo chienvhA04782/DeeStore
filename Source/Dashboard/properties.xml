@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<properties>
+    <products>
+        <widthIconProduct>100</widthIconProduct>
+        <heightIconProduct>150</heightIconProduct>
+        <widthSlideProduct>500</widthSlideProduct>
+        <heightSlideProduct>300</heightSlideProduct>
+    </products>
+    <categories>
+        <widthIconCategories>250</widthIconCategories>
+        <heightIconCategories>400</heightIconCategories>
+        <widthBannerCategories>250</widthBannerCategories>
+        <heightBannerCategories>400</heightBannerCategories>
+    </categories>
+</properties>

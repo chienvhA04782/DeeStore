@@ -2,6 +2,7 @@
 
 include 'Connect.php';
 include 'DALCategories.php';
+include 'SimpleXml.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include('SimpleImage.php');
@@ -13,8 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     $IconPath = "";
     $BannerPath = "";
-    $BannerStatus = $_POST['cbBannerStatus'] == "on" ? true : false;
-
+    $BannerStatus = "false";
+    if($_POST['cbBannerStatus'] == "on"){
+        $BannerStatus = "true";
+    }
     $cate = new DalCategories();
     $Id = $_POST['CatgoriesId'];
     if ($_FILES['fileIcon']['size'] > 0) {
@@ -26,9 +29,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         $IconPath = "Icon_" . time() . "." . pathinfo($_FILES['fileIcon']['name'], PATHINFO_EXTENSION);
         move_uploaded_file($_FILES['fileIcon']['tmp_name'], "../Media/Images/Categories/" . $IconPath);
+        $simpleXml = new SimpleXml();
+        $input = array("widthIconCategories", "heightIconCategories");
+        $rsSize = $simpleXml->getAttribute($input);
         $image = new SimpleImage();
         $image->load("../Media/Images/Categories/" . $IconPath);
-        $image->resize(250, 400);
+        $image->resize($rsSize[0], $rsSize[1]);
         $image->save("../Media/Images/Categories/" . $IconPath);
     }
     if ($_FILES['fileBanner']['size'] > 0) {
@@ -40,9 +46,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         $BannerPath = "Banner_" . time() . "." . pathinfo($_FILES['fileBanner']['name'], PATHINFO_EXTENSION);
         move_uploaded_file($_FILES['fileBanner']['tmp_name'], "../Media/Images/Categories/" . $BannerPath);
+        $simpleXml = new SimpleXml();
+        $input = array("widthBannerCategories", "heightBannerCategories");
+        $rsSize = $simpleXml->getAttribute($input);
         $image = new SimpleImage();
         $image->load("../Media/Images/Categories/" . $BannerPath);
-        $image->resize(250, 400);
+        $image->resize($rsSize[0], $rsSize[1]);
         $image->save("../Media/Images/Categories/" . $BannerPath);
     }
 

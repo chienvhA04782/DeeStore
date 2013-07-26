@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>CATEGORIES</title>
+        <title>CATEGORIES MANAGERS</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../../Media/Css/Layer.css" type="text/css" rel="stylesheet" />
-        <link href="../../Media/Css/Categories.css" type="text/css" rel="stylesheet" />
+        <link href="../../Media/Css/contents.css" type="text/css" rel="stylesheet" />
         <link href="../../Media/Css/jquery.dataTables.css" type="text/css" rel="stylesheet" />
         <link href="../../Media/Javascript/themes/jquery-ui-1.8.4.custom.css" type="text/css" rel="stylesheet" />
         <link href="../../Media/Css/table_jui.css" type="text/css" rel="stylesheet" />
@@ -14,7 +14,7 @@
             $(document).ready(function() {
                 $('#liCategoriesManager').addClass('leftMenuActive');
                 $('#example').dataTable({
-                    "sScrollY": "500px",
+                    "sScrollY": "700px",
                     "bPaginate": true,
                     "bScrollCollapse": true,
                     "bS": true,
@@ -39,7 +39,6 @@
             }
 
             function loadAllData() {
-                $('#container').html("");
                 $.ajax({url: '../../Model/BLLCategoriesManager.php',
                     data: {'typeRequest': 'ProductByCate'},
                     type: 'POST',
@@ -63,7 +62,7 @@
             }
         </script>
     </head>
-    <body id="bodyCategories">
+    <body id="bodyIdManager">
         <?php
         require '../Share/Header.php';
         ?>

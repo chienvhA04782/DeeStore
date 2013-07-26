@@ -4,13 +4,13 @@
         <div id="itemLeftMenu">
             <label class="itemManager">Quản lý chung</label>
             <ul class="listItem-menu">
-                <li>
+                <li id="liCategoriesManager">
                     <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../Media/Images/Icons/categoriesIcon.png">
                     <a href="../Pages/Categories/CategoriesManager.php">Danh mục sản phẩm</a>
                 </li>
-                <li>
-                    <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../Media/Images/Icons/menuItem.png">
-                    <a href="#">Another action</a>
+                <li id="liProductManager">
+                    <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../Media/Images/Icons/productIcon.png">
+                    <a href="../Pages/Products/ProductsManager.php">Quản lý sản phẩm</a>
                 </li>
                 <li>
                     <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../Media/Images/Icons/menuItem.png">

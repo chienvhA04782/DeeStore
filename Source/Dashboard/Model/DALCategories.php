@@ -88,8 +88,10 @@ class DalCategories {
             while ($rs = mysqli_fetch_array($result)) {
                 return $rs['CategoriesID'];
             }
+            return 1;
         } catch (Exception $e) {
             echo 'FetchCategoriesById:' . $e;
+            return 1;
         }
     }
 
