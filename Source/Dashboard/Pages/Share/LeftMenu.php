@@ -6,19 +6,19 @@
             <ul class="listItem-menu">
                 <li id="liCategoriesManager">
                     <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../../Media/Images/Icons/categoriesIcon.png">
-                    <a href="../Categories/CategoriesManager.php">Danh mục sản phẩm</a>
+                    <a href="../Categories/CategoriesManager.php">Danh mục</a>
                 </li>
                 <li id="liProductManager">
                     <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../../Media/Images/Icons/productIcon.png">
-                    <a href="../Products/ProductsManager.php">Quản lý sản phẩm</a>
+                    <a href="../Products/ProductsManager.php">Sản phẩm</a>
                 </li>
                 <li id="liBrandManager">
                     <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../../Media/Images/Icons/brand.png">
                     <a href="../Brands/BrandManager.php">Thương Hiệu</a>
                 </li>
-                <li>
-                    <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../../Media/Images/Icons/menuItem.png">
-                    <a href="#">Separated link</a>
+                <li id="liGalleryManager">
+                    <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../../Media/Images/Icons/gallerymanager.png">
+                    <a href="../Gallery/GalleryManager.php">Bộ sưu tập</a>
                 </li>
             </ul>
         </div>

@@ -380,6 +380,7 @@
     box-shadow: 5px 5px 10px #DDDDDD;
     margin: 20px 10px;
     padding: 20px 10px 30px 50px;
+    overflow: hidden;
 }
 
 .divMainAddAndEdit table{
@@ -500,7 +501,7 @@
     width: 175px;
     height: 115px;
     border: 1px solid #666666;
-    margin: 10px 0 0 5px;
+    margin: 10px 0 0 2px;
     float: left;
 }
 .spanDescription{
@@ -516,8 +517,11 @@
     float: left;
     margin-left: -23px;
     margin-top: 10px;
-    opacity: 0.7;
+    opacity: 0.4;
     padding: 0 5px;
+}
+.iconCloseImageSlideProduct:hover{
+    opacity: 0.7;
 }
 
 .titleBrand{
@@ -558,4 +562,98 @@
     text-align: center;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
     vertical-align: middle;
+}
+
+.titleGallery{
+    background: url("../Images/Icons/gallerymanager.png") no-repeat #EBF3F3;
+    background-size:32px 32px;
+    border: 1px solid #B2B2B2;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 5px 5px 10px #CCCCCC;
+    color: #032E3E;
+    font-size: 20px;
+    margin: 5px 10px;
+    padding: 5px 35px;
+    text-align: left;
+    background-position: left 3px;
+    text-transform: capitalize;
+}
+.titleSettings{
+    background: url("../Images/Icons/advancedsettings.png") no-repeat scroll left 2px #EBF3F3;
+    background-size:32px 32px;
+    border: 1px solid #B2B2B2;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 5px 5px 10px #CCCCCC;
+    color: #032E3E;
+    font-size: 20px;
+    margin: 5px 10px;
+    padding: 5px 35px;
+    text-align: left;
+    text-transform: capitalize;
+}
+#h2AddnewImage{
+    background: none repeat scroll 0 0 #EBF3F3;
+    border: 1px solid #B2B2B2;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 5px 10px #E2E2E2;
+    color: #032E3E;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    margin: 0 0 20px -40px;
+    text-align: center;
+}
+.divShowImageSlideContent{
+    border: 1px solid #E8E8E8;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 5px 5px 10px #DDDDDD;
+    margin: 20px 10px;
+    padding: 20px 0;
+    overflow: hidden;
+}
+.titleImageSlide{
+    background: none repeat scroll 0 0 #EBF3F3;
+    border: 1px solid #666666;
+    float: left;
+    font-size: 11px;
+    margin-left: 2px;
+    padding: 5px 5px 2px;
+    text-align: center;
+    width: 165px;
+}
+.iconSettingsImageSlideProduct{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #666666;
+    color: red;
+    float: left;
+    margin-left: -47px;
+    margin-top: 10px;
+    opacity: 0.4;
+    padding: 0 4px;
+}
+.iconSettingsImageSlideProduct:hover{
+    opacity: 0.7;
+}
+.divItemSlide{
+    height: 150px; 
+    overflow: hidden; 
+    width: 179px; 
+    float: left;
+}
+
+#divMore{
+    background: none repeat scroll 0 0 #EBF3F3;
+    border: 1px solid #CDCDCD;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
+    height: 15px;
+    padding-top: 2px;
+    text-align: center;
+    width: 94%;
+    border-radius: 3px;
+}
+#divMore:hover{
+    background: #3399ff;
+    color: #FFFFFF;
+    border: 1px solid #3399ff;
 }

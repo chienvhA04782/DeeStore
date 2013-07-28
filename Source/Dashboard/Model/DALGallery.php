@@ -62,6 +62,24 @@ class DALGallery {
         }
     }
     
+    function UpdateSlideById($Id, $Path, $Title, $Link){
+        try {
+            $connect = new Connect();
+            $query = "UPDATE deestore.productgallery SET ";
+            if($Path != ""){
+                $query = $query . "ProductGalleryPath='$Path', ";
+            }
+            if($Link != ""){
+                $query = $query . "ProductGalleryLink='$Link', ";
+            }
+            $query = $query . "ProductGalleryTitle='$Title' WHERE ProductGalleryID='$Id';";
+            $result = mysqli_query($connect->ConnectDb(), $query);
+            $connect->CloseDB();
+            return $result;
+        } catch (Exception $e) {
+            echo 'UpdateSlideById:' . $e;
+        }
+    }
 }
 
 ?>
