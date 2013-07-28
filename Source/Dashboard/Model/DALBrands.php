@@ -25,6 +25,17 @@ class DALBrands {
             echo 'FetchAllBrands:' . $e;
         }
     }
+    
+    function FetchBrandById($brandId) {
+        try {
+            $connect = new Connect();
+            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM deestore.productbrand  WHERE ProductBrandID = $brandId");
+            $connect->CloseDB();
+            return $result;
+        } catch (Exception $e) {
+            echo 'FetchBrandById:' . $e;
+        }
+    }
 }
 
 ?>

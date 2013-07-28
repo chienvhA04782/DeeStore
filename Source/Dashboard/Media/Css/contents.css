@@ -413,3 +413,109 @@
     text-align: center;
     width: 200px;
 }
+
+#popupViewProduct{
+    background: none repeat scroll 0 0 black;
+    height: 100%;
+    left: 0;
+    opacity: 0.7;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1050;
+}
+
+.ViewContents{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #541992;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 5px 5px 10px;
+    height: 601px;
+    left: 200px;
+    overflow: hidden;
+    color: #666666;
+    position: fixed;
+    top: 20px;
+    width: 960px;
+    z-index: 1051;
+    display: none;
+}
+
+.ViewContents h1{
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-transform: capitalize;
+    color: #541992;
+    /* Safari 4-5, Chrome 1-9 */
+    /* Can't specify a percentage size? Laaaaaame. */
+    background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#2F2727));
+
+    /* Safari 5.1+, Chrome 10+ */
+    background: -webkit-radial-gradient(circle, #2C94FF, #FAFAFA);
+
+    /* Firefox 3.6+ */
+    background: -moz-radial-gradient(circle, #2C94FF, #FAFAFA);
+
+    /* IE 10 */
+    background: -ms-radial-gradient(circle, #2C94FF, #FAFAFA);
+}
+.ViewContentDetails{
+    border: 1px solid #CCD7E2;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 5px 5px 10px #E2E2E2;
+    height: 485px;
+    margin: 10px auto;
+    width: 800px;
+    overflow: scroll;
+}
+.ViewContents table{
+    margin: 10px;
+    width: 98%;
+}
+.ViewContents table tr th{
+    border-bottom: 1px solid #F1F1F1;
+    font-size: 16px;
+    font-weight: normal;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-top: 10px;
+    text-align: left;
+}
+.ViewContents table tr td{
+    border-bottom: 1px solid #F1F1F1;
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-top: 10px;
+    text-align: left;
+}
+.divSlideImages{
+    overflow: hidden;
+}
+.imageSlide{
+    width: 175px;
+    height: 115px;
+    border: 1px solid #666666;
+    margin: 10px 0 0 5px;
+    float: left;
+}
+.spanDescription{
+    float: left;
+    font-size: 13px;
+    text-align: justify;
+    width: 98%;
+}
+.iconCloseImageSlideProduct{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #666666;
+    color: red;
+    float: left;
+    margin-left: -23px;
+    margin-top: 10px;
+    opacity: 0.7;
+    padding: 0 5px;
+}

@@ -24,6 +24,12 @@
                 $('.btnAddCate').click(function() {
                     window.location = "AddNewProduct.php";
                 });
+                $("body").on('click', '#popupViewProduct', function(e) {
+                    $(".ViewContents").hide('slow', function() {
+                        $(".ViewContents").remove();
+                    });
+                    $(this).remove();
+                });
             });
 
             function removeCateById(reId, reName) {
@@ -83,6 +89,33 @@
                     });
                 } else {
                     return false;
+                }
+            }
+
+            function ViewDetail(Id) {
+                $.ajax({url: '../../Model/BLLProductsManager.php',
+                    data: {'viewId': Id},
+                    type: 'POST',
+                    success: function(output) {
+                        $('body').append(output);
+                        $(".ViewContents").show(500);
+                    }, error: function(err) {
+                        alert(err.responseText);
+                    }
+                });
+            }
+
+            function removeImageInSlideProduct($SlideId) {
+                if (confirm("Bạn chắc chắn rằng bạn muốn xóa hình ảnh này?")) {
+                    $.ajax({url: '../../Model/BLLProductsManager.php',
+                        data: {'removeSlideId': $SlideId},
+                        type: 'POST',
+                        success: function(output) {
+                            $("#itemSlide_" + $SlideId).hide(500);
+                        }, error: function(err) {
+                            alert(err.responseText);
+                        }
+                    });
                 }
             }
         </script>

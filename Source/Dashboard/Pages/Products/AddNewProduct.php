@@ -6,7 +6,6 @@
         <link href="../../Media/Css/Layer.css" type="text/css" rel="stylesheet" />
         <link href="../../Media/Css/contents.css" type="text/css" rel="stylesheet" />
         <script src="../../Media/JavaScript/jquery.min.js" type="text/javascript"></script>
-        <!--<script src="../../Media/Lib/ckeditor/samples/sample.js" type="text/javascript"></script>-->
         <script src="../../Media/Lib/ckeditor/ckeditor.js" type="text/javascript"></script>
         <script type="text/javascript" charset="utf-8">
             $(document).ready(function() {
@@ -29,6 +28,10 @@
                         $("#divListFileSlide").append("<span><input name=\"fileSlide[]\" type=\"file\" style=\"width: 200px\"></span>");
                     }
                 });
+
+                CKEDITOR.replace('txtEditor', {
+                    uiColor: '#9AB8F3'
+                });
             });
 
             function checkUsingAllFile() {
@@ -42,67 +45,53 @@
                 return result;
             }
 
-            function removeProductById(reId) {
-                if (confirm('Bạn muốn xóa sản phẩm có Id = ' + reId)) {
-                    $.ajax({url: '../../Model/BLLCategoriesManager.php',
-                        data: {'reId': reId},
-                        type: 'GET',
-                        success: function(output) {
-                            loadAllData();
-                        }, error: function(err) {
-                            alert(err.responseText);
-                        }
-                    });
-                } else {
-                    return false;
-                }
-            }
-
-            function editProductById(edId) {
-                window.location = "EditProduct.php?edId=" + edId;
-            }
-
             function validateForm() {
                 var decimal = /^[-+]?[0-9]+\.?[0-9]+$/;
                 var result = true;
-                if ($("#txtName").val() === "") {
-                    $("#txtName").css({"border": "1px solid red", "width": "203px"});
+                if ($("#txtKeyWord").val() === "") {
+                    $("#txtKeyWord").css({"border": "1px solid red", "width": "203px"});
+                    $("#txtKeyWord").focus();
                     result = false;
                 } else {
-                    $("#txtName").css({"border": "1px solid #B3B3B3"});
+                    $("#txtKeyWord").css({"border": "1px solid #B3B3B3"});
                 }
-
-                if ($("#txtPriceOld").val() === "") {
-                    $("#txtPriceOld").css({"border": "1px solid red", "width": "203px"});
-                    result = false;
-                } else {
-                    var PriceOldValue = $("#txtPriceOld").val();
-                    if (!decimal.test(PriceOldValue)) {
-                        $("#txtPriceOld").css({"border": "1px solid red", "width": "203px"});
-                        result = false;
-                    } else {
-                        $("#txtPriceOld").css({"border": "1px solid #B3B3B3"});
-                    }
-                }
-
+                
                 if ($("#txtPriceSale").val() === "") {
                     $("#txtPriceSale").css({"border": "1px solid red", "width": "203px"});
+                    $("#txtPriceSale").focus();
                     result = false;
                 } else {
                     var PriceOldValue = $("#txtPriceSale").val();
                     if (!decimal.test(PriceOldValue)) {
                         $("#txtPriceSale").css({"border": "1px solid red", "width": "203px"});
+                        $("#txtPriceSale").focus();
                         result = false;
                     } else {
                         $("#txtPriceSale").css({"border": "1px solid #B3B3B3"});
                     }
                 }
-
-                if ($("#txtKeyWord").val() === "") {
-                    $("#txtKeyWord").css({"border": "1px solid red", "width": "203px"});
+                
+                if ($("#txtPriceOld").val() === "") {
+                    $("#txtPriceOld").css({"border": "1px solid red", "width": "203px"});
+                    $("#txtPriceOld").focus();
                     result = false;
                 } else {
-                    $("#txtKeyWord").css({"border": "1px solid #B3B3B3"});
+                    var PriceOldValue = $("#txtPriceOld").val();
+                    if (!decimal.test(PriceOldValue)) {
+                        $("#txtPriceOld").css({"border": "1px solid red", "width": "203px"});
+                        $("#txtPriceOld").focus();
+                        result = false;
+                    } else {
+                        $("#txtPriceOld").css({"border": "1px solid #B3B3B3"});
+                    }
+                }
+                
+                if ($("#txtName").val() === "") {
+                    $("#txtName").css({"border": "1px solid red", "width": "203px"});
+                    $("#txtName").focus();
+                    result = false;
+                } else {
+                    $("#txtName").css({"border": "1px solid #B3B3B3"});
                 }
                 return result;
             }

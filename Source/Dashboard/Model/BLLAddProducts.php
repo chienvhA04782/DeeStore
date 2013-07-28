@@ -48,10 +48,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 function uploadImageSlide($Id) {
     $nuber_Upload = count($_FILES["fileSlide"]["name"]);
-    $imagePath = "../Media/Images/Products/Slide_" . time();
+    $imagePath = "Slide_" . time();
     for ($i = 0; $i < $nuber_Upload; $i++) {
         if ($_FILES["fileSlide"]["size"][$i] > 0) {
-            $fullPath = $imagePath . "_" . $i . "." . pathinfo($_FILES['fileSlide']['name'][$i], PATHINFO_EXTENSION);
+            $imagePathSql = $imagePath . "_" . $i . "." . pathinfo($_FILES['fileSlide']['name'][$i], PATHINFO_EXTENSION);
+            $fullPath = "../Media/Images/Products/" . $imagePathSql;
             move_uploaded_file($_FILES["fileSlide"]["tmp_name"][$i], $fullPath);
 
             $simpleXml = new SimpleXml();
@@ -64,7 +65,7 @@ function uploadImageSlide($Id) {
             $image->save($fullPath);
             
             $gall = new DALGallery();
-            $gall->AddNewGallery($Id, $fullPath, 'Image slide', '');
+            $gall->AddNewGallery($Id, $imagePathSql, 'Image slide', '');
         }
     }
 }

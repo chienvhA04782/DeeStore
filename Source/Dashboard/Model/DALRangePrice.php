@@ -26,6 +26,17 @@ class DALRangePrice {
             echo 'GetAllRangePrice:' . $e;
         }
     }
+    
+    public function FetchRangePriceById($rangeId){
+        try {
+            $connect = new Connect();
+            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM deestore.productrangeprice WHERE ProductRangePriceID = $rangeId");
+            $connect->CloseDB();
+            return $result;
+        } catch (Exception $e) {
+            echo 'FetchRangePriceById:' . $e;
+        }
+    }
 }
 
 ?>

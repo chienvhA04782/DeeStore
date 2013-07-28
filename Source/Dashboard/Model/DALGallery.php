@@ -28,6 +28,40 @@ class DALGallery {
             echo 'AddNewGallery:' . $e;
         }
     }
+    
+    function FetchAllSlideByProductId($proId){
+        try {
+            $connect = new Connect();
+            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM deestore.productgallery WHERE ProductID = $proId");
+            $connect->CloseDB();
+            return $result;
+        } catch (Exception $e) {
+            echo 'FetchAllSlideByProductId:' . $e;
+        }
+    }
+    
+    function FetchSlideById($Id){
+        try {
+            $connect = new Connect();
+            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM deestore.productgallery WHERE ProductGalleryID = $Id");
+            $connect->CloseDB();
+            return $result;
+        } catch (Exception $e) {
+            echo 'FetchSlideById:' . $e;
+        }
+    }
+    
+    function RemoveSlideById($SlideId){
+        try {
+            $connect = new Connect();
+            $result = mysqli_query($connect->ConnectDb(), "DELETE FROM deestore.productgallery WHERE ProductGalleryID = $SlideId");
+            $connect->CloseDB();
+            return $result;
+        } catch (Exception $e) {
+            echo 'RemoveSlideById:' . $e;
+        }
+    }
+    
 }
 
 ?>
