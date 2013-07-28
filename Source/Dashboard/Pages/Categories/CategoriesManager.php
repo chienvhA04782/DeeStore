@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>CATEGORIES MANAGERS</title>
+        <title>QUẢN LÝ DANH MỤC</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../../Media/Css/Layer.css" type="text/css" rel="stylesheet" />
         <link href="../../Media/Css/contents.css" type="text/css" rel="stylesheet" />

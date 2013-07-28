@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>ADD CATEGORIES</title>
+        <title>THÊM MỚI DANH MỤC</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../../Media/Css/Layer.css" type="text/css" rel="stylesheet" />
         <link href="../../Media/Css/contents.css" type="text/css" rel="stylesheet" />
@@ -76,28 +76,24 @@
                                             <td>Tên danh mục:</td>
                                             <td>
                                                 <input id="txtName" type="text" style="width: 200px;" placeholder="Nhập tên danh mục" name="txtName" />
-                                                <label id="lblErrorNameEditCate" class="error"></label>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Vị trí hiển thị:</td>
                                             <td>
                                                 <input id="txtOrder" type="text" style="width: 200px;" title="Số càng nhỏ vị trí xuất hiện càng cao" placeholder="Nhập vị trí hiển thị" name="txtOrder" />
-                                                <label id="lblErrorOrderEditCate" class="error"></label>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Logo danh mục:</td>
                                             <td>
                                                 <input id="fileIcon" name="fileIcon" type="file" style="width: 200px">
-                                                <label id="lblErrorFileIconEditCate" class="error"></label>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Banner danh mục:</td>
                                             <td>
                                                 <input id="fileBanner" name="fileBanner" type="file" style="width: 200px">
-                                                <label id="lblErrorFileBannerEditCate" class="error"></label>
                                             </td>
                                         </tr>
                                         <tr>

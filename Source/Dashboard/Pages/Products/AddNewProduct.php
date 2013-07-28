@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>QUẢN LÝ SẢN PHẨM</title>
+        <title>THÊM MỚI SẢN PHẨM</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../../Media/Css/Layer.css" type="text/css" rel="stylesheet" />
         <link href="../../Media/Css/contents.css" type="text/css" rel="stylesheet" />

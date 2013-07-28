@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>DEESTORE SHOP</title>
+        <title>Trang Chủ</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../Media/Css/Layer.css" rel="stylesheet" />
-        <script src="../../Media/JavaScript/jquery/jquery.js"></script>
+        <script src="../../Media/JavaScript/jquery/jquery.min.js"></script>
         <script src="../../Media/Lib/bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {

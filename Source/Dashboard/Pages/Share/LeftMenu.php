@@ -12,9 +12,9 @@
                     <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../../Media/Images/Icons/productIcon.png">
                     <a href="../Products/ProductsManager.php">Quản lý sản phẩm</a>
                 </li>
-                <li>
-                    <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../../Media/Images/Icons/menuItem.png">
-                    <a href="#">Something else here</a>
+                <li id="liBrandManager">
+                    <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../../Media/Images/Icons/brand.png">
+                    <a href="../Brands/BrandManager.php">Thương Hiệu</a>
                 </li>
                 <li>
                     <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../../Media/Images/Icons/menuItem.png">

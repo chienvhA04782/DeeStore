@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>QUẢN LÝ SẢN PHẨM</title>
+        <title>QUẢN LÝ THƯƠNG HIỆU</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../../Media/Css/Layer.css" type="text/css" rel="stylesheet" />
         <link href="../../Media/Css/contents.css" type="text/css" rel="stylesheet" />
@@ -12,7 +12,7 @@
         <script src="../../Media/Javascript/jquery.dataTables.js"></script>
         <script type="text/javascript" charset="utf-8">
             $(document).ready(function() {
-                $('#liProductManager').addClass('leftMenuActive');
+                $('#liBrandManager').addClass('leftMenuActive');
                 $('#example').dataTable({
                     "sScrollY": "700px",
                     "bPaginate": true,
@@ -21,8 +21,8 @@
                     "bJQueryUI": true,
                     "sPaginationType": "full_numbers"
                 });
-                $('.btnAddCate').click(function() {
-                    window.location = "AddNewProduct.php";
+                $('#btnAddBrand').click(function() {
+                    window.location = "AddNewBrand.php";
                 });
                 $("body").on('click', '#popupViewProduct', function(e) {
                     $(".ViewContents").hide('slow', function() {
@@ -32,21 +32,21 @@
                 });
             });
 
-            function removeProductById(reId, reName) {
+            function removeBrandById(reId, reName) {
                 if (confirm('Bạn muốn xóa sản phẩm: ' + reName)) {
-                    deleteProductById(reId);
+                    deleteBrandById(reId);
                 } else {
                     return false;
                 }
             }
 
-            function editProductById(edId) {
-                window.location = "EditProduct.php?edId=" + edId;
+            function editBrandById(edId) {
+                window.location = "EditBrand.php?edId=" + edId;
             }
 
             function loadAllData() {
-                $.ajax({url: '../../Model/BLLProductsManager.php',
-                    data: {'typeRequest': 'ProductByCate'},
+                $.ajax({url: '../../Model/BLLBrandManager.php',
+                    data: {'typeRequest': 'Brand'},
                     type: 'POST',
                     success: function(output) {
                         $('#contentManager').html(output);
@@ -63,8 +63,8 @@
                     }
                 });
             }
-            function deleteProductById(reId) {
-                $.ajax({url: '../../Model/BLLProductsManager.php',
+            function deleteBrandById(reId) {
+                $.ajax({url: '../../Model/BLLBrandManager.php',
                     data: {'removeId': reId},
                     type: 'POST',
                     success: function(output) {
@@ -73,50 +73,6 @@
                         alert(err.responseText);
                     }
                 });
-            }
-
-            function lockProductById(lockId, lockName, lockValue) {
-                var l_ul = lockValue === 0 ? "Khóa" : "Mở Khóa";
-                if (confirm('Bạn muốn ' + l_ul + ' sản phẩm: ' + lockName)) {
-                    $.ajax({url: '../../Model/BLLProductsManager.php',
-                        data: {'lockId': lockId, 'lockValue': lockValue},
-                        type: 'POST',
-                        success: function(output) {
-                            loadAllData();
-                        }, error: function(err) {
-                            alert(err.responseText);
-                        }
-                    });
-                } else {
-                    return false;
-                }
-            }
-
-            function ViewDetail(Id) {
-                $.ajax({url: '../../Model/BLLProductsManager.php',
-                    data: {'viewId': Id},
-                    type: 'POST',
-                    success: function(output) {
-                        $('body').append(output);
-                        $(".ViewContents").show(500);
-                    }, error: function(err) {
-                        alert(err.responseText);
-                    }
-                });
-            }
-
-            function removeImageInSlideProduct($SlideId) {
-                if (confirm("Bạn chắc chắn rằng bạn muốn xóa hình ảnh này?")) {
-                    $.ajax({url: '../../Model/BLLProductsManager.php',
-                        data: {'removeSlideId': $SlideId},
-                        type: 'POST',
-                        success: function(output) {
-                            $("#itemSlide_" + $SlideId).hide(500);
-                        }, error: function(err) {
-                            alert(err.responseText);
-                        }
-                    });
-                }
             }
         </script>
     </head>
@@ -135,12 +91,12 @@
                 <div class="contents">
                     <div id="contentManager" style="overflow: hidden">
                         <?php
-                        include '../../Model/BLLProductsManager.php';
-                        LoadAllDataProducts();
+                        include '../../Model/BLLBrandManager.php';
+                        LoadAllDataBrand();
                         ?>
                     </div>
                     <!-- Button to trigger modal -->
-                    <a id="btnAddCate" href="#myModal" role="button" class="btnAddCate" data-toggle="modal">Thêm một sản phẩm mới</a>
+                    <a id="btnAddBrand" class="btnAddNew">Thêm một sản phẩm mới</a>
                 </div>
             </div>
             <?php

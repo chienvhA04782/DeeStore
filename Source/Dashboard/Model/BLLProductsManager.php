@@ -133,7 +133,7 @@ function LoadAllDataProducts() {
         echo '<td>' . $rs['ProductPriceOld'] . '</td>';
         echo '<td>' . $rs['ProductPriceCurrent'] . '</td>';
         echo '<td>
-                <a href="javascript:void(0);" onclick="return removeCateById(' . $rs['ProductID'] . ', \'' . $rs['ProductName'] . '\');" title="Xóa sản phẩm: ' . $rs['ProductName'] . '"><img class="dataTableEditRemove" src="../../Media/Images/Icons/Recycle.png"></a>
+                <a href="javascript:void(0);" onclick="return removeProductById(' . $rs['ProductID'] . ', \'' . $rs['ProductName'] . '\');" title="Xóa sản phẩm: ' . $rs['ProductName'] . '"><img class="dataTableEditRemove" src="../../Media/Images/Icons/Recycle.png"></a>
                 <a href="javascript:void(0);" onclick="return editProductById(' . $rs['ProductID'] . ');" title="Sửa sản phẩm: ' . $rs['ProductName'] . '"><img class="dataTableEditRemove" src="../../Media/Images/Icons/edit_Pencil.png"></a>';
         if ($rs['ProductStatus'] == 1) {
             echo '<a href="javascript:void(0);" onclick="return lockProductById(' . $rs['ProductID'] . ', \'' . $rs['ProductName'] . '\', 0);" title="Khóa sản phẩm: ' . $rs['ProductName'] . '"><img class="dataTableEditRemove" src="../../Media/Images/Icons/unlockBackground.png"></a>';
