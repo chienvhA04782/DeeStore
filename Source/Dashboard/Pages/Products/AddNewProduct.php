@@ -55,7 +55,7 @@
                 } else {
                     $("#txtKeyWord").css({"border": "1px solid #B3B3B3"});
                 }
-                
+
                 if ($("#txtPriceSale").val() === "") {
                     $("#txtPriceSale").css({"border": "1px solid red", "width": "203px"});
                     $("#txtPriceSale").focus();
@@ -70,7 +70,7 @@
                         $("#txtPriceSale").css({"border": "1px solid #B3B3B3"});
                     }
                 }
-                
+
                 if ($("#txtPriceOld").val() === "") {
                     $("#txtPriceOld").css({"border": "1px solid red", "width": "203px"});
                     $("#txtPriceOld").focus();
@@ -85,7 +85,7 @@
                         $("#txtPriceOld").css({"border": "1px solid #B3B3B3"});
                     }
                 }
-                
+
                 if ($("#txtName").val() === "") {
                     $("#txtName").css({"border": "1px solid red", "width": "203px"});
                     $("#txtName").focus();
@@ -162,6 +162,26 @@
                                         <td>
                                             <input id="txtPriceSale" name="txtPriceSale" placeholder="Nhập giá bán đã giảm giá" type="text" style="width: 200px">
                                             <label id="lblErrorPriceSale" class="error"></label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kích cỡ:</td>
+                                        <td>
+                                            <div style="width: 207px">
+                                                <?php
+                                                LoadAllSize();
+                                                ?>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Màu sắc:</td>
+                                        <td>
+                                            <div style="width: 208px">
+                                                <?php
+                                                LoadAllColor();
+                                                ?>
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>

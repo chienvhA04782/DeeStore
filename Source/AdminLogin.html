@@ -1,0 +1,183 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="Media/JavaScript/jquery/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                resizeLogin();
+                $(window).resize(function() {
+                    resizeLogin();
+                });
+
+                if (getURLParameter("error") !== "null") {
+                    $("#lblError").html("Tên đăng nhập hoặc mật khẩu không chính xác");
+                }else if (getURLParameter("lock") !== "null") {
+                    $("#lblError").html("Tài khoản đã bị khóa");
+                }else{
+                    $("#lblError").html("");
+                }
+            });
+            function resizeLogin() {
+                $("#bodyId").css({"with": $(window).width(), "height": $(window).height()});
+                $(".divBackground").css({"with": $(window).width(), "height": $(window).height()});
+                var marginTop = ($(window).height() - $(".contents").height()) / 2;
+                var marginLeft = ($(window).width() - $(".contents").width()) / 2;
+                $(".contents").css({"top": marginTop, "left": marginLeft});
+            }
+
+            function getURLParameter(name) {
+                return decodeURI(
+                        (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1]
+                        );
+            }
+
+            function validateForm() {
+                var result = true;
+                if ($("#txtPassword").val() === "") {
+                    $("#txtPassword").css({
+                        "border": "1px solid red",
+                        "width": "184px",
+                        "height": "22px"
+                    });
+                    $("#txtPassword").focus();
+                    result = false;
+                } else {
+                    $("#txtPassword").css({
+                        "border": "1px solid #999",
+                        "width": "184px",
+                        "height": "22px"
+                    });
+                }
+                if ($("#txtUserName").val() === "") {
+                    $("#txtUserName").css({
+                        "border": "1px solid red",
+                        "width": "184px",
+                        "height": "22px"
+                    });
+                    $("#txtUserName").focus();
+                    result = false;
+                } else {
+                    $("#txtUserName").css({
+                        "border": "1px solid #999",
+                        "width": "184px",
+                        "height": "22px"
+                    });
+                }
+                return result;
+            }
+        </script>
+        <style type="text/css">
+            body{
+                background-color: #2F2727;
+                background-image: url(images/radial_bg.png);
+                background-position: center center;
+                background-repeat: no-repeat;
+
+                /* Safari 4-5, Chrome 1-9 */
+                /* Can't specify a percentage size? Laaaaaame. */
+                background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#2F2727));
+
+                /* Safari 5.1+, Chrome 10+ */
+                background: -webkit-radial-gradient(circle, #1a82f7, #2F2727);
+
+                /* Firefox 3.6+ */
+                background: -moz-radial-gradient(circle, #1a82f7, #2F2727);
+
+                /* IE 10 */
+                background: -ms-radial-gradient(circle, #1a82f7, #2F2727);
+                margin: 0;
+            }
+            .divBackground{
+                background: #000000;
+                opacity: 0.4;
+            }
+            .contents{
+                background: none repeat scroll 0 0 #FFFFFF;
+                border: 1px solid #000000;
+                box-shadow: 0 0 20px #000000;
+                float: left;
+                height: 300px;
+                position: fixed;
+                width: 500px;
+                z-index: 10;
+            }
+            h2{
+                background: none repeat scroll 0 0 #2F2727;
+                color: white;
+                padding: 5px;
+                text-align: center;
+                text-shadow: 0 0 5px #FFFFFF;
+            }
+            table{
+                width: 100%;
+                color: #2F2727;
+            }
+            table tr{
+                padding: 5px;
+            }
+            table tr th{
+                padding-left: 70px;
+                padding-top: 15px;
+                text-align: left;
+                width: 160px;
+            }
+            table tr td{
+                padding-top: 15px;
+            }
+            input{
+                width: 180px;
+                height: 20px;
+            }
+            input[type=submit]{
+                background: none repeat scroll 0 0 #2F2727;
+                border: 1px solid #000000;
+                box-shadow: 0 0 5px #000000;
+                color: white;
+                cursor: pointer;
+                font-family: Times New Roman;
+                font-size: 16px;
+                font-weight: bold;
+                height: 32px;
+                padding: 5px 15px;
+                text-shadow: 0 0 5px #C5C5C5;
+                width: 120px;
+            }
+            #lblError{
+                color: red;
+                float: left;
+                text-align: center;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body id="bodyId">
+        <div class="divBackground"></div>
+        <div class="contents">
+            <h2>Đăng nhập hệ thống</h2>
+            <form action="Dashboard/Model/BLLLogin.php" method="POST">
+                <table>
+                    <tr>
+                        <th>Tên đăng nhập:</th>
+                        <td><input id="txtUserName" name="txtUserName" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <th>Mật khẩu:</th>
+                        <td><input id="txtPassword" name="txtPassword" type="password" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><label id="lblError"></label></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;"><input onclick="return validateForm();" type="submit" value="Đăng Nhập" /></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

@@ -17,6 +17,8 @@ include 'SimpleXml.php';
 include 'DALBrands.php';
 include 'DALRangePrice.php';
 include 'DALGallery.php';
+include 'DALSizes.php';
+include 'DALColor.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include 'SimpleImage.php';
@@ -54,10 +56,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $image->save("../Media/Images/Products/" . $IconPath);
     }
     $result = $prod->EditProductById($Id, $BrandId, $RangePriceId, $CateId, 1, $prodName, $PriceSale, $PriceOld, $KeyWord, $Descript, $IconPath);
+    saveSizeForProduct($Id);
+    saveColorForProduct($Id);
     if ($result) {
         echo '<META http-equiv="refresh" content="0;URL=../Pages/Products/ProductsManager.php">';
     } else {
         echo '<META http-equiv="refresh" content="0;URL=../Pages/Products/EditProduct.php?edId=' . $Id . '&&Error=true">';
+    }
+}
+
+function saveSizeForProduct($proId) {
+    $size = new DALSizes();
+    $size->removeSizeForByProductId($proId);
+    $number_Size = count($_POST['cbxSize']);
+    for ($i = 0; $i < $number_Size; $i++) {
+        if (isset($_POST['cbxSize'][$i])) {
+            $size->ProductJoinSize($proId, $_POST['cbxSize'][$i]);
+        }
+    }
+}
+
+function saveColorForProduct($proId) {
+    $number_Size = count($_POST['cbxColor']);
+    $color = new DALColor();
+    $color->RemoveColorByProductId($proId);
+    for ($i = 0; $i < $number_Size; $i++) {
+        if (isset($_POST['cbxColor'][$i])) {
+            $color->ProductJoinColor($proId, $_POST['cbxColor'][$i]);
+        }
     }
 }
 
@@ -86,8 +112,14 @@ function LoadDataForEditProduct() {
             echo '</select></td></tr>';
             echo '<tr><td>Giá gốc:</td><td><input id="txtPriceOld" name="txtPriceOld" placeholder="Nhập giá gốc cho sản phẩm" value="' . $rs['ProductPriceOld'] . '" type="text" style="width: 200px"></td></tr>';
             echo '<tr><td>Giá bán:</td><td><input id="txtPriceSale" name="txtPriceSale" placeholder="Nhập giá bán đã giảm giá" value="' . $rs['ProductPriceCurrent'] . '" type="text" style="width: 200px"></td></tr>';
+            echo '<tr><td>Kích cỡ:</td><td><div style="width: 207px">';
+            LoadAllSize($_GET['edId']);
+            echo '</div></td></tr>';
+            echo '<tr><td>Màu sắc:</td><td><div style="width: 208px">';
+            LoadAllColor($_GET['edId']);
+            echo '</div></td></tr>';
             echo '<tr><td>Hình ảnh đại diện:</td><td><input id="fileIcon" name="fileIcon" type="file" style="width: 200px"></label></td></tr>';
-            echo '<tr><td>Hình ảnh cho slide:</td><td><div style="overflow: hidden; width: 205px; height: 24px; padding-top: 5px;"><a href="#" style="background: -moz-linear-gradient(center top , #DDE7FA, #9AB8F3);color: #000000;padding: 5px 15px;text-decoration: underline;">Cập nhật tại quản lý slide</a></div></td></tr>';
+            echo '<tr><td>Hình ảnh cho slide:</td><td><div style="overflow: hidden; width: 205px; height: 24px; padding-top: 5px;"><a href="../Gallery/settingsGallery.php?edId=' . $_GET['edId'] . '" style="background: -moz-linear-gradient(center top , #DDE7FA, #9AB8F3);color: #000000;padding: 5px 15px;text-decoration: underline;">Cập nhật tại quản lý slide</a></div></td></tr>';
             echo '<tr><td>Từ khóa sell:</td><td><input type="text" id="txtKeyWord" name="txtKeyWord" value="' . $rs['ProductKeyMeta'] . '" style="width: 200px;" placeholder="Từ khóa 1, Từ khóa 2,..." /></td></tr>';
             echo '<tr><td>Mô tả chi tiết:</td><td></td></tr>';
             echo '<tr><td colspan="2"><textarea name="txtEditor" class="ckeditor" rows="20" cols="70" >' . $rs['ProductDescription'] . '</textarea></td></tr>';
@@ -100,6 +132,59 @@ function LoadDataForEditProduct() {
         }
     } else {
         echo '<h1 class="titleEditCategories">Không có sản phẩm được chỉnh sửa </h1>';
+    }
+}
+
+function LoadAllSize($proId) {
+    $Size = new DALSizes();
+    $result = $Size->GetAllSize();
+    $currentSize = $Size->GetAllSizeByProductId($proId);
+    $arrCurSize = array();
+    while ($r = mysqli_fetch_array($currentSize)) {
+        $arrCurSize[] = $r['ProductSizeID'];
+    }
+    while ($rs = mysqli_fetch_array($result)) {
+        $isCheck = false;
+        for ($i = 0; $i < count($arrCurSize); $i++) {
+            if ($rs['ProductSizeID'] == $arrCurSize[$i]) {
+                $isCheck = true;
+                break;
+            }
+        }
+        echo '<span style="padding-right: 10px; float: left; width: 59px">';
+        if ($isCheck) {
+            echo '<input checked="true" name="cbxSize[]" title="' . $rs['ProductSizeNumber'] . '" type="checkbox" value="' . $rs['ProductSizeID'] . '">' . $rs['ProductSizeNumber'];
+        } else {
+            echo '<input name="cbxSize[]" title="' . $rs['ProductSizeNumber'] . '" type="checkbox" value="' . $rs['ProductSizeID'] . '">' . $rs['ProductSizeNumber'];
+        }
+        echo '</span>';
+    }
+}
+
+function LoadAllColor($proId) {
+    $color = new DALColor();
+    $curentColor = $color->GetAllColorByProductId($proId);
+    $arrCurColor = array();
+    while ($r = mysqli_fetch_array($curentColor)) {
+        $arrCurColor[] = $r['ProductColorID'];
+    }
+    $result = $color->LoadAllColor();
+    while ($rs = mysqli_fetch_array($result)) {
+        $isCheck = false;
+        for ($i = 0; $i < count($arrCurColor); $i++) {
+            if ($rs['ProductColorID'] == $arrCurColor[$i]) {
+                $isCheck = true;
+                break;
+            }
+        }
+        echo '<span style="padding-right: 10px; float: left; width: 42px">';
+        if ($isCheck) {
+            echo '<input checked="true" name="cbxColor[]" value="' . $rs['ProductColorID'] . '" type="checkbox" style="float: left;">';
+        } else {
+            echo '<input name="cbxColor[]" value="' . $rs['ProductColorID'] . '" type="checkbox" style="float: left;">';
+        }
+        echo '<div style="width: 20px; height: 15px; background: ' . $rs['ProductColorCode'] . '; border: 1px solid #000; float: left;"></div>';
+        echo '</span>';
     }
 }
 
@@ -140,7 +225,9 @@ function GetAllBrands($brandId) {
         echo '<option selected="true" value="0" title="Thương Hiệu Khác">--Thương Hiệu Khác--</option>';
     }
 }
+
 $boolResult = false;
+
 function GetAllCategories($curId) {
     global $boolResult;
     $boolResult = false;

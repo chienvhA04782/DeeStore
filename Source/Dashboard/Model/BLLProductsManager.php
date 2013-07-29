@@ -6,9 +6,15 @@ include 'DALProducts.php';
 include 'DALBrands.php';
 include 'DALRangePrice.php';
 include 'DALGallery.php';
+include 'DALSizes.php';
+include 'DALColor.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!empty($_POST['removeId'])) {
+        $size = new DALSizes();
+        $size->removeSizeForByProductId($_POST['removeId']);
+        $color = new DALColor();
+        $color->RemoveColorByProductId($_POST['removeId']);
         $pro = new DALProducts();
         $result = $pro->RemoveProduct($_POST['removeId']);
         if (!$result) {
