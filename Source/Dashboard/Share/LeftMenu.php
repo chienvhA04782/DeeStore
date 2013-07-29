@@ -20,6 +20,10 @@
                     <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../Media/Images/Icons/gallerymanager.png">
                     <a href="../Pages/Gallery/GalleryManager.php">Bộ sưu tập</a>
                 </li>
+                <li id="liRangesManager">
+                    <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../Media/Images/Icons/range.png">
+                    <a href="../Pages/PriceRanges/PriceRangesManager.php">Khoảng giá</a>
+                </li>
             </ul>
         </div>
     </div>

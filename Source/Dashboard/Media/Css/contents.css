@@ -657,3 +657,19 @@
     color: #FFFFFF;
     border: 1px solid #3399ff;
 }
+
+/*PriceRanges*/
+.titleRanges{
+    background: url("../Images/Icons/range.png") no-repeat #EBF3F3;
+    background-size:32px 32px;
+    border: 1px solid #B2B2B2;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 5px 5px 10px #CCCCCC;
+    color: #032E3E;
+    font-size: 20px;
+    margin: 5px 10px;
+    padding: 5px 35px;
+    text-align: left;
+    background-position: left 2px;
+    text-transform: capitalize;
+}

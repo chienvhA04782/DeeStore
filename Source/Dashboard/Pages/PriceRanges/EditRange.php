@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>CHỈNH SỬA THƯƠNG HIỆU</title>
+        <title>CHỈNH SỬA KHOẢNG GIÁ</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../../Media/Css/Layer.css" type="text/css" rel="stylesheet" />
         <link href="../../Media/Css/contents.css" type="text/css" rel="stylesheet" />
@@ -9,13 +9,13 @@
         <script src="../../Media/Lib/ckeditor/ckeditor.js" type="text/javascript"></script>
         <script type="text/javascript" charset="utf-8">
             $(document).ready(function() {
-                $('#liBrandManager').addClass('leftMenuActive');
+                $('#liRangesManager').addClass('leftMenuActive');
             });
 
             function validateForm() {
-                if ($("#txtBrandName").val() === "") {
-                    $("#txtBrandName").css({"border": "1px solid red", "width": "203px"});
-                    $("#txtBrandName").focus();
+                if ($("#txtRangeName").val() === "") {
+                    $("#txtRangeName").css({"border": "1px solid red", "width": "203px"});
+                    $("#txtRangeName").focus();
                     return false;
                 }
                 return true;
@@ -38,7 +38,7 @@
                 <div class="contents">
                     <div class="divMainAddAndEdit">
                         <?php
-                        include '../../Model/BLLEditBrand.php';
+                        include '../../Model/BLLEditRange.php';
                         LoadDataForEdit();
                         ?>
                     </div>

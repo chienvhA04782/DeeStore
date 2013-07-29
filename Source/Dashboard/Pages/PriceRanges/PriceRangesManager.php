@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>QUẢN LÝ THƯƠNG HIỆU</title>
+        <title>KHOẢNG GIÁ</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../../Media/Css/Layer.css" type="text/css" rel="stylesheet" />
         <link href="../../Media/Css/contents.css" type="text/css" rel="stylesheet" />
@@ -12,7 +12,7 @@
         <script src="../../Media/Javascript/jquery.dataTables.js"></script>
         <script type="text/javascript" charset="utf-8">
             $(document).ready(function() {
-                $('#liBrandManager').addClass('leftMenuActive');
+                $('#liRangesManager').addClass('leftMenuActive');
                 $('#example').dataTable({
                     "sScrollY": "700px",
                     "bPaginate": true,
@@ -21,32 +21,26 @@
                     "bJQueryUI": true,
                     "sPaginationType": "full_numbers"
                 });
-                $('#btnAddBrand').click(function() {
-                    window.location = "AddNewBrand.php";
-                });
-                $("body").on('click', '#popupViewProduct', function(e) {
-                    $(".ViewContents").hide('slow', function() {
-                        $(".ViewContents").remove();
-                    });
-                    $(this).remove();
+                $('#btnAddRange').click(function() {
+                    window.location = "AddNewRange.php";
                 });
             });
 
-            function removeBrandById(reId, reName) {
+            function removeRangeById(reId, reName) {
                 if (confirm('Bạn muốn xóa sản phẩm: ' + reName)) {
-                    deleteBrandById(reId);
+                    deleteRangeById(reId);
                 } else {
                     return false;
                 }
             }
 
-            function editBrandById(edId) {
-                window.location = "EditBrand.php?edId=" + edId;
+            function editRangeById(edId) {
+                window.location = "EditRange.php?edId=" + edId;
             }
 
             function loadAllData() {
-                $.ajax({url: '../../Model/BLLBrandManager.php',
-                    data: {'typeRequest': 'Brand'},
+                $.ajax({url: '../../Model/BLLRangesManager.php',
+                    data: {'typeRequest': 'Ranges'},
                     type: 'POST',
                     success: function(output) {
                         $('#contentManager').html(output);
@@ -63,8 +57,8 @@
                     }
                 });
             }
-            function deleteBrandById(reId) {
-                $.ajax({url: '../../Model/BLLBrandManager.php',
+            function deleteRangeById(reId) {
+                $.ajax({url: '../../Model/BLLRangesManager.php',
                     data: {'removeId': reId},
                     type: 'POST',
                     success: function(output) {
@@ -91,12 +85,12 @@
                 <div class="contents">
                     <div id="contentManager" style="overflow: hidden">
                         <?php
-                        include '../../Model/BLLBrandManager.php';
-                        LoadAllDataBrand();
+                        include '../../Model/BLLRangesManager.php';
+                        LoadAllDataRanges();
                         ?>
                     </div>
                     <!-- Button to trigger modal -->
-                    <a id="btnAddBrand" class="btnAddNew">Thêm một thương hiệu mới</a>
+                    <a id="btnAddRange" class="btnAddNew">Thêm một khoảng giá mới</a>
                 </div>
             </div>
             <?php
