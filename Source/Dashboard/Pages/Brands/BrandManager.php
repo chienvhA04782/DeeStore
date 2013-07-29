@@ -24,16 +24,10 @@
                 $('#btnAddBrand').click(function() {
                     window.location = "AddNewBrand.php";
                 });
-                $("body").on('click', '#popupViewProduct', function(e) {
-                    $(".ViewContents").hide('slow', function() {
-                        $(".ViewContents").remove();
-                    });
-                    $(this).remove();
-                });
             });
 
             function removeBrandById(reId, reName) {
-                if (confirm('Bạn muốn xóa sản phẩm: ' + reName)) {
+                if (confirm('Bạn muốn xóa thương hiệu: ' + reName)) {
                     deleteBrandById(reId);
                 } else {
                     return false;

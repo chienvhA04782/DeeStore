@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $result = $account->login($userName, $password);
     while ($rs = mysqli_fetch_array($result)) {
         if ($rs['AdminStatus'] == 0) {
-            echo '<META http-equiv="refresh" content="0;URL=../../AdminLogin.html?lock=true">';
+            echo '<META http-equiv="refresh" content="0;URL=../AdminLogin.html?lock=true">';
             return;
         } else {
             session_start();
@@ -22,8 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
         return;
     }
-    echo '<META http-equiv="refresh" content="0;URL=../../AdminLogin.html?error=true">';
+    echo '<META http-equiv="refresh" content="0;URL=../AdminLogin.html?error=true">';
 } else {
-    echo '<META http-equiv="refresh" content="0;URL=../../AdminLogin.html">';
+    echo '<META http-equiv="refresh" content="0;URL=../AdminLogin.html">';
 }
 ?>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>KHOẢNG GIÁ</title>
+        <title>QUẢN LÝ SIZE</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../../Media/Css/Layer.css" type="text/css" rel="stylesheet" />
         <link href="../../Media/Css/contents.css" type="text/css" rel="stylesheet" />
@@ -12,7 +12,7 @@
         <script src="../../Media/Javascript/jquery.dataTables.js"></script>
         <script type="text/javascript" charset="utf-8">
             $(document).ready(function() {
-                $('#liRangesManager').addClass('leftMenuActive');
+                $('#liSizeManager').addClass('leftMenuActive');
                 $('#example').dataTable({
                     "sScrollY": "700px",
                     "bPaginate": true,
@@ -21,25 +21,25 @@
                     "bJQueryUI": true,
                     "sPaginationType": "full_numbers"
                 });
-                $('#btnAddRange').click(function() {
-                    window.location = "AddNewRange.php";
+                $('#btnAddSize').click(function() {
+                    window.location = "AddNewSize.php";
                 });
             });
 
-            function removeRangeById(reId, reName) {
-                if (confirm('Bạn muốn xóa khoảng giá: ' + reName)) {
-                    deleteRangeById(reId);
+            function removeSizeById(reId, reName) {
+                if (confirm('Bạn muốn xóa size: ' + reName)) {
+                    deleteSizeById(reId);
                 } else {
                     return false;
                 }
             }
 
-            function editRangeById(edId) {
-                window.location = "EditRange.php?edId=" + edId;
+            function editSizeById(edId) {
+                window.location = "EditSize.php?edId=" + edId;
             }
 
             function loadAllData() {
-                $.ajax({url: '../../Model/BLLRangesManager.php',
+                $.ajax({url: '../../Model/BLLSizeManager.php',
                     data: {'typeRequest': 'Ranges'},
                     type: 'POST',
                     success: function(output) {
@@ -57,8 +57,8 @@
                     }
                 });
             }
-            function deleteRangeById(reId) {
-                $.ajax({url: '../../Model/BLLRangesManager.php',
+            function deleteSizeById(reId) {
+                $.ajax({url: '../../Model/BLLSizeManager.php',
                     data: {'removeId': reId},
                     type: 'POST',
                     success: function(output) {
@@ -85,12 +85,12 @@
                 <div class="contents">
                     <div id="contentManager" style="overflow: hidden">
                         <?php
-                        include '../../Model/BLLRangesManager.php';
-                        LoadAllDataRanges();
+                        include '../../Model/BLLSizeManager.php';
+                        LoadAllDataSizes();
                         ?>
                     </div>
                     <!-- Button to trigger modal -->
-                    <a id="btnAddRange" class="btnAddNew">Thêm một khoảng giá mới</a>
+                    <a id="btnAddSize" class="btnAddNew">Thêm mới</a>
                 </div>
             </div>
             <?php

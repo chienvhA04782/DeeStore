@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
         $pro = new DALBrands();
         $result = $pro->removeBrandById($_POST['removeId']);
         if (!$result) {
-            echo '<span id="errorMessages">Xóa sản phẩm với Id = "<font style="text-decoration: underline">' . $_POST['removeId'] . '</font>" lỗi</span>';
+            echo '<span id="errorMessages">Xóa thương hiệu với Id = "<font style="text-decoration: underline">' . $_POST['removeId'] . '</font>" lỗi</span>';
             echo '<script type="text/javascript">$(document).ready(function (){$("#errorMessages").show();setTimeout(function(){$("#errorMessages").hide(1000);}, 3000);});</script>';
         }
     }
@@ -39,8 +39,8 @@ function LoadAllDataBrand() {
         echo '<td>' . $rs['ProductBrandID'] . '</td>';
         echo '<td>' . $rs['ProductBrandName'] . '</td>';
         echo '<td>
-                <a href="javascript:void(0);" onclick="return removeBrandById(' . $rs['ProductBrandID'] . ', \'' . $rs['ProductBrandName'] . '\');" title="Xóa sản phẩm: ' . $rs['ProductBrandName'] . '"><img class="dataTableEditRemove" src="../../Media/Images/Icons/Recycle.png"></a>
-                <a href="javascript:void(0);" onclick="return editBrandById(' . $rs['ProductBrandID'] . ');" title="Sửa sản phẩm: ' . $rs['ProductBrandName'] . '"><img class="dataTableEditRemove" src="../../Media/Images/Icons/edit_Pencil.png"></a>';
+                <a href="javascript:void(0);" onclick="return removeBrandById(' . $rs['ProductBrandID'] . ', \'' . $rs['ProductBrandName'] . '\');" title="Xóa thương hiệu: ' . $rs['ProductBrandName'] . '"><img class="dataTableEditRemove" src="../../Media/Images/Icons/Recycle.png"></a>
+                <a href="javascript:void(0);" onclick="return editBrandById(' . $rs['ProductBrandID'] . ');" title="Sửa thương hiệu: ' . $rs['ProductBrandName'] . '"><img class="dataTableEditRemove" src="../../Media/Images/Icons/edit_Pencil.png"></a>';
         echo '</td>';
         echo '</tr>';
     }

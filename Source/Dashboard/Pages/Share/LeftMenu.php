@@ -24,6 +24,14 @@
                     <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../../Media/Images/Icons/range.png">
                     <a href="../PriceRanges/PriceRangesManager.php">Khoảng giá</a>
                 </li>
+                <li id="liSizeManager">
+                    <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../../Media/Images/Icons/size.png">
+                    <a href="../Size/SizeManager.php">Size(Kích cỡ)</a>
+                </li>
+                <li id="liColorManager">
+                    <img width="32px" height="32px" style="float: left; margin-left: 2px; margin-top: 3px;" src="../../Media/Images/Icons/color.png">
+                    <a href="../Color/ColorManager.php">Màu cho sản phẩm</a>
+                </li>
             </ul>
         </div>
     </div>

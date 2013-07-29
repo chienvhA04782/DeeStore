@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>KHOẢNG GIÁ</title>
+        <title>QUẢN LÝ MÀU CHO SẢN PHẨM</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../../Media/Css/Layer.css" type="text/css" rel="stylesheet" />
         <link href="../../Media/Css/contents.css" type="text/css" rel="stylesheet" />
@@ -12,7 +12,7 @@
         <script src="../../Media/Javascript/jquery.dataTables.js"></script>
         <script type="text/javascript" charset="utf-8">
             $(document).ready(function() {
-                $('#liRangesManager').addClass('leftMenuActive');
+                $('#liColorManager').addClass('leftMenuActive');
                 $('#example').dataTable({
                     "sScrollY": "700px",
                     "bPaginate": true,
@@ -21,26 +21,26 @@
                     "bJQueryUI": true,
                     "sPaginationType": "full_numbers"
                 });
-                $('#btnAddRange').click(function() {
-                    window.location = "AddNewRange.php";
+                $('#btnAddColor').click(function() {
+                    window.location = "AddNewColor.php";
                 });
             });
 
-            function removeRangeById(reId, reName) {
-                if (confirm('Bạn muốn xóa khoảng giá: ' + reName)) {
-                    deleteRangeById(reId);
+            function removeColorById(reId, reName) {
+                if (confirm('Bạn muốn xóa mẫu màu: ' + reName)) {
+                    deleteColorById(reId);
                 } else {
                     return false;
                 }
             }
 
-            function editRangeById(edId) {
-                window.location = "EditRange.php?edId=" + edId;
+            function editColorById(edId) {
+                window.location = "EditColor.php?edId=" + edId;
             }
 
             function loadAllData() {
-                $.ajax({url: '../../Model/BLLRangesManager.php',
-                    data: {'typeRequest': 'Ranges'},
+                $.ajax({url: '../../Model/BLLColorManager.php',
+                    data: {'typeRequest': 'Color'},
                     type: 'POST',
                     success: function(output) {
                         $('#contentManager').html(output);
@@ -57,8 +57,8 @@
                     }
                 });
             }
-            function deleteRangeById(reId) {
-                $.ajax({url: '../../Model/BLLRangesManager.php',
+            function deleteColorById(reId) {
+                $.ajax({url: '../../Model/BLLColorManager.php',
                     data: {'removeId': reId},
                     type: 'POST',
                     success: function(output) {
@@ -85,12 +85,12 @@
                 <div class="contents">
                     <div id="contentManager" style="overflow: hidden">
                         <?php
-                        include '../../Model/BLLRangesManager.php';
-                        LoadAllDataRanges();
+                        include '../../Model/BLLColorManager.php';
+                        LoadAllDataColor();
                         ?>
                     </div>
                     <!-- Button to trigger modal -->
-                    <a id="btnAddRange" class="btnAddNew">Thêm một khoảng giá mới</a>
+                    <a id="btnAddColor" class="btnAddNew">Thêm một mẫu màu mới</a>
                 </div>
             </div>
             <?php
