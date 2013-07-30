@@ -3,7 +3,6 @@
         <?php
         session_start();
         if ($_SESSION['userName'] == "") {
-//            echo '<META http-equiv="refresh" content="0;URL=../../../AdminLogin.html">';
             header( 'Location: ../' ) ;
             return;
         }
@@ -41,13 +40,13 @@
     <div id="users">
         <div align="center">
             <div id="users_icon">
-                <a href="#">
-                    <img width="24" border="0" height="26" alt="big_users" src="../Media/Images/Icons/big_users.png">
+                <a href="../Pages/Account/ChangePassword.php">
+                    <img width="24" border="0" height="26" alt="big_users" src="../Media/Images/Icons/changePassword.png">
                 </a>
             </div>
             <span class="spanUsers">
-                <a href="#">
-                    <span class="users">Tài khoản</span>
+                <a href="../Pages/Account/ChangePassword.php">
+                    <span class="users">Đổi Mật Khẩu</span>
                 </a>
             </span>
         </div>

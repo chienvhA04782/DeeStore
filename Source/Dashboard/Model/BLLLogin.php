@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         } else {
             session_start();
             $_SESSION['userName'] = $rs['AdminAccount'];
+            session_start();
             $_SESSION['userId'] = $rs['AdminId'];
             echo '<META http-equiv="refresh" content="0;URL=../Pages/Home.php">';
             return;

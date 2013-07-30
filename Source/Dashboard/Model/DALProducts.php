@@ -20,7 +20,7 @@ class DALProducts {
     function FetchAllProducts() {
         try {
             $connect = new Connect();
-            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM deestore.products");
+            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM deestore.products ORDER BY ProductID DESC");
             $connect->CloseDB();
             return $result;
         } catch (Exception $e) {
