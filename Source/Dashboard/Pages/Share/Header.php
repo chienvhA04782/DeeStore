@@ -12,12 +12,12 @@
     <div id="logout">
         <div align="center">
             <div id="logout_icon">
-                <a href="#">
+                <a href="../../Model/BLLAccountManager.php?logout=true">
                     <img width="25" border="0" height="25" alt="big_logout" src="../../Media/Images/Icons/big_logout.png">
                 </a>
             </div>
             <span class="spanLogout">
-                <a href="#">
+                <a href="../../Model/BLLAccountManager.php?logout=true">
                     <span class="logOut">Thoát</span>
                 </a>
             </span>
@@ -26,12 +26,12 @@
     <div id="settings">
         <div align="center">
             <div id="settings_icon">
-                <a href="#">
+                <a href="javascript:void(0);">
                     <img width="25" border="0" height="26" alt="big_settings" src="../../Media/Images/Icons/big_settings.png">
                 </a>
                 <span class="spanSettings">
 
-                    <a href="#">
+                    <a href="javascript:void(0);">
                         <span class="settings">Cài đặt</span>
                     </a>
                 </span>
@@ -56,12 +56,12 @@
     <div id="about">
         <div align="center">
             <div id="about_icon">
-                <a href="#">
+                <a href="javascript:void(0);">
                     <img width="24" border="0" height="26" alt="big_users" src="../../Media/Images/Icons/about.png">
                 </a>
             </div>
             <span class="spanAbout">
-                <a href="#">
+                <a href="javascript:void(0);">
                     <span class="about">Giới thiệu</span>
                 </a>
             </span>
@@ -71,7 +71,7 @@
     <div class="wellcomePersonal">
         <div id="hello" class="bodytext">
             Chào! 
-            <a href="#">Administrator</a>
+            <a href="javascript:void(0);">Administrator</a>
             ,
             <img width="22" border="0" height="25" alt="user_icon" src="../../Media/Images/Icons/user.png">
             <br>

@@ -1,29 +1,40 @@
 <?php
+
 include 'Connect.php';
 include 'DALAccount.php';
 
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $Id = $_POST['txtId'];
     $PassOld = $_POST['txtPasswordOld'];
     $PassNew = $_POST['txtPasswordNew'];
     $PasswordNew = sha1($PassNew);
     $PasswordOld = sha1($PassOld);
-    if($Id != ""){
+    if ($Id != "") {
         $IsCurrent = false;
         $account = new DALAccount();
         $resultCurr = $account->checkValidatorPass($Id, $PasswordOld);
-        while ($rsc = mysqli_fetch_array($resultCurr)){
+        while ($rsc = mysqli_fetch_array($resultCurr)) {
             $IsCurrent = true;
             $result = $account->UpdatePassword($Id, $PasswordNew);
-            if($result == 1){
-                header( 'Location: ../Pages/Account/ChangePassword.php?result=success' );
-            }else{
-                header( 'Location: ../Pages/Account/ChangePassword.php?result=error' );
+            if ($result == 1) {
+                header('Location: ../Pages/Account/ChangePassword.php?result=success');
+            } else {
+                header('Location: ../Pages/Account/ChangePassword.php?result=error');
             }
         }
-        if(!$IsCurrent){
-            header( 'Location: ../Pages/Account/ChangePassword.php?result=errorPasswordCurrent' );
+        if (!$IsCurrent) {
+            header('Location: ../Pages/Account/ChangePassword.php?result=errorPasswordCurrent');
         }
+    }
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    if (!empty($_GET['logout'])) {
+        session_start();
+        session_unset();
+        session_destroy();
+        header("Location: ../");
+        exit;
     }
 }
 ?>
