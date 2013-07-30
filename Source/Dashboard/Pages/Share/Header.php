@@ -2,10 +2,11 @@
     <div class="logo">
         <?php
         session_start();
-//        if ($_SESSION['userName'] == "") {
+        if ($_SESSION['userName'] == "") {
 //            echo '<META http-equiv="refresh" content="0;URL=../../../AdminLogin.html">';
-//            return;
-//        }
+            header( 'Location: ../' ) ;
+            return;
+        }
         ?>
     </div>
     <div id="logout">
