@@ -48,14 +48,7 @@
             function validateForm() {
                 var decimal = /^[-+]?[0-9]+\.?[0-9]+$/;
                 var result = true;
-                if ($("#txtKeyWord").val() === "") {
-                    $("#txtKeyWord").css({"border": "1px solid red", "width": "203px"});
-                    $("#txtKeyWord").focus();
-                    result = false;
-                } else {
-                    $("#txtKeyWord").css({"border": "1px solid #B3B3B3"});
-                }
-
+                
                 if ($("#txtPriceSale").val() === "") {
                     $("#txtPriceSale").css({"border": "1px solid red", "width": "203px"});
                     $("#txtPriceSale").focus();
@@ -68,21 +61,6 @@
                         result = false;
                     } else {
                         $("#txtPriceSale").css({"border": "1px solid #B3B3B3"});
-                    }
-                }
-
-                if ($("#txtPriceOld").val() === "") {
-                    $("#txtPriceOld").css({"border": "1px solid red", "width": "203px"});
-                    $("#txtPriceOld").focus();
-                    result = false;
-                } else {
-                    var PriceOldValue = $("#txtPriceOld").val();
-                    if (!decimal.test(PriceOldValue)) {
-                        $("#txtPriceOld").css({"border": "1px solid red", "width": "203px"});
-                        $("#txtPriceOld").focus();
-                        result = false;
-                    } else {
-                        $("#txtPriceOld").css({"border": "1px solid #B3B3B3"});
                     }
                 }
 

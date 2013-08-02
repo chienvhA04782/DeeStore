@@ -131,15 +131,11 @@ class DALProducts {
             if ($PriceCurrent != "") {
                 $query = $query . ", ProductPriceCurrent = '$PriceCurrent'";
             }
-            if ($PriceOld != "") {
-                $query = $query . ", ProductPriceOld = '$PriceOld'";
-            }
-            if ($KeyWord != "") {
-                $query = $query . ", ProductKeyMeta = '$KeyWord'";
-            }
-            if ($Descript != "") {
-                $query = $query . ", ProductDescription = '$Descript'";
-            }
+            
+            $query = $query . ", ProductPriceOld = '$PriceOld'";
+            $query = $query . ", ProductKeyMeta = '$KeyWord'";
+            $query = $query . ", ProductDescription = '$Descript'";
+            
             if ($Icon != "") {
                 $query = $query . ", ProductPathImage = '$Icon'";
             }
