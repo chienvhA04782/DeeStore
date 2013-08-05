@@ -5,6 +5,7 @@ require './Product.php';
 require './Categories.php';
 require './Connect.php';
 require './JoinProductSize.php';
+require './ProductSize.php';
 
 $product = null;
 $result = null;
@@ -81,9 +82,22 @@ if (isset($_POST['action']) && !empty($_POST['action'])) {
                     }
                     $count = 0;
                     while ($row = mysqli_fetch_array($result)) {
-                        echo '$(".productContent").append(\'<a href="ProductDetails.php?_id=' . $row['ProductID'] . '&cateId=' . $row['CategoriesID'] . "&name=" . khongdauController($row['ProductName']) . '" title="' . $row['ProductName'] . '"><div class="items">';
+                        echo '$(".productContent").append(\'<a href="ProductDetails.php?_id=' . $row['ProductID'] . '&cateId=' . $row['CategoriesID'] .
+                                "&name=" . khongdauController($row['ProductName']) . '" title="' . $row['ProductName'] . '"><div class="items">';
                         echo '<div class="sizeH"><label><span style="color:#000">SIZE:</span>';
-                        echo '<span>X | XL | 1 | 2A</span></label>';
+                        echo '<span>';
+                        $joinSize = new JoinProductSize();
+                        $productSize = new ProductSize();
+                        $result = $joinSize->FetchJoinProductSizeByProductID($row['ProductID']);
+                        while ($row1 = mysqli_fetch_array($result)) {
+                            $rspSize = $productSize->FetchProductSizeByProductSizeId($row1["ProductSizeID"]);
+                            while ($row2 = mysqli_fetch_array($rspSize)) {
+                                echo $row2["ProductSizeNumber"] . "&nbsp;|&nbsp;";
+                                break;
+                            }                            
+                        }
+                        echo '</span></label>';
+                        
                         echo '</div><div class="opImage">';
                         if (isset($row['ProductPriceOld']) && !empty($row['ProductPriceOld']) && isset($row['ProductPriceCurrent']) && !empty($row['ProductPriceCurrent'])) {
                             $percent = ((intval($row['ProductPriceCurrent']) - intval($row['ProductPriceOld'])) / intval($row['ProductPriceOld'])) * 100;
@@ -93,9 +107,10 @@ if (isset($_POST['action']) && !empty($_POST['action'])) {
                         echo '<div><label class="opnameProduct" title="' . $row['ProductName'] . '">' . $row['ProductName'] . '</label>';
                         
                         $stvalue = str_replace("\"", "", $row['ProductDescription']);
-                        $stvalue = str_replace($stvalue);
+                        $stvalue = str_replace("\'","",$stvalue);
                                 
                         echo '<label class="opDescription">' . $stvalue . '</label>';
+                        
                         // PRICE OLD
                         if (isset($row['ProductPriceOld']) && !empty($row['ProductPriceOld'])) {
                             echo '<label class="opOldPrice">' . number_format($row['ProductPriceOld'], 0, '.', '.') . ' VNĐ</label>';

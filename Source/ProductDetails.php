@@ -51,7 +51,7 @@
                                 echo '<div class="post warpperDetails postcontent">
                                 <div class="leftDetails">
                                     <h2 class="title" title="' . $rowDetails["ProductName"] . '">' . $rowDetails["ProductName"] . '</h2>
-                                    <div class="description" title="' .$rowDetails["ProductDescription"] . '"><h3 title="' . $rowDetails["ProductDescription"] . '">
+                                    <div class="description" title="' . $rowDetails["ProductDescription"] . '"><h3 title="' . $rowDetails["ProductDescription"] . '">
                                     ' . $rowDetails["ProductDescription"] . '
                                     </h3></div>
                                     <div class="inforProduct">
@@ -75,7 +75,7 @@
                                 if (isset($rowDetails['ProductPriceCurrent']) && !empty($rowDetails['ProductPriceCurrent'])) {
                                     echo '<label class="currentPrice">Giá: ' . number_format($rowDetails['ProductPriceCurrent'], 0, '.', '.') . ' VNĐ</label>';
                                 }
-                                echo '<div class=\'detailsproduct\'>'.$rowDetails['ProductDetails'].'</div>';
+                                echo '<div class=\'detailsproduct\'>' . $rowDetails['ProductDetails'] . '</div>';
                                 echo '</div></div>';
                                 echo '</div>
                                 <div class="rightDetails">
@@ -98,38 +98,57 @@
                                     <h2 class="titleShip">SẢN PHẨM CÙNG LOẠI</h2>
                                     <div class="contentProductShow" style="border: none">
                                         <div class="productContent"> ';
-                                echo '<div class="items">
+
+                                $product = new Product();
+                                $resultpShip = $product->FetchProductByCategoriesId($_GET["cateId"]);
+                                while ($row3 = mysqli_fetch_array($resultpShip)) {
+                                    echo '<div class="items">
                                                 <div class="sizeH">
-                                                    <label>
-                                                        SIZE: X | XL | 1 | 2A
-                                                    </label>
+                                                    <label style="color:#000">
+                                                        SIZE: ';
+                                    $joinProduct = new JoinProductSize();
+                                    $resultJoinProduct = $joinProduct->FetchJoinProductSizeByProductID($pId);
+                                    while ($row = mysqli_fetch_array($resultJoinProduct)) {
+                                        $productSize = new ProductSize();
+                                        $resultSize = $productSize->FetchProductSizeByProductSizeId($row["ProductSizeID"]);
+                                        while ($rowSize = mysqli_fetch_array($resultSize)) {
+                                            echo '<a style="color:#fff" href="">' . $rowSize["ProductSizeNumber"] . '</a> &nbsp;<span style="color:#fff">|</span>&nbsp;';
+                                            break;
+                                        }
+                                    }
+
+                                    echo '</label>
                                                 </div>
-                                                <div class="opImage">
-                                                    <div class="salepercent">
-                                                        <span>-12</span> 
-                                                    </div>
-                                                    <img src="Media/Upload/Product/natural-project-7386-01857-1-catalog.jpg">
+                                                <div class="opImage">';
+                                    
+                                    if (isset($row3['ProductPriceOld']) && !empty($row3['ProductPriceOld']) && isset($row3['ProductPriceCurrent']) && !empty($row3['ProductPriceCurrent'])) {
+                                        $percent = ((intval($row3['ProductPriceCurrent']) - intval($row3['ProductPriceOld'])) / intval($row3['ProductPriceOld'])) * 100;
+                                        echo '<div class="salepercent"><span>' . round($percent) . '</span></div>';
+                                    }
+                                    echo '<img src="/Dashboard/Media/Images/Products/' . $row3["ProductPathImage"] . '">
                                                 </div> 
                                                 <div>
                                                     <label class="opnameProduct">
-                                                        ÁO SƠ MI NAM
+                                                        ' . $row3["ProductName"] . '
                                                     </label>
                                                     <label class="opDescription">
-                                                        Description
-                                                    </label>
-                                                    <label class="opOldPrice">
-                                                        600.000 VNĐ
-                                                    </label>
-                                                    <label class="opCurrentPrice">
-                                                        450.000 VNĐ
-                                                    </label>
-                                                    <label class="deestoreKy">
+                                                      ' . $row3["ProductDescription"] . '
+                                                    </label>';
+                                    // PRICE OLD
+                                    if (isset($row3['ProductPriceOld']) && !empty($row3['ProductPriceOld'])) {
+                                        echo '<label class="opOldPrice">' . number_format($row3['ProductPriceOld'], 0, '.', '.') . ' VNĐ</label>';
+                                    }
+                                    // PRICE CURRENT
+                                    if (isset($row3['ProductPriceCurrent']) && !empty($row3['ProductPriceCurrent'])) {
+                                        echo '<label class="opCurrentPrice">' . number_format($row3['ProductPriceCurrent'], 0, '.', '.') . ' VNĐ</label>';
+                                    }
+                                    echo ' <label class="deestoreKy">
                                                         DEESTORE
                                                     </label>
                                                 </div>
-                                            </div>
-                                            
-                                        </div>
+                                            </div>';
+                                }
+                                echo' </div>
                                     </div>
                                 </div>
                             </div>';

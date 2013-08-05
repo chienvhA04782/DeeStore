@@ -49,7 +49,6 @@ class ProductSize {
             echo "FetchProductSizeByProductId" . $e;
         }
     }
-
 }
 
 ?>

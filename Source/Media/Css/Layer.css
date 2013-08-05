@@ -37,7 +37,7 @@ body {
     font-size: 14px;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: normal;
-    color: #404040;
+    color: #000000;
 
     background-repeat: no-repeat;
 }
@@ -373,20 +373,23 @@ header#heads {
     padding-left: 15px;
     text-transform: uppercase;
 }
-
+#page header .content .topBar .search label button#btnsearch:hover{
+    background-color: #dc2606;
+}
 input.searchTopMain {
-    color: #404040;
+    color: #000;
     height: 26px;
     width: 310px;
     font-size: 1.2em;
     background-color: #FFFFFF;
     border: 1px solid #CCCCCC;
     font-weight: normal;
+    padding-left: 2px;
 }
 
 input.searchTopMain[placeholder] {
     font-size: 14px;
-    color: #B4B4B4;
+    color: #000;
 }
 
 #page header .content nav#menu {
@@ -728,7 +731,7 @@ article.boud{
 }
 .detailsproduct{
     margin-top: 20px;
-    border-top: 1px solid #d1d0d1;
+    border-top: 2px solid #dc2606;
     padding-top: 10px;
 }
 .detailsproduct p{
@@ -737,4 +740,7 @@ article.boud{
 .detailsproduct img{
     padding: 10px;
     padding-left: 0px;
+}
+.contentImageSLide{
+   
 }

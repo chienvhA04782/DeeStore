@@ -18,6 +18,11 @@
                                 Liên Hệ & Đặt Hàng
                             </a>
                         </li>
+                          <li>
+                            <a href="/Map.php">
+                                Bản đồ - Chỉ dẫn
+                            </a>
+                        </li>
                         <li>
                             <a href="/SiteMap.php">
                                 SiteMap
@@ -83,5 +88,5 @@
             <a href="#!/Home">Trang Chủ</a> <a href="#" class="sitemap_parentClass"></a> <a href="#" class="sitemap_ChildClass"></a>
         </div>
     </div>
-
+      <script src="http://builds.emberjs.com/ember-1.0.0-rc.6.1.min.js"></script>
 </header>
