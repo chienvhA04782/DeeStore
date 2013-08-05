@@ -1,7 +1,7 @@
-<marquee behavior="scroll" direction="left" scrollamount="10"
+<!--<marquee behavior="scroll" direction="left" scrollamount="10"
          style="background-color: #404040;
          font-weight: bold;position:fixed;font-size: 16px;
-         color:#fff; display: block; width: 100%; z-index: 90000; top: 96%">Website đang trong quá trình xây dựng bởi ACN</marquee>
+         color:#fff; display: block; width: 100%; z-index: 90000; top: 96%">Website đang trong quá trình xây dựng bởi ACN</marquee>-->
 <header id="heads">
     <div class="loadPanel" style="display: none"></div>
     <div class="content">

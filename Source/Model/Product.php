@@ -42,7 +42,7 @@ class Product {
     function FetchProductByParentId($cateId) {
         try {
             $connect = new Connect();
-            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM categories WHERE CategoriesParentID = $cateId");
+            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM categories WHERE ProductStatus = 1 AND CategoriesParentID = $cateId");
             $str = "";
             $count = 0;
 
@@ -68,7 +68,7 @@ class Product {
     function FetchProductByProductId($productId) {
         try {
             $connect = new Connect();
-            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM products WHERE ProductID = $productId");
+            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM products WHERE ProductStatus = 1 AND ProductID = $productId");
             return $result;
             $connect->CloseDB();
         } catch (Exception $e) {

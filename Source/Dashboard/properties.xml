@@ -5,8 +5,8 @@ and open the template in the editor.
 -->
 <properties>
     <products>
-        <widthIconProduct>100</widthIconProduct>
-        <heightIconProduct>150</heightIconProduct>
+        <widthIconProduct>175</widthIconProduct>
+        <heightIconProduct>252</heightIconProduct>
         <widthSlideProduct>500</widthSlideProduct>
         <heightSlideProduct>300</heightSlideProduct>
     </products>

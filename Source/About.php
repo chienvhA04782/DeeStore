@@ -5,7 +5,8 @@
       font-size: 12px;
       line-height: 20px;
       padding: 5px;">
-    Thông tin vê cửa hàng của chúng tôi 
-    các bạn có thể tham thảo tại đây: Bao gồm địa chỉ và thông tin.
-    xin lưu ý đây là dữ liệu test trong qua trình xây dựng chương trình. Deestore Store
+  Chuyên hàng VNXK original
+  (DKNY, Express, Celio, Pierre Cardin, Jules,TM Lewin, 
+  Mc Neal, Jerem, Gap, AE, Banana, Jake's, Jacques Britt, Abrams,...)
+  ,hàng đẹp, giá cả hợp lý, mong anh chị em ủng hộ nhé.
 </span>

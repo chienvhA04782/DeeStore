@@ -75,19 +75,20 @@
                                 if (isset($rowDetails['ProductPriceCurrent']) && !empty($rowDetails['ProductPriceCurrent'])) {
                                     echo '<label class="currentPrice">Giá: ' . number_format($rowDetails['ProductPriceCurrent'], 0, '.', '.') . ' VNĐ</label>';
                                 }
+                                echo '<div class=\'detailsproduct\'>'.$rowDetails['ProductDetails'].'</div>';
                                 echo '</div></div>';
                                 echo '</div>
                                 <div class="rightDetails">
                                     <div class="contentImageSLide images">
                                         <div class="mainImgSlide">
-                                            <img src="' . $rowDetails['ProductPathImage'] . '" width="172px"/>
+                                            <img src="/Dashboard/Media/Images/Products/' . $rowDetails['ProductPathImage'] . '" width="172px"/>
                                         </div>
                                         <div class="slideSmalIcon">
                                             <div class="smallImg">';
                                 $ProductGallery = new ProductGallery();
                                 $resultGallery = $ProductGallery->FetchProductGalleryByProductId($pId);
                                 while ($row2 = mysqli_fetch_array($resultGallery)) {
-                                    echo "<img src=" . $row2['ProductGalleryPath'] . ">" . "</img>";
+                                    echo "<img src=/Dashboard/Media/Images/Products/" . $row2['ProductGalleryPath'] . ">" . "</img>";
                                 }
                                 echo '</div>
                                         </div>

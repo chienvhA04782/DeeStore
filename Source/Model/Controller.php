@@ -42,14 +42,15 @@ if (isset($_POST['action']) && !empty($_POST['action'])) {
             case 'ProductByCate' :
                 $productBasicShow = 1;
                 $product = new Product();
-
-                if (isset($_POST['cateId']) && !empty($_POST['cateId'])) {
-                    if ($_POST['parentId'] == 0) {
-                        $result = $product->FetchProductByParentId($_POST['cateId']);
-                    } else {
-                        $result = $product->FetchProductByCategoriesId($_POST['cateId']);
-                    }
-                }
+                
+//                if (isset($_POST['cateId']) && !empty($_POST['cateId'])) {
+//                    if ($_POST['parentId'] == 0) {
+//                        $result = $product->FetchProductByParentId($_POST['cateId']);
+//                    } else {
+//                        $result = $product->FetchProductByCategoriesId($_POST['cateId']);
+//                    }
+//                }
+                $result = $product->FetchProductByCategoriesId($_POST['cateId']);
                 break;
             case "DetailsProduct":
                 $productBasicShow = 2;
@@ -88,9 +89,13 @@ if (isset($_POST['action']) && !empty($_POST['action'])) {
                             $percent = ((intval($row['ProductPriceCurrent']) - intval($row['ProductPriceOld'])) / intval($row['ProductPriceOld'])) * 100;
                             echo '<div class="salepercent"><span>' . round($percent) . '</span></div>';
                         }
-                        echo '<img title="' . $row['ProductName'] . '" src="' . $row['ProductPathImage'] . '"></div>';
+                        echo '<img title="' . $row['ProductName'] . '" src="/Dashboard/Media/Images/Products/' . $row['ProductPathImage'] . '"></div>';
                         echo '<div><label class="opnameProduct" title="' . $row['ProductName'] . '">' . $row['ProductName'] . '</label>';
-                        echo '<label class="opDescription">' . $row['ProductDescription'] . '</label>';
+                        
+                        $stvalue = str_replace("\"", "", $row['ProductDescription']);
+                        $stvalue = str_replace($stvalue);
+                                
+                        echo '<label class="opDescription">' . $stvalue . '</label>';
                         // PRICE OLD
                         if (isset($row['ProductPriceOld']) && !empty($row['ProductPriceOld'])) {
                             echo '<label class="opOldPrice">' . number_format($row['ProductPriceOld'], 0, '.', '.') . ' VNĐ</label>';

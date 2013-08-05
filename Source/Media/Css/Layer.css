@@ -615,7 +615,7 @@ ul.menuLeft li ul li a:hover{
     background-color: #fff;
 }
 .warpperDetails .leftDetails{
-    width: 480px;
+    width: 460px;
     display:block;
     float: left;
 }
@@ -668,7 +668,8 @@ ul.menuLeft li ul li a:hover{
     padding-left: 65px;
 }
 .warpperDetails .rightDetails .contentImageSLide .slideSmalIcon .smallImg img{
-    width: 40px;
+    width: 65px;
+    height: 85px;
     border: 1px solid #d1d0d1;
     padding: 3px;
     cursor: pointer;
@@ -724,4 +725,16 @@ article.boud{
     padding: 10px;
     margin-top: 5px;
     font-family: sans-serif, arial;
+}
+.detailsproduct{
+    margin-top: 20px;
+    border-top: 1px solid #d1d0d1;
+    padding-top: 10px;
+}
+.detailsproduct p{
+    line-height: 20px;   
+}
+.detailsproduct img{
+    padding: 10px;
+    padding-left: 0px;
 }

@@ -23,7 +23,7 @@ class Categories {
     function FetchCategoriesParent() {
         try {
             $connect = new Connect();
-            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM categories WHERE CategoriesParentID = 0");
+            $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM categories WHERE CategoriesParentID = 0 AND CategoriesStatus = 1");
             $connect->CloseDB();
             return $result;
         } catch (Exception $e) {
@@ -35,7 +35,7 @@ class Categories {
         try {
             $connect = new Connect();
             $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM 
-                categories WHERE CategoriesParentID = '" . $idParent . "'");
+                categories WHERE CategoriesStatus = 1 AND CategoriesParentID = '" . $idParent . "'");
             $connect->CloseDB();
             return $result;
         } catch (Exception $e) {
@@ -47,7 +47,7 @@ class Categories {
         try {
             $connect = new Connect();
             $result = mysqli_query($connect->ConnectDb(), "SELECT * FROM 
-                categories WHERE CategoriesID = '" . $cateId . "'");
+                categories WHERE CategoriesStatus = 1 AND CategoriesID  = '" . $cateId . "'");
             $connect->CloseDB();
             return $result;
         } catch (Exception $e) {
