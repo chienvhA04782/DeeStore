@@ -21,7 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $PriceOld = $_POST['txtPriceOld'];
     $PriceSale = $_POST['txtPriceSale'];
     $KeyWord = $_POST['txtKeyWord'];
-    $Descript = $_POST['txtEditor'];
+    $Descript = $_POST['txtDescript'];
+    $Details = $_POST['txtEditor'];
     $IconPath = "";
 
     if ($_FILES['fileIcon']['size'] > 0) {
@@ -39,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $image->resize($rs[0], $rs[1]);
         $image->save("../Media/Images/Products/" . $IconPath);
     }
-    $result = $prod->AddNewProduct($Id, $BrandId, $RangePriceId, $CateId, 1, $prodName, $PriceOld, $PriceSale, $KeyWord, $Descript, 1, $IconPath, '');
+    $result = $prod->AddNewProduct($Id, $BrandId, $RangePriceId, $CateId, 1, $prodName, $PriceOld, $PriceSale, $KeyWord, $Descript, 1, $IconPath, $Details);
     if ($result) {
         saveSizeForProduct($Id);
         saveColorForProduct($Id);

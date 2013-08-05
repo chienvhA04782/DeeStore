@@ -101,7 +101,7 @@ class DALProducts {
         }
     }
 
-    function EditProductById($Id, $BrandId, $RangeId, $CateId, $AdminId, $Name, $PriceCurrent, $PriceOld, $KeyWord, $Descript, $Icon) {
+    function EditProductById($Id, $BrandId, $RangeId, $CateId, $AdminId, $Name, $PriceCurrent, $PriceOld, $KeyWord, $Descript, $Icon, $Details) {
         try {
             $connect = new Connect();
             $query = "UPDATE deestore.products SET";
@@ -139,6 +139,8 @@ class DALProducts {
             if ($Icon != "") {
                 $query = $query . ", ProductPathImage = '$Icon'";
             }
+            
+            $query = $query . ", ProductDetails = '$Details'";
             $query = $query . " WHERE ProductID = $Id";
             $result = mysqli_query($connect->ConnectDb(), $query);
             $connect->CloseDB();

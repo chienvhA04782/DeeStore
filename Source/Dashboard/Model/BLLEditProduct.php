@@ -31,7 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $PriceOld = $_POST['txtPriceOld'];
     $PriceSale = $_POST['txtPriceSale'];
     $KeyWord = $_POST['txtKeyWord'];
-    $Descript = $_POST['txtEditor'];
+    $Descript = $_POST['txtDescript'];
+    $Details = $_POST['txtEditor'];
     $IconPath = "";
     if ($_FILES['fileIcon']['size'] > 0) {
 //Create path save file and name file
@@ -55,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $image->resize($rs[0], $rs[1]);
         $image->save("../Media/Images/Products/" . $IconPath);
     }
-    $result = $prod->EditProductById($Id, $BrandId, $RangePriceId, $CateId, 1, $prodName, $PriceSale, $PriceOld, $KeyWord, $Descript, $IconPath);
+    $result = $prod->EditProductById($Id, $BrandId, $RangePriceId, $CateId, 1, $prodName, $PriceSale, $PriceOld, $KeyWord, $Descript, $IconPath, $Details);
     saveSizeForProduct($Id);
     saveColorForProduct($Id);
     if ($result) {
@@ -121,8 +122,9 @@ function LoadDataForEditProduct() {
             echo '<tr><td>Hình ảnh đại diện:</td><td><input id="fileIcon" name="fileIcon" type="file" style="width: 200px"></label></td></tr>';
             echo '<tr><td>Hình ảnh cho slide:</td><td><div style="overflow: hidden; width: 205px; height: 24px; padding-top: 5px;"><a href="../Gallery/settingsGallery.php?edId=' . $_GET['edId'] . '" style="background: -moz-linear-gradient(center top , #DDE7FA, #9AB8F3);color: #000000;padding: 5px 15px;text-decoration: underline;">Cập nhật tại quản lý slide</a></div></td></tr>';
             echo '<tr><td>Từ khóa sell:</td><td><input type="text" id="txtKeyWord" name="txtKeyWord" value="' . $rs['ProductKeyMeta'] . '" style="width: 200px;" placeholder="Từ khóa 1, Từ khóa 2,..." /></td></tr>';
+            echo '<tr><td>Mô tả ngắn:</td><td><textarea id="txtDescript" name="txtDescript" style="width: 200px; height: 20px" placeholder="Mô tả ngắn">' . $rs['ProductDescription'] . '</textarea></td></tr>';
             echo '<tr><td>Mô tả chi tiết:</td><td></td></tr>';
-            echo '<tr><td colspan="2"><textarea name="txtEditor" class="ckeditor" rows="20" cols="70" >' . $rs['ProductDescription'] . '</textarea></td></tr>';
+            echo '<tr><td colspan="2"><textarea name="txtEditor" class="ckeditor" rows="20" cols="70" >' . $rs['ProductDetails'] . '</textarea></td></tr>';
             echo '<tr><td colspan="2"><input class="btnSubmit" onclick="return validateForm();" type="submit" value="Lưu lại" /></td></tr>';
             echo '</table></form></div>';
             break;

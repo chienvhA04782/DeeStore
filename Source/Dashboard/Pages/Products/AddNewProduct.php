@@ -108,8 +108,7 @@
                                     <tr>
                                         <td>Tên sản phẩm:</td>
                                         <td>
-                                            <input id="txtName" type="text" style="width: 200px;" placeholder="Nhập tên sản phẩm" name="txtName" />
-                                            <label id="lblErrorName" class="error"></label>
+                                            <input id="txtName" type="text" style="width: 200px;" placeholder="Nhập tên sản phẩm" name="txtName" maxlength="250" />
                                         </td>
                                     </tr>
                                     <tr>
@@ -131,15 +130,13 @@
                                     <tr>
                                         <td>Giá gốc:</td>
                                         <td>
-                                            <input id="txtPriceOld" name="txtPriceOld" placeholder="Nhập giá gốc cho sản phẩm" type="text" style="width: 200px">
-                                            <label id="lblErrorPriceOld" class="error"></label>
+                                            <input id="txtPriceOld" name="txtPriceOld" placeholder="Nhập giá gốc cho sản phẩm" type="text" style="width: 200px" maxlength="11">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Giá bán:</td>
                                         <td>
-                                            <input id="txtPriceSale" name="txtPriceSale" placeholder="Nhập giá bán đã giảm giá" type="text" style="width: 200px">
-                                            <label id="lblErrorPriceSale" class="error"></label>
+                                            <input id="txtPriceSale" name="txtPriceSale" placeholder="Nhập giá bán đã giảm giá" type="text" style="width: 200px" maxlength="11">
                                         </td>
                                     </tr>
                                     <tr>
@@ -166,7 +163,6 @@
                                         <td>Hình ảnh đại diện:</td>
                                         <td>
                                             <input id="fileIcon" name="fileIcon" type="file" style="width: 200px">
-                                            <label id="lblErrorFileIcon" class="error"></label>
                                         </td>
                                     </tr>
                                     <tr>
@@ -187,7 +183,13 @@
                                     <tr>
                                         <td>Từ khóa sell:</td>
                                         <td>
-                                            <input type="text" id="txtKeyWord" name="txtKeyWord" style="width: 200px;" placeholder="Từ khóa 1, Từ khóa 2,..." />
+                                            <input type="text" id="txtKeyWord" name="txtKeyWord" style="width: 200px;" maxlength="300" placeholder="Từ khóa 1, Từ khóa 2,..." />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mô tả ngắn:</td>
+                                        <td>
+                                            <textarea id="txtDescript" name="txtDescript" style="width: 200px; height: 20px" placeholder="Mô tả ngắn"></textarea>
                                         </td>
                                     </tr>
                                     <tr>

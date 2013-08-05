@@ -67,15 +67,69 @@ function PreviewProductDetails($Id) {
         echo '</tr><tr><th>Giá cũ:</th>';
         echo '<td>' . $rs['ProductPriceOld'] . ' VND</td>';
         echo '</tr><tr><th>Giá khuyến mại:</th>';
-        echo '<td>' . $rs['ProductPriceCurrent'] . ' VND</td>';
-        echo '</tr><tr><th>Từ khóa sell:</th>';
-        echo '<td>' . $rs['ProductKeyMeta'] . '</td>';
-        echo '</tr><tr><th colspan="2">Hình ảnh cho slide:</th></tr><tr><td colspan="2"><div class="divSlideImages">';
+        echo '<td>' . $rs['ProductPriceCurrent'] . ' VND</td></tr>';
+        echo '<tr><th>Kích cỡ</th><td>' . LoadAllSize($rs['ProductID']) . '</td></tr>';
+        echo '<tr><th>Màu sắc</th><td>';
+        LoadAllColor($rs['ProductID']);
+        echo '</td></tr>';
+        echo '<tr><th>Từ khóa sell:</th>';
+        echo '<td>' . $rs['ProductKeyMeta'] . '</td></tr>';
+        echo '<tr><th>Mô tả ngắn:</th>';
+        echo '<td>' . $rs['ProductDescription'] . '</td></tr>';
+        echo '<tr><th colspan="2">Hình ảnh cho slide:</th></tr><tr><td colspan="2"><div class="divSlideImages">';
         GetImageSlideInProduct($rs['ProductID']);
         echo '</div></td></tr><tr><th colspan="2">Mô tả chi tiết sản phẩm:</th></tr><tr><td colspan="2">';
-        echo '<span class="spanDescription">' . $rs['ProductDescription'] . '</span>';
+        echo '<span class="spanDescription">' . $rs['ProductDetails'] . '</span>';
         echo '</td></tr></table></div></div>';
     }
+}
+
+function LoadAllColor($proId) {
+    $color = new DALColor();
+    $curentColor = $color->GetAllColorByProductId($proId);
+    $arrCurColor = array();
+    while ($r = mysqli_fetch_array($curentColor)) {
+        $arrCurColor[] = $r['ProductColorID'];
+    }
+    $result = $color->LoadAllColor();
+    while ($rs = mysqli_fetch_array($result)) {
+        $isCheck = false;
+        for ($i = 0; $i < count($arrCurColor); $i++) {
+            if ($rs['ProductColorID'] == $arrCurColor[$i]) {
+                $isCheck = true;
+                break;
+            }
+        }
+        if ($isCheck) {
+            echo '<div style="width: 20px; margin-right: 10px; height: 15px; background: ' . $rs['ProductColorCode'] . '; border: 1px solid #000; float: left;" title="'.$rs['ProductColorCode'].'"></div>';
+        }
+    }
+}
+
+function LoadAllSize($proId) {
+    $Size = new DALSizes();
+    $result = $Size->GetAllSize();
+    $currentSize = $Size->GetAllSizeByProductId($proId);
+    $arrCurSize = array();
+    $stringResult = "";
+    while ($r = mysqli_fetch_array($currentSize)) {
+        $arrCurSize[] = $r['ProductSizeID'];
+    }
+    while ($rs = mysqli_fetch_array($result)) {
+        $isCheck = false;
+        for ($i = 0; $i < count($arrCurSize); $i++) {
+            if ($rs['ProductSizeID'] == $arrCurSize[$i]) {
+                $isCheck = true;
+                break;
+            }
+        }
+        $stringResult .= '<span style="padding-right: 10px; float: left; width: 59px">';
+        if ($isCheck) {
+            $stringResult .= '<input checked="true" name="cbxSize[]" title="' . $rs['ProductSizeNumber'] . '" type="checkbox" value="' . $rs['ProductSizeID'] . '">' . $rs['ProductSizeNumber'];
+        }
+        $stringResult .= '</span>';
+    }
+    return $stringResult;
 }
 
 function GetImageSlideInProduct($proId) {

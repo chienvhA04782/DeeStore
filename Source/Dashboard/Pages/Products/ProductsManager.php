@@ -123,6 +123,11 @@
     <body id="bodyIdManager">
         <?php
         require '../Share/Header.php';
+        if ($_SESSION['userName'] == "") {
+//            echo '<META http-equiv="refresh" content="0;URL=../../../AdminLogin.html">';
+            echo '<META http-equiv="refresh" content="0;URL=../../">';
+            return;
+        }
         ?>
         <div class="divcontainers">
             <?php
